@@ -1,10 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import './App.css';
 import { NavLink } from 'react-router-dom';
 import { Route } from 'react-router';
 
-import register from './components/LoginPage/ArtistLogin';
+import register from './containers/register/register';
 import profile from './containers/profile/profile';
 
 function App() {
