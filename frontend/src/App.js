@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import './App.css';
 import { NavLink } from 'react-router-dom';
 import { Route } from 'react-router';
 
@@ -33,8 +32,8 @@ function App() {
           </form>
         </div>
       </nav>
-      <Route path="/register" component={register}/>
-      <Route path="/profile" component={profile}/>
+      <Route path="/register" component={register} />
+      <Route path="/profile" component={profile} />
     </div>
   );
 }
