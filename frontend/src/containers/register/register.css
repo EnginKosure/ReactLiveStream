@@ -1,12 +1,12 @@
 body {
-	background: #eee !important;	
+	background: #eee;	
 }
 
 .login-wrapper {	
-	margin-top: 80px;
-  margin-bottom: 80px;
   width:50%;
   margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .auth-inner{
@@ -15,4 +15,13 @@ body {
     margin: 0 auto;
     background-color: #fff;
     border: 1px solid rgba(0,0,0,0.1); 
+    border-radius: 10px;
+
+}
+
+.photo{
+  border-radius: 35%;
+  display: block;
+  text-align: center;
+  margin: 20px auto;
 }

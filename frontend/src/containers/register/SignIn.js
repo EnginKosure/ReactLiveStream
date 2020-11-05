@@ -23,9 +23,15 @@ const Register = () => {
 
   return (
     <div className="login-wrapper">
+
       <div className="auth-inner">
+        <img
+          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+          alt="profile-img"
+          className="profile-img-card photo"
+        />
         <form className="container">
-          <h3>Sign Up</h3>
+          <h3>Sign In</h3>
           <div className="form-group">
             <label htmlFor="email">Email address</label>
             <input

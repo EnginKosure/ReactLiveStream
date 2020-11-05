@@ -3,8 +3,9 @@ import './App.css';
 import { NavLink } from 'react-router-dom';
 import { Route } from 'react-router';
 
-import register from './containers/register/register';
+import signin from './containers/register/SignIn';
 import profile from './containers/profile/profile';
+import signup from './containers/register/ArtistSignUp'
 
 function App() {
   return (
@@ -20,7 +21,10 @@ function App() {
               <NavLink to="/" class="nav-link" href="#">Home <span class="sr-only">(current)</span></NavLink>
             </li>
             <li class="nav-item">
-              <NavLink to="/register" class="nav-link" href="#">Register</NavLink>
+              <NavLink to="/signin" class="nav-link" href="#">Sign in</NavLink>
+            </li>
+            <li class="nav-item">
+              <NavLink to="/signup" class="nav-link" href="#">Register</NavLink>
             </li>
             <li class="nav-item">
               <NavLink to="/profile" class="nav-link" href="#">Profile</NavLink>
@@ -32,7 +36,8 @@ function App() {
           </form>
         </div>
       </nav>
-      <Route path="/register" component={register} />
+      <Route path="/signin" component={signin} />
+      <Route path="/signup" component={signup} />
       <Route path="/profile" component={profile} />
     </div>
   );
