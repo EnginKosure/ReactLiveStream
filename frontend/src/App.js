@@ -32,8 +32,8 @@ function App() {
           </form>
         </div>
       </nav>
-      <Route path="/register" component={register}/>
-      <Route path="/profile" component={profile}/>
+      <Route path="/register" component={register} />
+      <Route path="/profile" component={profile} />
     </div>
   );
 }
