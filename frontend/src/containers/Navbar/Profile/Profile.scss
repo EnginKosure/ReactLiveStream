@@ -1,0 +1,14 @@
+// Override default variables before the import
+$blue: #8859A4;
+$border-radius: 5px;
+$border: none;
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+
+button {
+  border: $border;
+  border-radius: $border-radius;
+  background-color: $blue;
+}
