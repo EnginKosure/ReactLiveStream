@@ -1,23 +1,8 @@
-// import React, { Component } from 'react';
-
-// import './register.css';
-
-// class register extends Component {
-//     render () {
-//         return (
-//             <div>
-//                 <h1>let us sign in!!!</h1>
-//             </div>
-//         );
-//     }
-// }
-
-// export default register;
-
 import React, { useState } from 'react';
-import "./register.css";
 
-const Register = () => {
+import "./SignUp.scss"
+
+const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -63,4 +48,4 @@ const Register = () => {
     </div>
   );
 };
-export default Register;
+export default SignUp;
