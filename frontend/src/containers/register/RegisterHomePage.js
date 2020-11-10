@@ -18,10 +18,10 @@ function RegisterHomePage() {
     }
 
     return (
-        <div className="col-lg-8 offset-lg-2">
+        <div className="col-lg-8 offset-lg-2 bg ">
             <h1>Hi {user.ArtistFirstName}!</h1>
             <p>You're logged in to Aplaudo!</p>
-            <h3>All active users:</h3>
+            <h3>All active artists:</h3>
             {users.loading && <em>Loading users...</em>}
             {users.error && <span className="text-danger">ERROR: {users.error}</span>}
             {users.items &&
