@@ -19,6 +19,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { userActions } from '../../actions';
 import "./register.css";
+import aplaudo from '../../assets/aplaudo.png'
+
 
 const Register = () => {
   // const [email, setEmail] = useState("");
@@ -55,56 +57,60 @@ const Register = () => {
   }
 
   return (
-    <div className="login-wrapper">
+    <div className="signin-container">
+      <div className="logo">
+        <img src={aplaudo} alt="Logo" className="logo" />
+      </div>
+      <div className="login-wrapper">
 
-      <div className="auth-inner">
-        <img
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-          alt="profile-img"
-          className="profile-img-card photo"
-        />
-        <form className="container" name="form" onSubmit={handleSubmit}>
-          <h3>Sign In</h3>
-          <div className="form-group">
-            <label htmlFor="EmailAddress">Email address</label>
-            <input
-              type="email"
-              name="EmailAddress"
-              className={'form-control email' + (submitted && !EmailAddress ? ' is-invalid' : '')}
-              value={EmailAddress}
-              placeholder="Enter email"
-              onChange={handleChange}
-            />
-            {submitted && !EmailAddress &&
-              <div className="invalid-feedback">Email is required</div>
-            }
-          </div>
-          <div className="form-group">
-            <label htmlFor="Password" >Password</label>
-            <input
-              type="password"
-              name="Password"
-              className={"form-control password" + (submitted && !Password ? " is-invalid" : "")}
-              value={Password}
-              placeholder="Enter password"
-              onChange={handleChange}
-            />
-            {submitted && !Password &&
-              <div className="invalid-feedback">Password is required</div>
-            }
-          </div>
-          <div className="form-group">
-            <button className="btn btn-primary">
-              {loggingIn && <span className="spinner-border spinner-border-sm mr-1"></span>}
+        <div className="auth-inner">
+          <img
+            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+            alt="profile-img"
+            className="profile-img-card photo"
+          />
+          <form className="container" name="form" onSubmit={handleSubmit}>
+            <h3>Sign In</h3>
+            <div className="form-group">
+              <label htmlFor="EmailAddress">Email address</label>
+              <input
+                type="email"
+                name="EmailAddress"
+                className={'form-control email' + (submitted && !EmailAddress ? ' is-invalid' : '')}
+                value={EmailAddress}
+                placeholder="Enter email"
+                onChange={handleChange}
+              />
+              {submitted && !EmailAddress &&
+                <div className="invalid-feedback">Email is required</div>
+              }
+            </div>
+            <div className="form-group">
+              <label htmlFor="Password" >Password</label>
+              <input
+                type="password"
+                name="Password"
+                className={"form-control password" + (submitted && !Password ? " is-invalid" : "")}
+                value={Password}
+                placeholder="Enter password"
+                onChange={handleChange}
+              />
+              {submitted && !Password &&
+                <div className="invalid-feedback">Password is required</div>
+              }
+            </div>
+            <div className="form-group">
+              <button className="btn btn-primary">
+                {loggingIn && <span className="spinner-border spinner-border-sm mr-1"></span>}
                         Login
                     </button>
-            <Link to="/signup" className="btn btn-link">Register</Link>
-          </div>
-          <button type="submit" className="btn btn-primary btn-block" > Submit</button >
-          <p className="forgot-password text-right">
-            Forgot <a href="#">password?</a>
-          </p>
-        </form>
+              <Link to="/signup" className="btn btn-link">Register</Link>
+            </div>
+            <p className="forgot-password text-right">
+              Forgot <a href="#">password?</a>
+            </p>
+          </form>
+        </div>
       </div>
     </div>
   );
