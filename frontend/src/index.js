@@ -1,16 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter} from 'react-router-dom';
-import './index.scss';
-import './custom.scss';
+// import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+
+import { store } from './helpers';
+import './index.css';
 import App from './App';
 // import registerServiceWorker from './registerServiceWorker';
 
+import { configureFakeBackend } from './helpers';
+configureFakeBackend();
+// import { configureRealBackend } from './helpers';
+// configureRealBackend();
+
 
 ReactDOM.render(
-  <BrowserRouter>
+  <Provider store={store}>
+    {/* <BrowserRouter> */}
     <App />
-  </BrowserRouter>,
+    {/* </BrowserRouter> */}
+  </Provider>,
   document.getElementById('root')
 );
 

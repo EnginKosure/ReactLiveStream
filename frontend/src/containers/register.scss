@@ -1,18 +1,24 @@
+/* import sidePhoto from "../../assets/signin.jpg" */
+
 body {
-	background: #eee;	
+  /* background: #eee;	 */
+  background-image: url("../../assets/signin.jpg"
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 .login-wrapper {	
-  width:50%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   margin-top: 40px;
   margin-bottom: 40px;
 }
 
 .auth-inner{
-    max-width: 380px;
+    max-width: 400px;
     padding: 15px 35px 45px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     background-color: #fff;
     border: 1px solid rgba(0,0,0,0.1); 
     border-radius: 10px;
@@ -24,4 +30,21 @@ body {
   display: block;
   text-align: center;
   margin: 20px auto;
+}
+
+.signin-container{
+  display: flex;
+  align-items: center ; 
+  justify-content: space-between; 
+ } 
+
+.logo{
+  width: 200px;
+}
+
+.bg{
+  background-color: #cbe6ff;
+  margin: 40px;
+  padding: 30px;
+  border-radius: 10px;
 }
