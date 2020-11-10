@@ -1,9 +1,0 @@
-// Override default variables before the import
-$bg: #cbe6ff;
-
-// Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
-
-.auth-inner {
-  background-color: $bg;
-}

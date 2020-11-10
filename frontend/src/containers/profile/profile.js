@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 
-import './Profile.scss';
+import './profile.css';
 
-class Profile extends Component {
+class profile extends Component {
     render () {
         return (
             <div>
                 <h1>Amazing artists</h1>
-                <button className="btn btn-primary">add</button>
             </div>
         );
     }
 }
 
-export default Profile;
+export default profile;

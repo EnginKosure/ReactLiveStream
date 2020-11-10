@@ -115,4 +115,4 @@ const Register = () => {
     </div>
   );
 };
-export default SignUp;
+export default Register;
