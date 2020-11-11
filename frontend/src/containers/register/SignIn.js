@@ -1,19 +1,3 @@
-// import React, { Component } from 'react';
-
-// import './register.css';
-
-// class register extends Component {
-//     render () {
-//         return (
-//             <div>
-//                 <h1>let us sign in!!!</h1>
-//             </div>
-//         );
-//     }
-// }
-
-// export default register;
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
