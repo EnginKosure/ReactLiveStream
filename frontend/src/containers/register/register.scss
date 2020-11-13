@@ -31,12 +31,6 @@
   // align-items: center;
 }
 
-// .signin-container {
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-// }
-
 .logo {
   width: 200px;
   padding: 20px;
@@ -98,6 +92,9 @@
   letter-spacing: -0.015em;
   text-align: center;
   min-width: 100px;
+}
+.btn-register {
+  margin-top: 15px;
 }
 
 .search-component {

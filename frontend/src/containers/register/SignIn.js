@@ -52,15 +52,13 @@ const Register = () => {
           <img src={aplaudo} alt="Logo" className="logo" />
         </div>
         <div className="search-component">
-
           <Search />
         </div>
       </div>
-      {/* <div className="signin-container"> */}
 
       <div className="auth-inner">
         <form className="container" name="form" onSubmit={handleSubmit}>
-          <h3 className="text">Welcome to Aplaudo</h3>
+          <h4 className="text">Welcome to Aplaudo</h4>
           <div className="form-group">
             <label htmlFor="EmailAddress" />
             <input
