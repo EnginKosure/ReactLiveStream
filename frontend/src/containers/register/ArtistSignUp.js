@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { userActions } from '../../actions';
-import "./register.css";
+import "./register.scss";
 import aplaudo from '../../assets/aplaudo.png'
 
 

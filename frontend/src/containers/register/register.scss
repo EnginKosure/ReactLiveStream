@@ -1,0 +1,94 @@
+/* import sidePhoto from "../../assets/signin.jpg" */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+
+body {
+  /* background: #eee;	 */
+  background-image: url("../../assets/signin.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.auth-inner {
+  max-width: 600px;
+  min-width: 40%;
+  padding: 0 50px;
+  // margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  min-height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 200px;
+}
+
+.bg {
+  background-color: #cbe6ff;
+  margin: 40px;
+  padding: 30px;
+  border-radius: 10px;
+}
+.text {
+  //styleName: Body H4;
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.015em;
+  text-align: left;
+  color: #592e75;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.text-fields {
+  //styleName: Body H4;
+  font-family: Montserrat, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  text-align: left;
+
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.fgpw {
+  font-family: "Itim", cursive;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 50px;
+
+  a {
+    color: #592e75;
+  }
+}
+
+.btn-custom {
+  background-color: #592e75 !important;
+  font-family: Itim;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.015em;
+  text-align: center;
+  min-width: 100px;
+}
