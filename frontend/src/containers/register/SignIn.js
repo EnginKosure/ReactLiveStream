@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { userActions } from '../../actions';
-import "./register.css";
-import aplaudo from '../../assets/aplaudo.png';
+import "./register.scss";
+import aplaudo from '../../assets/logo.png';
+import Search from '../../components/Search';
 
 import BootstrapCarousel from '../Carousel/Carousel';
 import About from '../About/About';
@@ -46,70 +47,67 @@ const Register = () => {
 
   return (
     <div>
-      <div className="signin-container">
-        <div className="logo">
-          <img src={aplaudo} alt="Logo" className="logo" />
-        </div>
-        <div className="login-wrapper">
-
-          <div className="auth-inner">
-            <img
-              src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-              alt="profile-img"
-              className="profile-img-card photo"
-            />
-            <form className="container" name="form" onSubmit={handleSubmit}>
-              <h3>Sign In</h3>
-              <div className="form-group">
-                <label htmlFor="EmailAddress">Email address</label>
-                <input
-                  type="email"
-                  name="EmailAddress"
-                  className={'form-control email' + (submitted && !EmailAddress ? ' is-invalid' : '')}
-                  value={EmailAddress}
-                  placeholder="Enter email"
-                  onChange={handleChange}
-                />
-                {submitted && !EmailAddress &&
-                  <div className="invalid-feedback">Email is required</div>
-                }
-              </div>
-              <div className="form-group">
-                <label htmlFor="Password" >Password</label>
-                <input
-                  type="password"
-                  name="Password"
-                  className={"form-control password" + (submitted && !Password ? " is-invalid" : "")}
-                  value={Password}
-                  placeholder="Enter password"
-                  onChange={handleChange}
-                />
-                {submitted && !Password &&
-                  <div className="invalid-feedback">Password is required</div>
-                }
-              </div>
-              <div className="form-group">
-                <button className="btn btn-primary">
-                  {loggingIn && <span className="spinner-border spinner-border-sm mr-1"></span>}
-                          Login
-                      </button>
-                <Link to="/signup" className="btn btn-link">Register</Link>
-              </div>
-              <p className="forgot-password text-right">
-                Forgot <a href="#">password?</a>
-              </p>
-            </form>
+      <div className="main-container">
+        <div className="left-container">
+          <div className="logo-container">
+            <img src={aplaudo} alt="Logo" className="logo" />
+          </div>
+          <div className="search-component">
+            <Search />
           </div>
         </div>
-
+        <div className="auth-inner">
+          <form className="container" name="form" onSubmit={handleSubmit}>
+            <h4 className="text">Welcome to Aplaudo</h4>
+            <div className="form-group">
+              <label htmlFor="EmailAddress" />
+              <input
+                type="email"
+                name="EmailAddress"
+                className={'form-control email text-fields' + (submitted && !EmailAddress ? ' is-invalid' : '')}
+                value={EmailAddress}
+                placeholder="Email address"
+                onChange={handleChange}
+              />
+              {submitted && !EmailAddress &&
+                <div className="invalid-feedback">Email is required</div>
+              }
+            </div>
+            <div className="form-group">
+              <label htmlFor="Password" />
+              <input
+                type="password"
+                name="Password"
+                className={"form-control password text-fields" + (submitted && !Password ? " is-invalid" : "")}
+                value={Password}
+                placeholder="Your password"
+                onChange={handleChange}
+              />
+              {submitted && !Password &&
+                <div className="invalid-feedback">Password is required</div>
+              }
+            </div>
+            <p className="fgpw">
+              <a href="#">Forgot your password?</a>
+            </p>
+            <div className="form-group">
+              <button className="btn btn-primary btn-custom">
+                {loggingIn && <span className="spinner-border spinner-border-sm mr-1"></span>}
+                          Login
+                      </button>
+              <Link to="/signup" className="btn btn-link fgpw">Register</Link>
+            </div>
+          </form>
+        </div>
       </div>
       <div className="contanier">
-        <BootstrapCarousel/> 
+        <BootstrapCarousel />
       </div>
       <div className="contanier">
-        <About/> 
+        <About />
       </div>
     </div>
+
   );
 };
 export default Register;
