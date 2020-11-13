@@ -126,11 +126,11 @@ const ArtistSignUp = () => {
                         }
                     </div>
                     <div className="form-group">
-                        <button className="btn btn-primary btn-custom btn-register">
+                        <button className="btn btn-primary btn-custom">
                             {registering && <span className="spinner-border spinner-border-sm mr-1"></span>}
                         Register
                     </button>
-                        <Link to="/signin" className="btn btn-link">Cancel</Link>
+                        <Link to="/signin" className="btn btn-link fgpw">Cancel</Link>
                     </div>
                 </form>
             </div>

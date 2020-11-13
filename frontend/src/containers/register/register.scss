@@ -3,7 +3,6 @@
 
 .main-container {
   display: flex;
-  // align-items: center;
   justify-content: space-between;
 }
 .left-container {
@@ -75,7 +74,7 @@
   line-height: 19px;
   letter-spacing: 0em;
   text-align: left;
-  margin-bottom: 50px;
+  margin-top: 25px;
 
   a {
     color: #592e75;
@@ -92,9 +91,7 @@
   letter-spacing: -0.015em;
   text-align: center;
   min-width: 100px;
-}
-.btn-register {
-  margin-top: 15px;
+  margin-top: 30px;
 }
 
 .search-component {
@@ -108,7 +105,6 @@
 }
 .logo-container {
   background: #2c2c2c;
-  // background: yellow;
   border-top-left-radius: 53px;
   border-top-right-radius: 53px;
   position: absolute;

@@ -95,19 +95,19 @@ const Register = () => {
               {loggingIn && <span className="spinner-border spinner-border-sm mr-1"></span>}
                           Login
                       </button>
-            <Link to="/signup" className="btn btn-link">Register</Link>
+            <Link to="/signup" className="btn btn-link fgpw">Register</Link>
           </div>
 
         </form>
       </div>
 
       {/* </div> */}
-      {/* <div className="contanier">
+      <div className="contanier">
         <BootstrapCarousel />
       </div>
       <div className="contanier">
         <About />
-      </div> */}
+      </div>
     </div>
   );
 };
