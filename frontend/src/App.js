@@ -38,7 +38,7 @@ function App() {
         </div>
             
               <Router history={history}>
-                  {/* <Navbar/>  */}
+                  <Navbar/> 
                
 
                     <Switch>
