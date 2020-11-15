@@ -41,6 +41,7 @@
   padding: 30px;
   border-radius: 10px;
 }
+
 .text {
   font-family: Montserrat, sans-serif;
   font-size: 24px;
@@ -126,3 +127,22 @@
     top: 30%;
   }
 }
+.dashboard-main {
+  display: flex;
+}
+.info-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 10%;
+}
+
+.title {
+  margin: 0 auto;
+  font-size: 2rem;
+}
+// .user-name {
+//   display: flex;
+//   flex-direction: column;
+// }
