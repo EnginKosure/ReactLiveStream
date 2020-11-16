@@ -19,7 +19,7 @@
 .auth-inner {
   max-width: 600px;
   min-width: 35%;
-  padding: 150px 50px;
+  padding: 120px 40px;
   // margin: 0 auto;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -28,6 +28,10 @@
   // flex-direction: column;
   // justify-content: center;
   // align-items: center;
+}
+#profile-wrapper {
+  max-width: 1100px;
+  min-width: 50%;
 }
 
 .logo {

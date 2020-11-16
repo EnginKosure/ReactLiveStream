@@ -50,7 +50,7 @@ const UpdateProfile = ({ current }) => {
     return (
         <div className="main-container">
 
-            <div className="auth-inner">
+            <div className="auth-inner" id="profile-wrapper">
                 <form className="container" name="form" onSubmit={handleSubmit}>
                     <h4 className="text">Update your profile</h4>
                     <div className="main-profile-update">
