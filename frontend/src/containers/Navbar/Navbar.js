@@ -5,7 +5,7 @@ import './Navbar.scss';
 
 const Navbar = () => {
   return (
-   <div className="Navbar">
+   <div className="Navbar fixed-top">
     <nav className="navbar navbar-expand-lg navbar-light bg-light nav-menu">
       <a className="navbar-brand">
         <img
@@ -26,17 +26,17 @@ const Navbar = () => {
       </button>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
+          <li className="nav-item" data-toggle="collapse" data-target=".in">
             <NavLink to="/signin" className="nav-link menu-item">
               Sign in
             </NavLink>
           </li>
-          <li className="nav-item">
+          <li className="nav-item" data-toggle="collapse" data-target=".in">
             <NavLink to="/signup" className="nav-link menu-item">
               Register
             </NavLink>
           </li>
-          <li className="nav-item">
+          <li className="nav-item" data-toggle="collapse" data-target=".in">
             <NavLink to="/profile" className="nav-link menu-item">
               Profile
             </NavLink>
