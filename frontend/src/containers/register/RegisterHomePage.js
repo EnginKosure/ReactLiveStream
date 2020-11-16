@@ -31,7 +31,7 @@ function RegisterHomePage() {
                     <h3 className="text">Hi {user.ArtistFirstName}! <span className="text-fields">You're logged in to Aplaudo!</span></h3>
                 </div>
 
-                <DashboardRight />
+                <DashboardRight user={user} />
 
                 <div className="admin-info">
                     <h3 className="text-fields">All active artists:</h3>

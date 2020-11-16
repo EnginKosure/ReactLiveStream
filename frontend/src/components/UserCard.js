@@ -12,7 +12,7 @@ const UserCard = ({ user }) => {
                     alt="profile-img"
                     className="profile-img-card photo"
                 />
-                <h6 className="user-h6">{user.ArtistFirstName} {user.ArtistLastName}</h6>
+                <h6 className="user-h6">{user?.ArtistFirstName} {user?.ArtistLastName}</h6>
                 <ul>
                     <li className="active"><a href="#"><i className="fa fa-columns" aria-hidden="true"></i>User DashBoard</a></li>
                     <li><a href="#"><i className="fa fa-user-circle" aria-hidden="true" />Profile Info</a></li>

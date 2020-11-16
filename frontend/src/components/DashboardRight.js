@@ -1,7 +1,8 @@
 import React from 'react'
 import './DashboardRight.scss'
+import { Link } from 'react-router-dom';
 
-function DashboardRight() {
+function DashboardRight({ user }) {
     return (
         <div>
             <section>
@@ -18,7 +19,7 @@ function DashboardRight() {
 
                 <div className="flipbox">
                     <div className="back profile">
-                        <a href="#" target="_blank">Enter!</a>
+                        <Link to="/profile">Update Profile</Link>
                     </div>
                     <div className="front">
                         <h2>Update Profile</h2>
