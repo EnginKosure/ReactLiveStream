@@ -133,13 +133,13 @@ const UpdateProfile = ({ current }) => {
                         <div className="right-form">
 
                             <div className="form-group">
-                                <label htmlFor="ArtistFirstName" />
+                                <label htmlFor="SocialLink1" />
                                 <input
                                     type="text"
-                                    name="ArtistFirstName"
+                                    name="SocialLink1"
                                     className={"form-control email text-fields" + (submitted && !user.ArtistFirstName ? ' is-invalid' : '')}
-                                    value={user.ArtistFirstName}
-                                    placeholder={current.ArtistFirstName}
+                                    value={user.SocialLink1}
+                                    placeholder={current.SocialLink1 || "Add social media-1"}
                                     onChange={handleChange}
                                 />
                                 {submitted && !user.ArtistFirstName &&
@@ -148,64 +148,83 @@ const UpdateProfile = ({ current }) => {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="ArtistLastName" />
+                                <label htmlFor="SocialLink2" />
                                 <input
                                     type="text"
-                                    name="ArtistLastName"
-                                    className={"form-control email text-fields" + (submitted && !user.ArtistLastName ? ' is-invalid' : '')}
-                                    value={user.ArtistLastName}
-                                    placeholder={current.ArtistLastName}
+                                    name="SocialLink2"
+                                    className={"form-control email text-fields" + (submitted && !user.ArtistFirstName ? ' is-invalid' : '')}
+                                    value={user.SocialLink2}
+                                    placeholder={current.SocialLink2 || "Add social media-2"}
                                     onChange={handleChange}
                                 />
-                                {submitted && !user.ArtistLastName &&
-                                    <div className="invalid-feedback">Last Name is required</div>
+                                {submitted && !user.ArtistFirstName &&
+                                    <div className="invalid-feedback">First Name is required</div>
+                                }
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="SocialLink3" />
+                                <input
+                                    type="text"
+                                    name="SocialLink3"
+                                    className={"form-control email text-fields" + (submitted && !user.ArtistFirstName ? ' is-invalid' : '')}
+                                    value={user.SocialLink3}
+                                    placeholder={current.SocialLink3 || "Add social media-3"}
+                                    onChange={handleChange}
+                                />
+                                {submitted && !user.ArtistFirstName &&
+                                    <div className="invalid-feedback">First Name is required</div>
                                 }
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="EmailAddress" />
+                                <label htmlFor="Genre" />
                                 <input
-                                    type="email"
-                                    name="EmailAddress"
-                                    className={"form-control email text-fields" + (submitted && !user.EmailAddress ? ' is-invalid' : '')}
-                                    value={user.EmailAddress}
-                                    placeholder={current.EmailAddress}
+                                    type="text"
+                                    name="Genre"
+                                    className={"form-control email text-fields" + (submitted && !user.ArtistFirstName ? ' is-invalid' : '')}
+                                    value={user.Genre}
+                                    placeholder={current.Genre || "Add genre info"}
                                     onChange={handleChange}
                                 />
-                                {submitted && !user.EmailAddress &&
-                                    <div className="invalid-feedback">Email is required</div>
+                                {submitted && !user.ArtistFirstName &&
+                                    <div className="invalid-feedback">First Name is required</div>
                                 }
                             </div>
                             <div className="form-group">
-                                <label htmlFor="Password" />
+                                <label htmlFor="Instrument" />
                                 <input
-                                    type="password"
-                                    name="Password"
-                                    className={"form-control password" + (submitted && !user.Password ? ' is-invalid' : '')}
-                                    value={user.Password}
-                                    placeholder="Enter new password"
+                                    type="text"
+                                    name="Instrument"
+                                    className={"form-control email text-fields" + (submitted && !user.ArtistFirstName ? ' is-invalid' : '')}
+                                    value={user.Instrument}
+                                    placeholder={current.Instrument || "Add instrument info"}
                                     onChange={handleChange}
                                 />
-                                {submitted && !user.Password &&
-                                    <div className="invalid-feedback">Password is required</div>
+                                {submitted && !user.ArtistFirstName &&
+                                    <div className="invalid-feedback">First Name is required</div>
                                 }
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="Password" />
-                                <input
-                                    type="password"
-                                    name="Password"
-                                    className={"form-control password" + (submitted && !user.Password ? ' is-invalid' : '')}
-                                    value={user.Password}
-                                    placeholder="Confirm password"
-                                    onChange={handleChange}
-                                />
-                                {submitted && !user.Password &&
-                                    <div className="invalid-feedback">Password is required</div>
-                                }
-                            </div>
+
                         </div>
                     </div>
+
+                    <div className="form-group">
+                        <label htmlFor="ArtistBio" />
+                        <textarea
+                            type="text"
+                            name="ArtistBio"
+                            className={"form-control password" + (submitted && !user.Password ? ' is-invalid' : '')}
+                            value={user.Password}
+                            placeholder="Biography..."
+                            onChange={handleChange}
+                            cols={40}
+                            rows={5}
+                        />
+                        {submitted && !user.Password &&
+                            <div className="invalid-feedback">Password is required</div>
+                        }
+                    </div>
+
                     <div className="form-group">
                         <button className="btn btn-primary btn-custom">
                             {registering && <span className="spinner-border spinner-border-sm mr-1"></span>}
