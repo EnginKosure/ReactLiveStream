@@ -120,3 +120,15 @@ section {
     }
   }
 }
+
+@media (min-width: 980px) and (max-width: 1300px) {
+  .flipbox {
+    margin: 10px 60px !important;
+  }
+
+  @media (min-width: 700px) and (max-width: 980px) {
+    .flipbox {
+      padding-left: 100px;
+    }
+  }
+}
