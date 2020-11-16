@@ -9,6 +9,7 @@ import Navbar from './containers/Navbar/Navbar';
 import signin from './containers/register/SignIn';
 import profile from './containers/profile/profile';
 import signup from './containers/register/ArtistSignUp';
+import Footer from './containers/Footer/Footer';
 
 import { history } from './helpers';
 import { alertActions } from './actions';
@@ -47,6 +48,8 @@ function App() {
                       <Route path="/profile" component={profile} />
                       <Redirect from="*" to="/" />
                     </Switch>
+
+                    <Footer/>
                 
               </Router>
         

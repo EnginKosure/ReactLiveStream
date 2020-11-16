@@ -1,8 +1,8 @@
 import React from "react";
 import Carousel from "react-elastic-carousel";
-import Item from './Item';
+import Item from "./Item/Item";
 
-import './Carousel.scss';
+import "./Carousel.scss";
 
 const breakPoints = [
   // { width: 1, itemsToShow: 1 },
@@ -11,25 +11,25 @@ const breakPoints = [
   // { width: 1200, itemsToShow: 4 }
   { width: 1, itemsToShow: 1 },
   { width: 650, itemsToShow: 2, itemsToScroll: 2 },
-  { width: 1200, itemsToShow: 3 }
+  { width: 1200, itemsToShow: 3 },
 ];
 
 const BootstrapCarousel = () => {
   return (
     <div className="Carousel">
       <Carousel breakPoints={breakPoints}>
-        <Item>1</Item>
-        <Item>2</Item>
-        <Item>3</Item>
-        <Item>4</Item>
-        <Item>5</Item>
-        <Item>6</Item>
-        <Item>7</Item>
-        <Item>8</Item>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
       </Carousel>
     </div>
   );
-}
+};
 
 export default BootstrapCarousel;
 
@@ -92,8 +92,8 @@ export default BootstrapCarousel;
 
 // export default BootstrapCarousel;
 
-
-   {/* <div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel">
+{
+  /* <div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel">
     <div className="carousel-inner">
       <div className="carousel-item active">
         <img src="../../assets/signin.jpg" className="d-block w-100" alt="..."/>
@@ -113,4 +113,5 @@ export default BootstrapCarousel;
       <span className="carousel-control-next-icon" aria-hidden="true"></span>
       <span className="sr-only">Next</span>
     </a>
-   </div> */}
+   </div> */
+}
