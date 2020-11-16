@@ -2,7 +2,7 @@ import React from 'react';
 import './UserCard.scss';
 import logo from '../assets/logo_.png';
 
-const UserCard = () => {
+const UserCard = ({ user }) => {
     return (
         <div className="card-container">
             <div className="dash" ><img className="logo" src={logo} alt="logo" /></div>
@@ -12,7 +12,7 @@ const UserCard = () => {
                     alt="profile-img"
                     className="profile-img-card photo"
                 />
-                <h6 className="user-h6">Lievenka Van De Meirssche</h6>
+                <h6 className="user-h6">{user.ArtistFirstName} {user.ArtistLastName}</h6>
                 <ul>
                     <li className="active"><a href="#"><i className="fa fa-columns" aria-hidden="true"></i>User DashBoard</a></li>
                     <li><a href="#"><i className="fa fa-user-circle" aria-hidden="true" />Profile Info</a></li>

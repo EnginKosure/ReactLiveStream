@@ -22,7 +22,7 @@ function RegisterHomePage() {
 
     return (
         <div className="dashboard-main">
-            <UserCard />
+            <UserCard user={user} />
 
             <div className="info-right">
                 <h1 className="text title">User Dashboard</h1>
