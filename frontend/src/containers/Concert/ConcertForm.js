@@ -145,6 +145,7 @@ const ConcertForm = () => {
                                 />
 
                             </div>
+                            <CheckBoxGenre />
                             <div className="form-group">
                                 <label htmlFor="Password" />
                                 <input
