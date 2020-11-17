@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import axios from "axios";
+import React from 'react';
 import styled from "styled-components";
 import "./Item.scss";
 import { Link } from 'react-router-dom';
@@ -19,41 +18,15 @@ const StyledDiv = styled.div`
 `;
 
 
-
-const Item = () => {
-  const [concerts, setConcerts] = useState({})
-
-  const options = {
-    method: 'GET',
-    url: 'https://robby.p.rapidapi.com/search.json',
-    params: {
-      country: 'US',
-      lng: '-74.00597',
-      city: 'New York',
-      lat: '40.71435',
-      to: '2020-08-01T20:30:00+08:00',
-      limit: '30',
-      distance: '10',
-      from: '2019-06-30T20:30:00'
-    },
-    headers: {
-      'x-rapidapi-key': '15ad104108mshf6f08f42562fee9p141a21jsne13a7acdf194',
-      'x-rapidapi-host': 'robby.p.rapidapi.com'
-    }
-  };
-
-  axios.request(options).then(function (response) {
-    console.log(response.data);
-  }).catch(function (error) {
-    console.error(error);
-  });
- return (
-  <StyledDiv>
-    <Link to="/concertInfo">
-      <img src="https://source.unsplash.com/featured?technology" width="450" height="350"/>
-    </Link>
-  </StyledDiv>
- )
+const IMG_API = "https://image.tmdb.org/t/p/w1280"
+const Item = ({ title, vote_average, poster_path, overview }) => {
+  return (
+    <StyledDiv>
+      <Link to="/concertInfo">
+        <img src={poster_path ? (IMG_API + poster_path) : 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1225&q=80'} alt={title} width="450" height="350" />
+      </Link>
+    </StyledDiv>
+  )
 }
 
 export default Item;
