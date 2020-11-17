@@ -13,7 +13,6 @@ import Footer from './containers/Footer/Footer';
 import concertInfo from "./containers/Carousel/ConcertInfo/ConcertInfo";
 import ConcertForm from './containers/Concert/ConcertForm';
 import concertInfo from "./containers/Carousel/ConcertInfo/ConcertInfo";
-import ConcertForm from './containers/Concert/ConcertForm';
 
 import { history } from "./helpers";
 import { alertActions } from "./actions";
