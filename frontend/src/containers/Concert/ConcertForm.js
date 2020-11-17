@@ -125,7 +125,7 @@ const ConcertForm = () => {
                                     onChange={handleChange}
                                 />
                                 {submitted && !concert.Artists &&
-                                    <div className="invalid-feedback">Emails are required</div>
+                                    <div className="invalid-feedback">Artist emails are required</div>
                                 }
                             </div>
 
@@ -136,6 +136,7 @@ const ConcertForm = () => {
         "Links" :["link1","link2"],
         "Picture": ["jpg/png img url link"],
         "Programma": ["A pdf/jpg file url link"] */}
+                            <CheckBoxGenre />
                             <div className="form-group">
                                 <label htmlFor="Styles">Choose Styles/Genre</label>
                                 <input
@@ -149,7 +150,6 @@ const ConcertForm = () => {
                                 />
 
                             </div>
-                            <CheckBoxGenre />
                             <div className="form-group">
                                 <label htmlFor="Password" />
                                 <input

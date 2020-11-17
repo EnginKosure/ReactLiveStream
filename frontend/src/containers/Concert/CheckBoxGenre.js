@@ -2,9 +2,15 @@ import React, { useEffect, useState } from 'react';
 import CheckBox from './CheckBox';
 
 const items = [
-    'One',
-    'Two',
-    'Three',
+    'Rock',
+    'Pop',
+    'Jazz',
+    'Folk',
+    'Classical',
+    'Popular',
+    'Electronic',
+    'Instrumental',
+    'Independent',
 ];
 
 const CheckBoxGenre = () => {
