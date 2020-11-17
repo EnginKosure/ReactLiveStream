@@ -12,6 +12,7 @@ import signup from './containers/register/ArtistSignUp';
 import Footer from './containers/Footer/Footer';
 import ConcertForm from './containers/Concert/ConcertForm';
 import concertInfo from "./containers/Carousel/ConcertInfo/ConcertInfo";
+import ConcertForm from './containers/Concert/ConcertForm';
 
 import { history } from "./helpers";
 import { alertActions } from "./actions";
@@ -32,10 +33,11 @@ function App() {
   }, []);
   return (
     <div className="App">
+
       <div className="col-md-8 offset-md-2">
-        {alert.message && (
+        {alert.message &&
           <div className={`alert ${alert.type}`}>{alert.message}</div>
-        )}
+        }
       </div>
 
       <Router history={history}>
@@ -49,6 +51,7 @@ function App() {
           <Route path="/profile" component={profile} />
           <Route path="/concert" component={ConcertForm} />
           <Route path="/concertInfo" component={concertInfo} />
+          <Route path="/concert" component={ConcertForm} />
           <Redirect from="*" to="/" />
         </Switch>
 
