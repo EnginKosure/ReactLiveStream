@@ -24,12 +24,7 @@ const ConcertForm = () => {
     {
         "Dates" : new Date('1995-12-17T03:24:00'),
         "About": "A concert in memory of Beetles",
-        "Artists":[{
-                    "ArtistFirstName": "Bin",
-                    "ArtistLastName": "Barly",
-                    "EmailAddress": "rass@gmail.com",
-                    "Password": "123dwccetere"
-                     }],
+        "Artists":[  "EmailAddress": "rass@gmail.com",],
         "Styles" : ["country","jazz"],
         "Instruments": ["accordion","bass","bassoon","banjo","cello","clarinet","classical guitar",
                     "clavichord","double bass","drums","electrical guitar","electronics","english horn","flute",
