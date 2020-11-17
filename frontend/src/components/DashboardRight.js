@@ -9,7 +9,7 @@ function DashboardRight({ user }) {
                 <div className="flipbox">
                     <div className="back concert">
 
-                        <a href="#" target="_blank">Add Concert</a>
+                        <Link to="/concert">Add Concert</Link>
                     </div>
                     <div className="front">
                         <h2>Concert</h2>

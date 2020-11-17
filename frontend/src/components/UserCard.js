@@ -1,7 +1,7 @@
 import React from 'react';
 import './UserCard.scss';
 import logo from '../assets/logo_.png';
-
+import { Link } from 'react-router-dom';
 const UserCard = ({ user }) => {
     return (
         <div className="card-container">
@@ -14,7 +14,7 @@ const UserCard = ({ user }) => {
                 />
                 <h6 className="user-h6">{user?.ArtistFirstName} {user?.ArtistLastName}</h6>
                 <ul>
-                    <li className="active"><a href="#"><i className="fa fa-columns" aria-hidden="true"></i>User DashBoard</a></li>
+                    <li className="active"><Link to="/"><i className="fa fa-columns" aria-hidden="true"></i>User DashBoard</Link></li>
                     <li><a href="#"><i className="fa fa-user-circle" aria-hidden="true" />Profile Info</a></li>
                     <li><a href="#"><i className="fa fa-cog" aria-hidden="true" />Settings</a></li>
                     <li><a href="#"><i className="fa fa-inbox" aria-hidden="true" />Usage</a></li>

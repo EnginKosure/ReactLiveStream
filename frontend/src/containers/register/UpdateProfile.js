@@ -137,7 +137,7 @@ const UpdateProfile = ({ current }) => {
                                 <input
                                     type="text"
                                     name="SocialLink1"
-                                    className={"form-control email text-fields" + (submitted && !user.ArtistFirstName ? ' is-invalid' : '')}
+                                    className={"form-control email text-fields" + (submitted && !user.SocialLink1 ? ' is-invalid' : '')}
                                     value={user.SocialLink1}
                                     placeholder={current.SocialLink1 || "Add social media-1"}
                                     onChange={handleChange}
@@ -152,28 +152,23 @@ const UpdateProfile = ({ current }) => {
                                 <input
                                     type="text"
                                     name="SocialLink2"
-                                    className={"form-control email text-fields" + (submitted && !user.ArtistFirstName ? ' is-invalid' : '')}
+                                    className={"form-control email text-fields" + (submitted && !user.SocialLink2 ? ' is-invalid' : '')}
                                     value={user.SocialLink2}
                                     placeholder={current.SocialLink2 || "Add social media-2"}
                                     onChange={handleChange}
                                 />
-                                {submitted && !user.ArtistFirstName &&
-                                    <div className="invalid-feedback">First Name is required</div>
-                                }
                             </div>
                             <div className="form-group">
                                 <label htmlFor="SocialLink3" />
                                 <input
                                     type="text"
                                     name="SocialLink3"
-                                    className={"form-control email text-fields" + (submitted && !user.ArtistFirstName ? ' is-invalid' : '')}
+                                    className={"form-control email text-fields" + (submitted && !user.SocialLink3 ? ' is-invalid' : '')}
                                     value={user.SocialLink3}
                                     placeholder={current.SocialLink3 || "Add social media-3"}
                                     onChange={handleChange}
                                 />
-                                {submitted && !user.ArtistFirstName &&
-                                    <div className="invalid-feedback">First Name is required</div>
-                                }
+
                             </div>
 
                             <div className="form-group">
@@ -181,7 +176,7 @@ const UpdateProfile = ({ current }) => {
                                 <input
                                     type="text"
                                     name="Genre"
-                                    className={"form-control email text-fields" + (submitted && !user.ArtistFirstName ? ' is-invalid' : '')}
+                                    className={"form-control email text-fields" + (submitted && !user.Genre ? ' is-invalid' : '')}
                                     value={user.Genre}
                                     placeholder={current.Genre || "Add genre info"}
                                     onChange={handleChange}
@@ -213,16 +208,14 @@ const UpdateProfile = ({ current }) => {
                         <textarea
                             type="text"
                             name="ArtistBio"
-                            className={"form-control password" + (submitted && !user.Password ? ' is-invalid' : '')}
-                            value={user.Password}
+                            className={"form-control password" + (submitted && !user.ArtistBio ? ' is-invalid' : '')}
+                            value={user.ArtistBio}
                             placeholder="Biography..."
                             onChange={handleChange}
                             cols={40}
                             rows={5}
                         />
-                        {submitted && !user.Password &&
-                            <div className="invalid-feedback">Password is required</div>
-                        }
+
                     </div>
 
                     <div className="form-group">

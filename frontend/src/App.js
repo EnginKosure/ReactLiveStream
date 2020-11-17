@@ -10,6 +10,7 @@ import signin from './containers/register/SignIn';
 import profile from './containers/profile/profile';
 import signup from './containers/register/ArtistSignUp';
 import Footer from './containers/Footer/Footer';
+import ConcertForm from './containers/Concert/ConcertForm';
 
 import { history } from './helpers';
 import { alertActions } from './actions';
@@ -30,30 +31,31 @@ function App() {
   }, []);
   return (
     <div className="App">
-      
-        <div className="col-md-8 offset-md-2">
-          {alert.message &&
-            <div className={`alert ${alert.type}`}>{alert.message}</div>
-          }
-        </div>
-            
-              <Router history={history}>
-                  <Navbar/> 
-               
 
-                    <Switch>
-                      <PrivateRoute exact path="/" component={RegisterHomePage} />
-                      <Route path="/signin" component={signin} />
-                      <Route path="/signup" component={signup} />
-                      <Route path="/profile" component={profile} />
-                      <Redirect from="*" to="/" />
-                    </Switch>
-
-                    <Footer/>
-                
-              </Router>
-        
+      <div className="col-md-8 offset-md-2">
+        {alert.message &&
+          <div className={`alert ${alert.type}`}>{alert.message}</div>
+        }
       </div>
+
+      <Router history={history}>
+        <Navbar />
+
+
+        <Switch>
+          <PrivateRoute exact path="/" component={RegisterHomePage} />
+          <Route path="/signin" component={signin} />
+          <Route path="/signup" component={signup} />
+          <Route path="/profile" component={profile} />
+          <Route path="/concert" component={ConcertForm} />
+          <Redirect from="*" to="/" />
+        </Switch>
+
+        <Footer />
+
+      </Router>
+
+    </div>
   );
 }
 
