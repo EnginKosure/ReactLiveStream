@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 import "./Item.scss";
+import { Link } from 'react-router-dom';
+
 
 const StyledDiv = styled.div`
   display: flex;
@@ -18,10 +20,9 @@ const StyledDiv = styled.div`
 const Item = () => {
  return (
   <StyledDiv>
-   <img 
-      src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"
-      alt="new"
-      />
+    <Link to="/concertInfo">
+      <img src="https://source.unsplash.com/featured?technology" width="450" height="350"/>
+    </Link>
   </StyledDiv>
  )
 }
