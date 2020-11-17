@@ -152,7 +152,7 @@ const ConcertForm = () => {
                                     name="Password"
                                     className={"form-control password" + (submitted && !concert.Password ? ' is-invalid' : '')}
                                     value={concert.Password}
-                                    placeholder="Confirm password"
+                                    placeholder="Teaser/trailer inks"
                                     onChange={handleChange}
                                 />
                                 {submitted && !concert.Password &&
@@ -169,7 +169,7 @@ const ConcertForm = () => {
                                     name="SocialLink1"
                                     className={"form-control email text-fields" + (submitted && !concert.ArtistFirstName ? ' is-invalid' : '')}
                                     value={concert.SocialLink1}
-                                    placeholder={"Add social media-1"}
+                                    placeholder={"Picture Link-1"}
                                     onChange={handleChange}
                                 />
                                 {submitted && !concert.ArtistFirstName &&
@@ -184,7 +184,7 @@ const ConcertForm = () => {
                                     name="SocialLink2"
                                     className={"form-control email text-fields" + (submitted && !concert.ArtistFirstName ? ' is-invalid' : '')}
                                     value={concert.SocialLink2}
-                                    placeholder={"Add social media-2"}
+                                    placeholder={"Picture Link-2"}
                                     onChange={handleChange}
                                 />
                                 {submitted && !concert.ArtistFirstName &&
@@ -198,7 +198,7 @@ const ConcertForm = () => {
                                     name="SocialLink3"
                                     className={"form-control email text-fields" + (submitted && !concert.ArtistFirstName ? ' is-invalid' : '')}
                                     value={concert.SocialLink3}
-                                    placeholder={"Add social media-3"}
+                                    placeholder={"Programma Link"}
                                     onChange={handleChange}
                                 />
                                 {submitted && !concert.ArtistFirstName &&
