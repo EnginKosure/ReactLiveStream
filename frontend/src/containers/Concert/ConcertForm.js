@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import CheckBoxGenre from './CheckBoxGenre';
 
 // import { concertActions } from '../../actions';
 import "./concert.scss";
@@ -147,10 +148,8 @@ const ConcertForm = () => {
                                     onChange={handleChange}
                                 />
 
-                                {submitted && !concert.Password &&
-                                    <div className="invalid-feedback">Password is required</div>
-                                }
                             </div>
+                            <CheckBoxGenre />
                             <div className="form-group">
                                 <label htmlFor="Password" />
                                 <input
