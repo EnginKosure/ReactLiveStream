@@ -39,16 +39,38 @@ const ConcertForm = () => {
     }
     */
     // 
+    //     {
+    //         "About":"Concert about acting in the heart of brussels in the heart of Europe in chrismas",
+    //       "Style":"African",
+    //       "Date":"12/01/2010",
+    //       "ConcertLink":"http://wwww.google.com/1",
+    //       "PictureLink":"http://wwww.google.com/2",
+    //       "ProgrammaLink":"http://wwww.google.com/2",
+    //       "TeaserLink":"http://wwww.google.com/2",
+    //       "CountryName":"Belgium",
+    //       "InstrumentationValue":"Solo",
+    //       "ArtistEmails": [{"EmailAddress": "par@gmail.com"},
+    //           {"EmailAddress": "rasaa@gmail.com"},
+    //           {"EmailAddress": "Ralyy.MM@gmail.com"}],
+    //       "InstrumentNames":[{"InstrumentName":"accordion"},{"InstrumentName":"bass"},{"InstrumentName":"Piano"}]
+    // }
+
     const [concert, setConcert] = useState({
-        ArtistPhoto: '',
-        ArtistFirstName: '',
-        ArtistLastName: '',
-        EmailAddress: '',
-        Password: ''
+        About: '',
+        Style: '',
+        Date: '',
+        ConcertLink: '',
+        PictureLink: '',
+        ProgrammaLink: '',
+        TeaserLink: '',
+        CountryName: '',
+        InstrumentationValue: '',
+        ArtistEmails: [],
+        InstrumentNames: []
     });
     const [submitted, setSubmitted] = useState(false);
     const registering = useSelector(state => state.registration.registering);
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     // reset login status
     useEffect(() => {
@@ -64,35 +86,19 @@ const ConcertForm = () => {
         e.preventDefault();
 
         setSubmitted(true);
-        if (concert.Dates && concert.Artists && concert.Instruments) {
+        if (concert.Date && concert.ArtistEmails && concert.About) {
             // dispatch(concertActions.register(concert));
         }
     }
 
     return (
         <div className="main-container">
-
             <div className="auth-inner" id="profile-wrapper">
                 <form className="container" name="form" onSubmit={handleSubmit}>
                     <h4 className="text">Create your concert!</h4>
                     <div className="main-profile-update">
 
                         <div className="left-form">
-
-                            <div className="form-group">
-                                <label htmlFor="Dates" />
-                                <input
-                                    type="date"
-                                    name="Dates"
-                                    className={"form-control email text-fields" + (submitted && !concert.Dates ? ' is-invalid' : '')}
-                                    value={concert.Dates}
-                                    placeholder="Concert date dd/mm/yyyy"
-                                    onChange={handleChange}
-                                />
-                                {submitted && !concert.Dates &&
-                                    <div className="invalid-feedback">Date is required</div>
-                                }
-                            </div>
 
                             <div className="form-group">
                                 <label htmlFor="About" />
@@ -110,6 +116,87 @@ const ConcertForm = () => {
                             </div>
 
                             <div className="form-group">
+                                <label htmlFor="Style" />
+                                <input
+                                    type="text"
+                                    name="Style"
+                                    className={"form-control email text-fields"}
+                                    value={concert.Style}
+                                    placeholder={"Add style info"}
+                                    onChange={handleChange}
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="Date" />
+                                <input
+                                    type="date"
+                                    name="Date"
+                                    className={"form-control email text-fields" + (submitted && !concert.Date ? ' is-invalid' : '')}
+                                    value={concert.Date}
+                                    placeholder="Concert date dd/mm/yyyy"
+                                    onChange={handleChange}
+                                />
+                                {submitted && !concert.Date &&
+                                    <div className="invalid-feedback">Date is required</div>
+                                }
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="ConcertLink" >Create concert link </label>
+                                <input
+                                    type="text"
+                                    name="ConcertLink"
+                                    className={"form-control email text-fields" + (submitted && !concert.ConcertLink ? ' is-invalid' : '')}
+                                    value={concert.ConcertLink}
+                                    placeholder={"Concert link"}
+                                    onChange={handleChange}
+                                />
+                                {submitted && !concert.ConcertLink &&
+                                    <div className="invalid-feedback">Concert link is required</div>
+                                }
+                            </div>
+
+                        </div>
+                        <div className="right-form">
+
+                            <div className="form-group">
+                                <label htmlFor="PictureLink" />
+                                <input
+                                    type="text"
+                                    name="PictureLink"
+                                    className={"form-control email text-fields"}
+                                    value={concert.PictureLink}
+                                    placeholder={"Picture Link"}
+                                    onChange={handleChange}
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="ProgrammaLink" />
+                                <input
+                                    type="text"
+                                    name="ProgrammaLink"
+                                    className={"form-control email text-fields"}
+                                    value={concert.ProgrammaLink}
+                                    placeholder={"Programma Link"}
+                                    onChange={handleChange}
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="TeaserLink" />
+                                <input
+                                    type="text"
+                                    name="TeaserLink"
+                                    className={"form-control email text-fields"}
+                                    value={concert.TeaserLink}
+                                    placeholder={"TeaserLink Link"}
+                                    onChange={handleChange}
+                                />
+                            </div>
+
+                            <div className="form-group">
                                 <label htmlFor="Artists" />
                                 <input
                                     type="email"
@@ -124,102 +211,7 @@ const ConcertForm = () => {
                                 }
                             </div>
 
-                            {/* 
-        "Styles" : ["country","jazz"],
-        "Instruments": ["accordion","bass","bassoon","banjo","cello","clarinet","classical guitar",
-        "Country" : ["Select from dropdown list"],
-        "Links" :["link1","link2"],
-        "Picture": ["jpg/png img url link"],
-        "Programma": ["A pdf/jpg file url link"] */}
-                            <CheckBoxGenre />
-                            <div className="form-group">
-                                <label htmlFor="Styles">Choose Styles/Genre</label>
-                                <input
-                                    type="checkbox"
-                                    list="music-styles"
-                                    name="Styles"
-                                    id="Styles"
-                                    className={"form-control email" + (submitted && !concert.Styles ? ' is-invalid' : '')}
-                                    value={concert.Styles}
-                                    onChange={handleChange}
-                                />
 
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="Password" />
-                                <input
-                                    type="password"
-                                    name="Password"
-                                    className={"form-control password" + (submitted && !concert.Password ? ' is-invalid' : '')}
-                                    value={concert.Password}
-                                    placeholder="Teaser/trailer inks"
-                                    onChange={handleChange}
-                                />
-                                {submitted && !concert.Password &&
-                                    <div className="invalid-feedback">Password is required</div>
-                                }
-                            </div>
-                        </div>
-                        <div className="right-form">
-
-                            <div className="form-group">
-                                <label htmlFor="SocialLink1" />
-                                <input
-                                    type="text"
-                                    name="SocialLink1"
-                                    className={"form-control email text-fields" + (submitted && !concert.ArtistFirstName ? ' is-invalid' : '')}
-                                    value={concert.SocialLink1}
-                                    placeholder={"Picture Link-1"}
-                                    onChange={handleChange}
-                                />
-                                {submitted && !concert.ArtistFirstName &&
-                                    <div className="invalid-feedback">First Name is required</div>
-                                }
-                            </div>
-
-                            <div className="form-group">
-                                <label htmlFor="SocialLink2" />
-                                <input
-                                    type="text"
-                                    name="SocialLink2"
-                                    className={"form-control email text-fields" + (submitted && !concert.ArtistFirstName ? ' is-invalid' : '')}
-                                    value={concert.SocialLink2}
-                                    placeholder={"Picture Link-2"}
-                                    onChange={handleChange}
-                                />
-                                {submitted && !concert.ArtistFirstName &&
-                                    <div className="invalid-feedback">First Name is required</div>
-                                }
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="SocialLink3" />
-                                <input
-                                    type="text"
-                                    name="SocialLink3"
-                                    className={"form-control email text-fields" + (submitted && !concert.ArtistFirstName ? ' is-invalid' : '')}
-                                    value={concert.SocialLink3}
-                                    placeholder={"Programma Link"}
-                                    onChange={handleChange}
-                                />
-                                {submitted && !concert.ArtistFirstName &&
-                                    <div className="invalid-feedback">First Name is required</div>
-                                }
-                            </div>
-
-                            <div className="form-group">
-                                <label htmlFor="Genre" />
-                                <input
-                                    type="text"
-                                    name="Genre"
-                                    className={"form-control email text-fields" + (submitted && !concert.ArtistFirstName ? ' is-invalid' : '')}
-                                    value={concert.Genre}
-                                    placeholder={"Add genre info"}
-                                    onChange={handleChange}
-                                />
-                                {submitted && !concert.ArtistFirstName &&
-                                    <div className="invalid-feedback">First Name is required</div>
-                                }
-                            </div>
                             <div className="form-group">
                                 <label htmlFor="Instrument" />
                                 <input
@@ -234,6 +226,21 @@ const ConcertForm = () => {
                                     <div className="invalid-feedback">First Name is required</div>
                                 }
                             </div>
+                            <div className="form-group">
+                                <label htmlFor="ConcertLink">Choose Styles/Genre</label>
+                                <CheckBoxGenre />
+
+                                <input
+                                    type="checkbox"
+                                    list="music-styles"
+                                    name="Styles"
+                                    id="Styles"
+                                    className={"form-control email" + (submitted && !concert.Styles ? ' is-invalid' : '')}
+                                    value={concert.Styles}
+                                    onChange={handleChange}
+                                />
+                            </div>
+
 
                         </div>
                     </div>
