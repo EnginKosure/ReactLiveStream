@@ -10,8 +10,8 @@ import signin from './containers/register/SignIn';
 import profile from './containers/profile/profile';
 import signup from './containers/register/ArtistSignUp';
 import Footer from './containers/Footer/Footer';
-import ConcertForm from './containers/Concert/ConcertForm';
 import concertInfo from "./containers/Carousel/ConcertInfo/ConcertInfo";
+import ConcertForm from './containers/Concert/ConcertForm';
 
 import { history } from "./helpers";
 import { alertActions } from "./actions";
