@@ -9,8 +9,13 @@ const Profile = () => {
     const user = useSelector(state => state?.users?.items[state.users.items.length - 1]);
     return (
         <div className="profile-container">
-            <UserCard user={user} />
-            <UpdateProfile current={user} />
+            <div className="user-inner">
+                <UserCard user={user} />
+            </div>
+            <div className="profile-inner">
+                <UpdateProfile current={user} />
+
+            </div>
         </div>
     );
 }
