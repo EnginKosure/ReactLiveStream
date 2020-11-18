@@ -102,153 +102,193 @@ const ConcertForm = () => {
                     <h4 className="text">Create your concert!</h4>
                     <div className="main-profile-update">
 
-                        <div className="left-form">
+                        <Form>
+                            <Form.Group controlId="About">
+                                <Form.Label htmlFor="About">About</Form.Label>
+                                <Form.Control
+                                    name="About"
+                                    className={"form-control email text-fields" + (submitted && !concert.About ? ' is-invalid' : '')}
+                                    value={concert.About}
+                                    placeholder="About the concert..."
+                                    onChange={handleChange}
+                                />
+                                {submitted && !concert.About &&
+                                    <div className="invalid-feedback">This field is required</div>
+                                }
+                            </Form.Group>
 
-                            <Form>
-                                <Form.Row>
-                                    <Form.Group as={Col} controlId="formGridEmail">
-                                        <Form.Label>Email</Form.Label>
-                                        <Form.Control type="email" placeholder="Enter email" />
-                                    </Form.Group>
-
-                                    <Form.Group as={Col} controlId="formGridPassword">
-                                        <Form.Label>Password</Form.Label>
-                                        <Form.Control type="password" placeholder="Password" />
-                                    </Form.Group>
-                                </Form.Row>
-
-                                <Form.Group controlId="About">
-                                    <Form.Label htmlFor="About">About</Form.Label>
+                            <Form.Row>
+                                <Form.Group as={Col} controlId="formGridState">
+                                    <Form.Label htmlFor="Style">Style</Form.Label>
                                     <Form.Control
-                                        name="About"
-                                        className={"form-control email text-fields" + (submitted && !concert.About ? ' is-invalid' : '')}
-                                        value={concert.About}
-                                        placeholder="About the concert..."
+                                        type="text"
+                                        name="Style"
+                                        className={"form-control email text-fields"}
+                                        value={concert.Style}
+                                        onChange={handleChange}
+                                        as="select"
+                                        custom
+                                    >
+                                        <option>Rock</option>
+                                        <option>Country</option>
+                                        <option>Jazz</option>
+                                        <option>Independent</option>
+                                        <option>Blues</option>
+                                        <option>Instrumental</option>
+                                        <option>Classical</option>
+                                        <option>Popular</option>
+                                        <option>Electronic</option>
+                                    </Form.Control>
+                                </Form.Group>
+
+                                <Form.Group as={Col} controlId="formGridZip">
+                                    <Form.Label htmlFor="Date" >Date</Form.Label>
+                                    <Form.Control
+                                        type="date"
+                                        name="Date"
+                                        className={"form-control email text-fields" + (submitted && !concert.Date ? ' is-invalid' : '')}
+                                        value={concert.Date}
+                                        placeholder="dd/mm/yyyy"
                                         onChange={handleChange}
                                     />
-                                    {submitted && !concert.About &&
-                                        <div className="invalid-feedback">This field is required</div>
+                                    {submitted && !concert.Date &&
+                                        <div className="invalid-feedback">Date is required</div>
                                     }
                                 </Form.Group>
 
-                                <Form.Group controlId="formGridAddress2">
-                                    <Form.Label>Address 2</Form.Label>
-                                    <Form.Control placeholder="Apartment, studio, or floor" />
-                                </Form.Group>
+                            </Form.Row>
 
-                                <Form.Row>
-
-
-                                    <Form.Group as={Col} controlId="formGridState">
-                                        <Form.Label htmlFor="Style">Style</Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            name="Style"
-                                            className={"form-control email text-fields"}
-                                            value={concert.Style}
-                                            onChange={handleChange}
-                                            as="select"
-                                            custom
-                                        >
-                                            <option>Rock</option>
-                                            <option>Country</option>
-                                            <option>Jazz</option>
-                                            <option>Independent</option>
-                                            <option>Blues</option>
-                                            <option>Instrumental</option>
-                                            <option>Classical</option>
-                                            <option>Popular</option>
-                                            <option>Electronic</option>
-                                        </Form.Control>
-
-                                    </Form.Group>
-
-                                    <Form.Group as={Col} controlId="formGridZip">
-                                        <Form.Label htmlFor="Date" >Date</Form.Label>
-                                        <Form.Control
-                                            type="date"
-                                            name="Date"
-                                            className={"form-control email text-fields" + (submitted && !concert.Date ? ' is-invalid' : '')}
-                                            value={concert.Date}
-                                            placeholder="dd/mm/yyyy"
-                                            onChange={handleChange}
-                                        />
-                                        {submitted && !concert.Date &&
-                                            <div className="invalid-feedback">Date is required</div>
-                                        }
-                                    </Form.Group>
-
-                                    <Form.Group as={Col} controlId="formGridCity">
-                                        <Form.Label htmlFor="ConcertLink">
-                                            <Button variant="info"> Create concert link...</Button>
-                                        </Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            name="ConcertLink"
-                                            className={"form-control email text-fields" + (submitted && !concert.ConcertLink ? ' is-invalid' : '')}
-                                            value={concert.ConcertLink}
-                                            placeholder={"Concert link"}
-                                            onChange={handleChange}
-                                        />
-                                        {submitted && !concert.ConcertLink &&
-                                            <div className="invalid-feedback">Concert link is required</div>
-                                        }
-                                    </Form.Group>
-
-                                </Form.Row>
-
-                                <Form.Group id="formGridCheckbox">
-                                    <Form.Check type="checkbox" label="Check me out" />
-                                </Form.Group>
-
-                                <Button variant="primary" type="submit">
-                                    Submit
-  </Button>
-                            </Form>
+                            <Form.Group as={Col} controlId="formGridCity">
+                                <Form.Label htmlFor="ConcertLink">
+                                    <Button variant="info">Create concert link...</Button>
+                                </Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    name="ConcertLink"
+                                    className={"form-control email text-fields" + (submitted && !concert.ConcertLink ? ' is-invalid' : '')}
+                                    value={concert.ConcertLink}
+                                    placeholder={"Concert link"}
+                                    onChange={handleChange}
+                                />
+                                {submitted && !concert.ConcertLink &&
+                                    <div className="invalid-feedback">Concert link is required</div>
+                                }
+                            </Form.Group>
 
 
-
-
-
-
-                        </div>
-                        <div className="right-form">
-
-                            <div className="form-group">
-                                <label htmlFor="PictureLink" />
-                                <input
+                            <Form.Group>
+                                <Form.Label htmlFor="PictureLink" >Upload picture</Form.Label>
+                                <Form.File
                                     type="text"
                                     name="PictureLink"
                                     className={"form-control email text-fields"}
                                     value={concert.PictureLink}
-                                    placeholder={"Picture Link"}
                                     onChange={handleChange}
                                 />
-                            </div>
+                            </Form.Group>
 
-                            <div className="form-group">
-                                <label htmlFor="ProgrammaLink" />
-                                <input
+
+                            <Form.Group>
+                                <Form.Label htmlFor="ProgrammaLink" >Upload programma</Form.Label>
+                                <Form.File
                                     type="text"
                                     name="ProgrammaLink"
                                     className={"form-control email text-fields"}
                                     value={concert.ProgrammaLink}
-                                    placeholder={"Programma Link"}
                                     onChange={handleChange}
+                                    placeholder={"Programma Link"}
                                 />
-                            </div>
+                            </Form.Group>
 
-                            <div className="form-group">
-                                <label htmlFor="TeaserLink" />
-                                <input
+
+                            {/* <Form.Row>
+                                <Form.Group as={Col} controlId="Somelink">
+                                    <Form.Label htmlFor="PictureLink" >Upload picture</Form.Label>
+                                    <Form.Control type="email" placeholder="Enter email" />
+
+                                </Form.Group>
+
+                                <Form.Group as={Col} controlId="formGridPassword">
+                                    <Form.Label>Password</Form.Label>
+                                    <Form.Control type="password" placeholder="Password" />
+                                </Form.Group>
+                            </Form.Row> */}
+                            <Form.Row controlId="formGridCheckbox">
+                                <Form.Group as={Col} >
+                                    <Form.Check type="checkbox" label="accordion" />
+                                    <Form.Check type="checkbox" label="bass" />
+                                    <Form.Check type="checkbox" label="bassoon" />
+                                    <Form.Check type="checkbox" label="banjo" />
+                                    <Form.Check type="checkbox" label="cello" />
+                                    <Form.Check type="checkbox" label="clarinet" />
+                                    <Form.Check type="checkbox" label="classical guitar" />
+                                    <Form.Check type="checkbox" label="clavichord" />
+                                    <Form.Check type="checkbox" label="double bass" />
+                                    <Form.Check type="checkbox" label="drums" />
+                                    <Form.Check type="checkbox" label="electrical guitar" />
+
+                                </Form.Group>
+                                <Form.Group as={Col}>
+
+
+                                    <Form.Check type="checkbox" label="electronics" />
+                                    <Form.Check type="checkbox" label="english horn" />
+                                    <Form.Check type="checkbox" label="flugelhorn" />
+                                    <Form.Check type="checkbox" label="flute" />
+                                    <Form.Check type="checkbox" label="french horn" />
+                                    <Form.Check type="checkbox" label="harmonica" />
+                                    <Form.Check type="checkbox" label="harp" />
+                                    <Form.Check type="checkbox" label="harpsichord" />
+                                    <Form.Check type="checkbox" label="keyboard" />
+                                    <Form.Check type="checkbox" label="lute" />
+                                    <Form.Check type="checkbox" label="mandolin" />
+
+
+
+
+                                </Form.Group>
+
+                                <Form.Group as={Col} >
+                                    <Form.Check type="checkbox" label="oboe" />
+                                    <Form.Check type="checkbox" label="organ" />
+                                    <Form.Check type="checkbox" label="other" />
+                                    <Form.Check type="checkbox" label="oud" />
+                                    <Form.Check type="checkbox" label="piccolo" />
+                                    <Form.Check type="checkbox" label="recorder" />
+                                    <Form.Check type="checkbox" label="saxophone" />
+                                    <Form.Check type="checkbox" label="sitar" />
+                                    <Form.Check type="checkbox" label="theorbo" />
+                                    <Form.Check type="checkbox" label="traverso" />
+                                    <Form.Check type="checkbox" label="trombone" />
+                                </Form.Group>
+
+                                <Form.Group as={Col} >
+                                    <Form.Check type="checkbox" label="trumpet" />
+                                    <Form.Check type="checkbox" label="tuba" />
+                                    <Form.Check type="checkbox" label="ukulele" />
+                                    <Form.Check type="checkbox" label="vihuela" />
+                                    <Form.Check type="checkbox" label="viola" />
+                                    <Form.Check type="checkbox" label="viola da gamba" />
+                                    <Form.Check type="checkbox" label="viola d'amore" />
+                                    <Form.Check type="checkbox" label="violin" />
+                                    <Form.Check type="checkbox" label="voice" />
+                                </Form.Group>
+                            </Form.Row>
+
+
+
+                            <Form.Group controlId="formGridAddress2">
+                                <Form.Label htmlFor="TeaserLink">Add teaser link</Form.Label>
+                                <Form.Control
                                     type="text"
                                     name="TeaserLink"
                                     className={"form-control email text-fields"}
                                     value={concert.TeaserLink}
-                                    placeholder={"TeaserLink Link"}
+                                    placeholder={"Teaser link"}
                                     onChange={handleChange}
                                 />
-                            </div>
+                            </Form.Group>
+
 
                             <div className="form-group">
                                 <label htmlFor="Artists" />
@@ -295,8 +335,8 @@ const ConcertForm = () => {
                                 />
                             </div>
 
+                        </Form>
 
-                        </div>
                     </div>
 
                     <div className="form-group">
