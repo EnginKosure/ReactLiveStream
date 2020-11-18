@@ -37,9 +37,9 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className="nav-item" data-toggle="m" data-target=".in">
-              <NavLink to="/profile" className="nav-link menu-item">
+              {/* <NavLink to="/profile" className="nav-link menu-item">
                 Profile
-              </NavLink>
+              </NavLink> */}
             </li>
           </ul>
         </div>
