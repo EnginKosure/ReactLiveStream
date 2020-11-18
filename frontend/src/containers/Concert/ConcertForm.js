@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import CheckBoxGenre from './CheckBoxGenre';
 import Button from 'react-bootstrap/Button';
 // import Form from 'react-bootstrap/Form';
-import { Grid, Row, Col, Form } from 'react-bootstrap';
+import { Grid, Row, Col, Form, InputGroup } from 'react-bootstrap';
 import SelectedInstrument from './SelectInstrument';
 
 // import { concertActions } from '../../actions';
@@ -270,7 +270,6 @@ const ConcertForm = () => {
 
                             <SelectedInstrument />
 
-
                             <Form.Group controlId="formGridAddress2">
                                 <Form.Label htmlFor="TeaserLink">Add teaser link</Form.Label>
                                 <Form.Control
@@ -282,6 +281,26 @@ const ConcertForm = () => {
                                     onChange={handleChange}
                                 />
                             </Form.Group>
+
+                            <InputGroup as={Form.Group} className="mb-3">
+                                <Form.Label htmlFor="ArtistEmails">Add Artist email 1</Form.Label>
+                                <Form.Control
+                                    placeholder="Email of the artist1"
+                                    aria-label="ArtistEmails"
+                                    aria-describedby="basic-addon1"
+                                />
+                            </InputGroup>
+
+                            <Form.Group controlId="ArtistEmails">
+                                <Form.Label>Email address(es)</Form.Label>
+                                <Form.Control type="email" placeholder="Enter email (of the artist(s))" />
+                                <Form.Control type="email" placeholder="Enter email (of the artist(s))" />
+
+                                <Form.Text className="text-muted">
+                                    We'll never share your email with anyone else.
+                                </Form.Text>
+                            </Form.Group>
+
 
 
                             <div className="form-group">
