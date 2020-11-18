@@ -5,7 +5,7 @@ import CheckBoxGenre from './CheckBoxGenre';
 import Button from 'react-bootstrap/Button';
 // import Form from 'react-bootstrap/Form';
 import { Grid, Row, Col, Form } from 'react-bootstrap';
-
+import SelectedInstrument from './SelectInstrument';
 
 // import { concertActions } from '../../actions';
 import "./concert.scss";
@@ -13,7 +13,6 @@ import "./concert.scss";
 
 
 const ConcertForm = () => {
-
     // 
     /*- Date: the date of the concert;
     - About: Text about the concert;
@@ -175,7 +174,6 @@ const ConcertForm = () => {
                                 }
                             </Form.Group>
 
-
                             <Form.Group>
                                 <Form.Label htmlFor="PictureLink" >Upload picture</Form.Label>
                                 <Form.File
@@ -186,7 +184,6 @@ const ConcertForm = () => {
                                     onChange={handleChange}
                                 />
                             </Form.Group>
-
 
                             <Form.Group>
                                 <Form.Label htmlFor="ProgrammaLink" >Upload programma</Form.Label>
@@ -213,7 +210,9 @@ const ConcertForm = () => {
                                     <Form.Control type="password" placeholder="Password" />
                                 </Form.Group>
                             </Form.Row> */}
-                            <Form.Row controlId="formGridCheckbox">
+
+                            {/* <Form.Row controlId="Instrument">
+                                <Form.Label style={{ width: "100%" }}>Add instrument info</Form.Label>
                                 <Form.Group as={Col} >
                                     <Form.Check type="checkbox" label="accordion" />
                                     <Form.Check type="checkbox" label="bass" />
@@ -226,11 +225,9 @@ const ConcertForm = () => {
                                     <Form.Check type="checkbox" label="double bass" />
                                     <Form.Check type="checkbox" label="drums" />
                                     <Form.Check type="checkbox" label="electrical guitar" />
-
                                 </Form.Group>
+
                                 <Form.Group as={Col}>
-
-
                                     <Form.Check type="checkbox" label="electronics" />
                                     <Form.Check type="checkbox" label="english horn" />
                                     <Form.Check type="checkbox" label="flugelhorn" />
@@ -242,10 +239,6 @@ const ConcertForm = () => {
                                     <Form.Check type="checkbox" label="keyboard" />
                                     <Form.Check type="checkbox" label="lute" />
                                     <Form.Check type="checkbox" label="mandolin" />
-
-
-
-
                                 </Form.Group>
 
                                 <Form.Group as={Col} >
@@ -273,8 +266,9 @@ const ConcertForm = () => {
                                     <Form.Check type="checkbox" label="violin" />
                                     <Form.Check type="checkbox" label="voice" />
                                 </Form.Group>
-                            </Form.Row>
+                            </Form.Row> */}
 
+                            <SelectedInstrument />
 
 
                             <Form.Group controlId="formGridAddress2">
@@ -307,22 +301,7 @@ const ConcertForm = () => {
 
 
                             <div className="form-group">
-                                <label htmlFor="Instrument" />
-                                <input
-                                    type="text"
-                                    name="Instrument"
-                                    className={"form-control email text-fields" + (submitted && !concert.ArtistFirstName ? ' is-invalid' : '')}
-                                    value={concert.Instrument}
-                                    placeholder={"Add instrument info"}
-                                    onChange={handleChange}
-                                />
-                                {submitted && !concert.ArtistFirstName &&
-                                    <div className="invalid-feedback">First Name is required</div>
-                                }
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="ConcertLink">Choose Styles/Genre</label>
-                                <CheckBoxGenre />
+                                {/* <CheckBoxGenre /> */}
 
                                 <input
                                     type="checkbox"
