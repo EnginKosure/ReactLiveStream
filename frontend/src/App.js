@@ -12,7 +12,7 @@ import profile from './containers/profile/profile';
 import signup from './containers/register/ArtistSignUp';
 import Footer from './containers/Footer/Footer';
 import concertInfo from "./containers/Carousel/ConcertInfo/ConcertInfo";
-import ConcertForm from './containers/Concert/ConcertForm';
+import ConcertContainer from './containers/Concert/ConcertContainer';
 
 import { history } from "./helpers";
 import { alertActions } from "./actions";
@@ -48,7 +48,7 @@ function App() {
           <Route path="/signin" component={signin} />
           <Route path="/signup" component={signup} />
           <Route path="/profile" component={profile} />
-          <Route path="/concert" component={ConcertForm} />
+          <Route path="/concert" component={ConcertContainer} />
           <Route path="/concertInfo" component={concertInfo} />
           <Redirect from="*" to="/" />
         </Switch>
