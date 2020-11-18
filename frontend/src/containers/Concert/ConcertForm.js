@@ -21,34 +21,6 @@ const ConcertForm = () => {
         name: "items"
     });
     // 
-    /*- Date: the date of the concert;
-    - About: Text about the concert;
-    - Style: List of styles of the concert (same list of styles of artists, but for each concert an artist can choose different values of styles;
-    - Artist(s): The artist can choose if he/she will make the concert alone or with another musicians. In the case that the artist will make the concert with other musicians and this musicians are also registered on the platform, the user can tag this musician.
-    - Instruments: List of instruments of the concert (same list of instruments of artists, but for each concert an artist can choose different values of instruments;
-    - Instrumentation: List of instrumentation to choose.
-    - Country: A list of countries for the user to choose, in case that the user is playing music from a specific country.
-    - Links: YouTube links for teaser / trailers and so on.
-    - Picture: A jpg/png picture of the event:
-    - Programma: A pdf/jpg file with the programma of the concert, if there is one>
-    {
-        "Dates" : new Date('1995-12-17T03:24:00'),
-        "About": "A concert in memory of Beetles",
-        "Artists":[  "EmailAddress": "rass@gmail.com",],
-        "Styles" : ["country","jazz"],
-        "Instruments": ["accordion","bass","bassoon","banjo","cello","clarinet","classical guitar",
-                    "clavichord","double bass","drums","electrical guitar","electronics","english horn","flute",
-                    "flugelhorn","french horn","harmonica","harp","harpsichord","keyboard","lute","mandolin",
-                    "oboe","organ","other","oud","percussion","piano", "piccolo","recorder","saxophone","sitar",
-                    "theorbo","traverso","trombone","trumpet","tuba","ukulele","vihuela", "viola","viola da gamba",
-                    "viola d'amore","violin", "voice""],
-        "Country" : ["Select from dropdown list"],
-        "Links" :["link1","link2"],
-        "Picture": ["jpg/png img url link"],
-        "Programma": ["A pdf/jpg file url link"]
-    }
-    */
-    // 
     //     {
     //         "About":"Concert about acting in the heart of brussels in the heart of Europe in chrismas",
     //       "Style":"African",
