@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
+
 import React, { useEffect } from "react";
 import { Router, Switch, Redirect, Route } from "react-router-dom";
 // import { Route } from 'react-router';
@@ -37,12 +38,11 @@ function App() {
         {alert.message &&
           <div className={`alert ${alert.type}`}>{alert.message}</div>
         }
+
       </div>
 
       <Router history={history}>
         <Navbar />
-
-
         <Switch>
           <PrivateRoute exact path="/" component={RegisterHomePage} />
           <Route path="/signin" component={signin} />
@@ -50,9 +50,6 @@ function App() {
           <Route path="/profile" component={profile} />
           <Route path="/concert" component={ConcertForm} />
           <Route path="/concertInfo" component={concertInfo} />
-          <Route path="/concert" component={ConcertForm} />
-          <Route path="/concertInfo" component={concertInfo} />
-          <Route path="/concert" component={ConcertForm} />
           <Redirect from="*" to="/" />
         </Switch>
 
@@ -60,6 +57,7 @@ function App() {
 
       </Router>
 
+      </Router>
     </div>
   );
 }
