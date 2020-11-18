@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 // import Form from 'react-bootstrap/Form';
 import { Grid, Row, Col, Form, InputGroup } from 'react-bootstrap';
 import SelectedInstrument from './SelectInstrument';
+import { useForm, useFieldArray, useWatch } from 'react-hook-form';
 
 // import { concertActions } from '../../actions';
 import "./concert.scss";
@@ -13,6 +14,12 @@ import "./concert.scss";
 
 
 const ConcertForm = () => {
+
+    const { register, control, handleSubmit } = useForm();
+    const { fields, append, remove } = useFieldArray({
+        control,
+        name: "items"
+    });
     // 
     /*- Date: the date of the concert;
     - About: Text about the concert;
@@ -85,14 +92,14 @@ const ConcertForm = () => {
         setConcert(concert => ({ ...concert, [name]: value }));
     }
 
-    function handleSubmit(e) {
-        e.preventDefault();
+    // function handleSubmit(e) {
+    //     e.preventDefault();
 
-        setSubmitted(true);
-        if (concert.Date && concert.ArtistEmails && concert.About) {
-            // dispatch(concertActions.register(concert));
-        }
-    }
+    //     setSubmitted(true);
+    //     if (concert.Date && concert.ArtistEmails && concert.About) {
+    //         // dispatch(concertActions.register(concert));
+    //     }
+    // }
 
     return (
         <div className="main-container">
@@ -101,7 +108,7 @@ const ConcertForm = () => {
                     <h4 className="text">Create your concert!</h4>
                     <div className="main-profile-update">
 
-                        <Form>
+                        <Form onSubmit={handleSubmit(console.log)}>
                             <Form.Group controlId="About">
                                 <Form.Label htmlFor="About">About</Form.Label>
                                 <Form.Control
@@ -156,23 +163,6 @@ const ConcertForm = () => {
                                 </Form.Group>
 
                             </Form.Row>
-
-                            <Form.Group as={Col} controlId="formGridCity">
-                                <Form.Label htmlFor="ConcertLink">
-                                    <Button variant="info">Create concert link...</Button>
-                                </Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    name="ConcertLink"
-                                    className={"form-control email text-fields" + (submitted && !concert.ConcertLink ? ' is-invalid' : '')}
-                                    value={concert.ConcertLink}
-                                    placeholder={"Concert link"}
-                                    onChange={handleChange}
-                                />
-                                {submitted && !concert.ConcertLink &&
-                                    <div className="invalid-feedback">Concert link is required</div>
-                                }
-                            </Form.Group>
 
                             <Form.Group>
                                 <Form.Label htmlFor="PictureLink" >Upload picture</Form.Label>
@@ -282,16 +272,16 @@ const ConcertForm = () => {
                                 />
                             </Form.Group>
 
-                            <InputGroup as={Form.Group} className="mb-3">
+                            {/* <InputGroup as={Form.Group} className="mb-3">
                                 <Form.Label htmlFor="ArtistEmails">Add Artist email 1</Form.Label>
                                 <Form.Control
                                     placeholder="Email of the artist1"
                                     aria-label="ArtistEmails"
                                     aria-describedby="basic-addon1"
                                 />
-                            </InputGroup>
+                            </InputGroup> */}
 
-                            <Form.Group controlId="ArtistEmails">
+                            {/* <Form.Group controlId="ArtistEmails">
                                 <Form.Label>Email address(es)</Form.Label>
                                 <Form.Control type="email" placeholder="Enter email (of the artist(s))" />
                                 <Form.Control type="email" placeholder="Enter email (of the artist(s))" />
@@ -299,59 +289,53 @@ const ConcertForm = () => {
                                 <Form.Text className="text-muted">
                                     We'll never share your email with anyone else.
                                 </Form.Text>
+                            </Form.Group> */}
+
+                            <Form.Group controlId="ArtistEmails">
+                                <Form.Label style={{ width: "100%" }}>Add Artist emails</Form.Label>
+
+                                {fields.map(({ id, name, type }, index) => {
+                                    return (
+                                        <div key={id}>
+                                            <Form.Text style={{ width: "100%" }}>Add Artist email {index + 1}</Form.Text>
+                                            <input
+                                                ref={register()}
+                                                name={`ArtistEmails[${index}].EmailAddress`}
+                                                defaultValue={name}
+                                            />
+
+                                            <button type="button" onClick={() => remove(index)}>
+                                                Remove </button>
+                                        </div>
+                                    );
+                                })}
+
+                                {/* <input type="submit" /> */}
+                                <button type="button" onClick={() => append({})}>
+                                    Append </button>
                             </Form.Group>
 
-
-
-                            <div className="form-group">
-                                <label htmlFor="Artists" />
-                                <input
-                                    type="email"
-                                    name="Artists"
-                                    className={"form-control email text-fields" + (submitted && !concert.Artists ? ' is-invalid' : '')}
-                                    value={concert.Artists}
-                                    placeholder="Emails of the artists"
+                            <Form.Group as={Col} controlId="formGridCity">
+                                <Form.Label htmlFor="ConcertLink">
+                                    <Button variant="info">Create concert link...</Button>
+                                </Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    name="ConcertLink"
+                                    className={"form-control email text-fields" + (submitted && !concert.ConcertLink ? ' is-invalid' : '')}
+                                    value={concert.ConcertLink}
+                                    placeholder={"Concert link"}
                                     onChange={handleChange}
                                 />
-                                {submitted && !concert.Artists &&
-                                    <div className="invalid-feedback">Artist emails are required</div>
+                                {submitted && !concert.ConcertLink &&
+                                    <div className="invalid-feedback">Concert link is required</div>
                                 }
-                            </div>
+                            </Form.Group>
 
-
-                            <div className="form-group">
-                                {/* <CheckBoxGenre /> */}
-
-                                <input
-                                    type="checkbox"
-                                    list="music-styles"
-                                    name="Styles"
-                                    id="Styles"
-                                    className={"form-control email" + (submitted && !concert.Styles ? ' is-invalid' : '')}
-                                    value={concert.Styles}
-                                    onChange={handleChange}
-                                />
-                            </div>
+                            {/* <CheckBoxGenre /> */}
 
                         </Form>
 
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="ArtistBio" />
-                        <textarea
-                            type="text"
-                            name="ArtistBio"
-                            className={"form-control password" + (submitted && !concert.Password ? ' is-invalid' : '')}
-                            value={concert.Password}
-                            placeholder="Biography..."
-                            onChange={handleChange}
-                            cols={40}
-                            rows={5}
-                        />
-                        {submitted && !concert.Password &&
-                            <div className="invalid-feedback">Password is required</div>
-                        }
                     </div>
 
                     <div className="form-group">
