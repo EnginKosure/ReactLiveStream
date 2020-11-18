@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "./App.scss";
 import React, { useEffect } from "react";
 import { Router, Switch, Redirect, Route } from "react-router-dom";
 // import { Route } from 'react-router';
