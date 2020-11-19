@@ -155,3 +155,22 @@
     margin-left: 50px;
   }
 }
+.abel-container {
+  display: flex;
+}
+
+.auth-inner-concert {
+  min-width: 800px;
+  padding: 60px 40px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  // min-height: 900px;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+}
+.concert-cont-main {
+  margin: 0 auto;
+}

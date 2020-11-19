@@ -74,11 +74,11 @@ const ConcertForm = () => {
     // }
 
     return (
-        <div className="main-container">
-            <div className="auth-inner" id="profile-wrapper">
-                <form className="container" name="form" onSubmit={handleSubmit}>
+        <div className="concert-cont-main" >
+            <div className="auth-inner-concert" >
+                <form name="form" onSubmit={handleSubmit}>
                     <h4 className="text">Create your concert!</h4>
-                    <div className="main-profile-update">
+                    <div >
 
                         <Form onSubmit={handleSubmit(console.log)}>
                             <Form.Group controlId="About">

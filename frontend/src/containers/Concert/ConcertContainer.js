@@ -3,7 +3,7 @@ import ConcertForm from './ConcertForm';
 import UserCard from '../../components/UserCard';
 function ConcertContainer() {
     return (
-        <div>
+        <div className="abel-container">
             <UserCard />
             <ConcertForm />
         </div>
