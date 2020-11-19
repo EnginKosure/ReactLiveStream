@@ -33,7 +33,9 @@ const breakPoints = [
 const BootstrapCarousel = () => {
   const [concerts, setConcerts] = useState([]);
 
-  const FEATURED_API = "/api/instruments";
+  // const FEATURED_API = "/api/instruments";
+  const FEATURED_API =
+    "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
 
   const fetchConcerts = async (API) => {
     const { data } = await axios.get(API);
@@ -42,20 +44,21 @@ const BootstrapCarousel = () => {
     console.log(concerts);
   };
 
+  // fetch("/api/instruments", {
+  //   method: "GET",
+  //   headers: {
+  //     "Content-type": "application/json;charset=UTF-8",
+  //   },
+  // })
+  //   .then((response) => response.text())
+  //   .then((result) => {
+  //     console.log("Success:", result);
+  //   })
+  //   .catch((error) => {
+  //     console.error("Error:", error);
+  //   });
   useEffect(() => {
-    fetch("/api/instruments", {
-      method: "GET",
-      headers: {
-        "Content-type": "application/json;charset=UTF-8",
-      },
-    })
-      .then((response) => response.text())
-      .then((result) => {
-        console.log("Success:", result);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    fetchConcerts(FEATURED_API);
   }, []);
 
   // [{"InstrumentName":"accordion"}]

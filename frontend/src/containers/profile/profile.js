@@ -10,19 +10,19 @@ import ConcertVideo from "./ConcertVideo/ConcertVideo";
 import "./profile.scss";
 
 const Profile = () => {
- const user = useSelector(state => state?.users?.items[state?.users?.items?.length - 1]);
+  const user = useSelector(state => state?.users?.items[state?.users?.items?.length - 1]);
 
- return (
-  <div className="profile-container">
-   <div className="user-inner">
-    <UserCard user={user} />
-   </div>
-   <div className="profile-inner">
-    <UpdateProfile current={user} />
+  return (
+    <div className="profile-container">
+      <div className="user-inner">
+        <UserCard user={user} />
+      </div>
+      <div className="profile-inner">
+        <UpdateProfile current={user} />
 
-   </div>
+      </div>
 
-   {/* // const user = useSelector(state => state?.users?.items[state.users.items.length - 1]);
+      {/* // const user = useSelector(state => state?.users?.items[state.users.items.length - 1]);
   // return (
   //     <div className="profile-container">
   //         <UserCard user={user} />
@@ -43,27 +43,27 @@ const Profile = () => {
   };
 
   useEffect(() => {
-    fetchConcerts(FEATURED_API);
+        fetchConcerts(FEATURED_API);
   }, []);
 
   return (
-   <div className="container">
-    <div className="row">
-     <div className="col-8">
-      <div className="embed-responsive embed-responsive-16by9">
-       <ConcertVideo />
+      <div className="container">
+        <div className="row">
+          <div className="col-8">
+            <div className="embed-responsive embed-responsive-16by9">
+              <ConcertVideo />
+            </div>
+          </div>
+          <div className="col-4">
+            <h2 className="text-center">Concerts Lists</h2>
+            <ul className="list-group ">
+              {concerts.map((concert) => (
+                <ConcertVideoList key={concert.id} {...concert} />
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
-     </div>
-     <div className="col-4">
-      <h2 className="text-center">Concerts Lists</h2>
-      <ul className="list-group ">
-       {concerts.map((concert) => (
-        <ConcertVideoList key={concert.id} {...concert} />
-       ))}
-      </ul>
-     </div>
-    </div>
-   </div>
   );
 };
 
