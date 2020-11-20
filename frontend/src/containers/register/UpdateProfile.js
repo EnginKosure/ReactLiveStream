@@ -88,7 +88,7 @@ const UpdateProfile = ({ current }) => {
                             <div className="invalid-feedback">Email is required</div>
                         }
                     </div>
-                    <div>
+                    {(current.EmailAddress !== user.EmailAddress) && <div><div>
                         <label htmlFor="Password" />
                         <input
                             type="password"
@@ -102,20 +102,22 @@ const UpdateProfile = ({ current }) => {
                             <div className="invalid-feedback">Password is required</div>
                         }
                     </div>
-                    <div>
-                        <label htmlFor="Password" />
-                        <input
-                            type="password"
-                            name="Password"
-                            className={"form-control password" + (submitted && !user.Password ? ' is-invalid' : '')}
-                            value={user.Password}
-                            placeholder="Confirm password"
-                            onChange={handleChange}
-                        />
-                        {submitted && !user.Password &&
-                            <div className="invalid-feedback">Password is required</div>
-                        }
-                    </div>
+                        <div>
+                            <label htmlFor="Password" />
+                            <input
+                                type="password"
+                                name="Password"
+                                className={"form-control password" + (submitted && !user.Password ? ' is-invalid' : '')}
+                                value={user.Password}
+                                placeholder="Confirm password"
+                                onChange={handleChange}
+                            />
+                            {submitted && !user.Password &&
+                                <div className="invalid-feedback">Password is required</div>
+                            }
+                        </div>
+                    </div>}
+
 
                     <div>
                         <label htmlFor="SocialLink1" />
