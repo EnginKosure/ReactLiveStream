@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import SelectedInstrument from '../Concert/SelectInstrument';
 
 import { userActions } from '../../actions';
 import "./register.scss";
@@ -156,18 +157,19 @@ const UpdateProfile = ({ current }) => {
                             onChange={handleChange}
                         />
                     </div>
+                    <SelectedInstrument />
 
                     <div>
-                        <label htmlFor="Genre" />
+                        <label htmlFor="Style" />
                         <input
                             type="text"
-                            name="Genre"
-                            className={"form-control email text-fields" + (submitted && !user.Genre ? ' is-invalid' : '')}
-                            value={user.Genre}
-                            placeholder={current.Genre || "Add genre info"}
+                            name="Style"
+                            className={"form-control email text-fields" + (submitted && !user.Style ? ' is-invalid' : '')}
+                            value={user.Style}
+                            placeholder={current.Style || "Add style info"}
                             onChange={handleChange}
                         />
-                        {submitted && !user.ArtistFirstName &&
+                        {submitted && !user.Style &&
                             <div className="invalid-feedback">First Name is required</div>
                         }
                     </div>
