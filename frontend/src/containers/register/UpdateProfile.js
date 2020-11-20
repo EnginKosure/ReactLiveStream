@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import SelectedInstrument from '../Concert/SelectInstrument';
+import SelectInstrument from '../Concert/SelectInstrument';
+import SelectStyle from '../Concert/SelectStyle';
+
 
 import { userActions } from '../../actions';
 import "./register.scss";
@@ -146,7 +148,7 @@ const UpdateProfile = ({ current }) => {
                             onChange={handleChange}
                         />
                     </div>
-                    <div>
+                    <div id="selected-update">
                         <label htmlFor="SocialLink3" />
                         <input
                             type="text"
@@ -157,9 +159,10 @@ const UpdateProfile = ({ current }) => {
                             onChange={handleChange}
                         />
                     </div>
-                    <SelectedInstrument />
+                    <SelectInstrument />
+                    <SelectStyle />
 
-                    <div>
+                    {/* <div>
                         <label htmlFor="Style" />
                         <input
                             type="text"
@@ -186,7 +189,7 @@ const UpdateProfile = ({ current }) => {
                         {submitted && !user.ArtistFirstName &&
                             <div className="invalid-feedback">First Name is required</div>
                         }
-                    </div>
+                    </div> */}
 
 
                     <div>
