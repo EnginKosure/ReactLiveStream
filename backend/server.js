@@ -12,9 +12,15 @@ const RTCMultiConnectionServer = require('rtcmulticonnection-server');
 app.set('view engine', 'ejs')
 app.use(express.static('public')) 
 
+app.get('/new-room', (req, res) => {
+    const newRoomId = uuidV4();
+    console.log(newRoomId);
+    res.send(newRoomId);
+})
 app.get('/', (req, res) => {
     res.redirect(`/${uuidV4()}`)
-})
+});
+
 app.get('/:room', (req, res)=> {
     res.render('room', { roomId: req.params.room })
 })
@@ -23,7 +29,6 @@ io.on('connection', socket => {
         config: {
             "socketURL": "/",
             "dirPath": "",
-            "homePage": "/demos/index.html",
             "socketMessageEvent": "RTCMultiConnection-Message",
             "socketCustomEvent": "RTCMultiConnection-Custom-Message",
             "port": "9001",
