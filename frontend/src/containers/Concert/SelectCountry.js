@@ -11,7 +11,7 @@ const SelectCountry = () => {
             onChange={setValue}
             valueAs='id'
             // flush={false}
-            countryLabelFormatter={country => `${country.name} (${country.alpha2})`}
+            // countryLabelFormatter={country => `${country.name} (${country.alpha2})`}
             formControlProps={{
                 name: "CountryName",
                 className: "form-control email text-fields",
