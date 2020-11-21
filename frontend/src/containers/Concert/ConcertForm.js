@@ -10,6 +10,7 @@ import { useForm, useFieldArray, useWatch } from 'react-hook-form';
 
 // import { concertActions } from '../../actions';
 import "./concert.scss";
+import SelectCountry from './SelectCountry';
 
 
 
@@ -37,6 +38,7 @@ const ConcertForm = () => {
     //       "InstrumentNames":[{"InstrumentName":"accordion"},{"InstrumentName":"bass"},{"InstrumentName":"Piano"}]
     // }
     const [concert, setConcert] = useState({
+        Title: '',
         About: '',
         Style: [],
         Date: '',
@@ -67,7 +69,7 @@ const ConcertForm = () => {
     //     e.preventDefault();
 
     //     setSubmitted(true);
-    //     if (concert.Date && concert.ArtistEmails && concert.About) {
+    //     if (concert.Date && concert.ArtistEmails && concert.About && concert.Title) {
     //         // dispatch(concertActions.register(concert));
     //     }
     // }
@@ -80,13 +82,29 @@ const ConcertForm = () => {
                     <div >
 
                         <Form onSubmit={handleSubmit(console.log)}>
+                            <Form.Group
+                            // controlId="Title"
+                            >
+                                <Form.Label htmlFor="Title">Title</Form.Label>
+                                <Form.Control
+                                    name="Title"
+                                    className={"form-control email text-fields" + (submitted && !concert.Title ? ' is-invalid' : '')}
+                                    value={concert.Title}
+                                    placeholder="Title of the concert..."
+                                    onChange={handleChange}
+                                />
+                                {submitted && !concert.About &&
+                                    <div className="invalid-feedback">This field is required</div>
+                                }
+                            </Form.Group>
+
                             <Form.Group controlId="About">
                                 <Form.Label htmlFor="About">About</Form.Label>
                                 <Form.Control
                                     name="About"
                                     className={"form-control email text-fields" + (submitted && !concert.About ? ' is-invalid' : '')}
                                     value={concert.About}
-                                    placeholder="About the concert..."
+                                    placeholder="Short description of the concert..."
                                     onChange={handleChange}
                                 />
                                 {submitted && !concert.About &&
@@ -134,7 +152,7 @@ const ConcertForm = () => {
                                 </Form.Group>
 
                             </Form.Row>
-
+                            <SelectCountry />
                             <Form.Group>
                                 <Form.Label htmlFor="PictureLink" >Upload picture</Form.Label>
                                 <Form.File
