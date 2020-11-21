@@ -244,6 +244,17 @@ const UpdateProfile = ({ current }) => {
 
                     </div>
 
+                    <Form.Group>
+                        <Form.Label htmlFor="ArtistPhoto" className="text-fields">Upload profile photo</Form.Label>
+                        <Form.File
+                            type="text"
+                            name="ArtistPhoto"
+                            className={"form-control email text-fields"}
+                            value={user.ArtistPhoto}
+                            onChange={handleChange}
+                        />
+                    </Form.Group>
+
                     <div className="form-group">
                         <button className="btn btn-primary btn-custom">
                             {registering && <span className="spinner-border spinner-border-sm mr-1"></span>}
