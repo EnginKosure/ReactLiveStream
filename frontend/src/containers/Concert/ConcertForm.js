@@ -273,16 +273,21 @@ const ConcertForm = () => {
                                                 ref={register()}
                                                 name={`ArtistEmails[${index}].EmailAddress`}
                                                 defaultValue={name}
+                                                style={{ width: "200px", margin: "5px 5px 5px 0", fontFamily: "FontAwesome, Montserrat" }}
                                             />
 
-                                            <button type="button" onClick={() => remove(index)}>
+                                            <button
+                                                className="btn btn-sm btn-custom-2"
+                                                type="button" onClick={() => remove(index)}>
                                                 Remove </button>
                                         </div>
                                     );
                                 })}
 
                                 {/* <input type="submit" /> */}
-                                <button type="button" onClick={() => append({})}>
+                                <button
+                                    className="btn btn-sm  btn-custom-1"
+                                    type="button" onClick={() => append({})}>
                                     Append </button>
                             </Form.Group>
 

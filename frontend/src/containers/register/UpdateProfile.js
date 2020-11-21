@@ -28,7 +28,8 @@ const UpdateProfile = ({ current }) => {
         EmailAddress: '',
         Password: '',
         StyleName: [],
-        CountryName: ''
+        CountryName: '',
+        SocialLinks: [],
     });
     const [submitted, setSubmitted] = useState(false);
     const registering = useSelector(state => state.registration.registering);
@@ -153,19 +154,28 @@ const UpdateProfile = ({ current }) => {
                                 <div key={id}>
                                     <Form.Text style={{ width: "100%" }}>Add social media link- {index + 1}</Form.Text>
                                     <select
-                                        name={`SocialLinks[${index}].Link`}
-                                        ref={register()}
+
                                         className={"text-fields"}
                                         style={{ width: "200px", padding: "4px", margin: "5px 5px 5px 0", fontFamily: "FontAwesome, Montserrat" }}
                                     >
                                         <option value="Select...">Select...</option>
-                                        <option data-icon="fab fa-youtube" value="YouTube">&#xf167; YouTube</option>
+                                        <option value="YouTube">&#xf167; YouTube</option>
                                         <option value="Spotify">&#xf1bc; Spotify</option>
                                         <option value="iTunes">&#xf001; iTunes</option>
                                         <option value="SoundCloud">&#xf1be; SoundCloud</option>
                                         <option value="LinkedIn">&#xf08c; LinkedIn</option>
                                         <option value="Website">&#xf268; Website</option>
                                     </select>
+                                    <input
+                                        type="text"
+                                        name={`SocialLinks[${index}].Link`}
+                                        ref={register()}
+                                        className={"email text-fields"}
+                                        placeholder="Add social media link"
+                                        defaultValue={name}
+                                        // onChange={handleChange}
+                                        style={{ width: "200px", margin: "5px 5px 5px 0", fontFamily: "FontAwesome, Montserrat" }}
+                                    />
 
                                     <button
                                         className="btn btn-sm btn-custom-2"
