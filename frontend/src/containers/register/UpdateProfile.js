@@ -38,7 +38,7 @@ const UpdateProfile = ({ current }) => {
         e.preventDefault();
 
         setSubmitted(true);
-        if (user.ArtistFirstName && user.ArtistLastName && user.EmailAddress && user.Password) {
+        if (user.ArtistFirstName && user.ArtistLastName && user.EmailAddress) {
             dispatch(userActions.register(user));
         }
     }
@@ -97,7 +97,7 @@ const UpdateProfile = ({ current }) => {
                         <input
                             type="password"
                             name="Password"
-                            className={"form-control password" + (submitted && !user.Password ? ' is-invalid' : '')}
+                            className={"form-control password text-fields" + (submitted && !user.Password ? ' is-invalid' : '')}
                             value={user.Password}
                             placeholder="Enter new password"
                             onChange={handleChange}
@@ -111,7 +111,7 @@ const UpdateProfile = ({ current }) => {
                             <input
                                 type="password"
                                 name="Password"
-                                className={"form-control password" + (submitted && !user.Password ? ' is-invalid' : '')}
+                                className={"form-control password text-fields" + (submitted && !user.Password ? ' is-invalid' : '')}
                                 value={user.Password}
                                 placeholder="Confirm password"
                                 onChange={handleChange}
@@ -197,7 +197,7 @@ const UpdateProfile = ({ current }) => {
                         <textarea
                             type="text"
                             name="ArtistBio"
-                            className={"form-control password" + (submitted && !user.ArtistBio ? ' is-invalid' : '')}
+                            className={"form-control text-fields"}
                             value={user.ArtistBio}
                             placeholder="Biography..."
                             onChange={handleChange}

@@ -63,7 +63,7 @@ function SelectInstrument() {
     const [selected, setSelected] = useState([]);
     return (
         <div className="select-wrapper">
-            <h6>Select Instruments</h6>
+            <h6 className="text-fields">Select Instruments</h6>
             {/* <pre className="preview-selected">{JSON.stringify(selected)}</pre> */}
             <MultiSelect
                 options={options}

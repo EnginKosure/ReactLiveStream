@@ -45,7 +45,7 @@ function SelectStyle() {
     const [selected, setSelected] = useState([]);
     return (
         <div className="select-wrapper">
-            <h6>Select Styles</h6>
+            <h6 className="text-fields">Select Styles</h6>
             {/* <pre className="preview-selected">{JSON.stringify(selected)}</pre> */}
             <MultiSelect
                 options={options}
