@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import SelectInstrument from '../Concert/SelectInstrument';
 import SelectStyle from '../Concert/SelectStyle';
-
-
 import { userActions } from '../../actions';
 import "./register.scss";
+import SelectCountry from '../Concert/SelectCountry';
 
 
 
@@ -129,14 +128,11 @@ const UpdateProfile = ({ current }) => {
                         <input
                             type="text"
                             name="SocialLink1"
-                            className={"form-control email text-fields" + (submitted && !user.SocialLink1 ? ' is-invalid' : '')}
+                            className={"form-control email text-fields"}
                             value={user.SocialLink1}
                             placeholder={current.SocialLink1 || "Add social media-1"}
                             onChange={handleChange}
                         />
-                        {submitted && !user.ArtistFirstName &&
-                            <div className="invalid-feedback">First Name is required</div>
-                        }
                     </div>
 
                     <div>
@@ -144,7 +140,7 @@ const UpdateProfile = ({ current }) => {
                         <input
                             type="text"
                             name="SocialLink2"
-                            className={"form-control email text-fields" + (submitted && !user.SocialLink2 ? ' is-invalid' : '')}
+                            className={"form-control email text-fields"}
                             value={user.SocialLink2}
                             placeholder={current.SocialLink2 || "Add social media-2"}
                             onChange={handleChange}
@@ -155,7 +151,7 @@ const UpdateProfile = ({ current }) => {
                         <input
                             type="text"
                             name="SocialLink3"
-                            className={"form-control email text-fields" + (submitted && !user.SocialLink3 ? ' is-invalid' : '')}
+                            className={"form-control email text-fields"}
                             value={user.SocialLink3}
                             placeholder={current.SocialLink3 || "Add social media-3"}
                             onChange={handleChange}
@@ -192,6 +188,8 @@ const UpdateProfile = ({ current }) => {
                             <div className="invalid-feedback">First Name is required</div>
                         }
                     </div> */}
+
+                    <SelectCountry />
 
 
                     <div>
