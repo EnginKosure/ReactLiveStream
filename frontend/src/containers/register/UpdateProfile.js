@@ -6,10 +6,20 @@ import SelectStyle from '../Concert/SelectStyle';
 import { userActions } from '../../actions';
 import "./register.scss";
 import SelectCountry from '../Concert/SelectCountry';
+import Form from 'react-bootstrap/Form';
+import { useForm, useFieldArray, useWatch } from 'react-hook-form';
+
+
 
 
 
 const UpdateProfile = ({ current }) => {
+
+    const { register, control, handleSubmit } = useForm();
+    const { fields, append, remove } = useFieldArray({
+        control,
+        name: "items"
+    });
 
     const [user, setUser] = useState({
         ArtistPhoto: '',
@@ -22,11 +32,11 @@ const UpdateProfile = ({ current }) => {
     });
     const [submitted, setSubmitted] = useState(false);
     const registering = useSelector(state => state.registration.registering);
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     // reset login status
     useEffect(() => {
-        dispatch(userActions.logout());
+        // dispatch(userActions.logout());
     }, []);
 
     function handleChange(e) {
@@ -34,13 +44,13 @@ const UpdateProfile = ({ current }) => {
         setUser(user => ({ ...user, [name]: value }));
     }
 
-    function handleSubmit(e) {
+    function handleSubmitOwn(e) {
         e.preventDefault();
 
         setSubmitted(true);
-        if (user.ArtistFirstName && user.ArtistLastName && user.EmailAddress) {
-            dispatch(userActions.register(user));
-        }
+        // if (user.ArtistFirstName && user.ArtistLastName && user.EmailAddress) {
+        //     dispatch(userActions.register(user));
+        // }
     }
 
     return (
@@ -123,7 +133,7 @@ const UpdateProfile = ({ current }) => {
                     </div>}
 
 
-                    <div>
+                    {/*   <div>
                         <label htmlFor="SocialLink1" />
                         <input
                             type="text"
@@ -133,30 +143,47 @@ const UpdateProfile = ({ current }) => {
                             placeholder={current.SocialLink1 || "Add social media-1"}
                             onChange={handleChange}
                         />
-                    </div>
+                    </div> */}
 
-                    <div>
-                        <label htmlFor="SocialLink2" />
-                        <input
-                            type="text"
-                            name="SocialLink2"
-                            className={"form-control email text-fields"}
-                            value={user.SocialLink2}
-                            placeholder={current.SocialLink2 || "Add social media-2"}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div id="selected-update">
-                        <label htmlFor="SocialLink3" />
-                        <input
-                            type="text"
-                            name="SocialLink3"
-                            className={"form-control email text-fields"}
-                            value={user.SocialLink3}
-                            placeholder={current.SocialLink3 || "Add social media-3"}
-                            onChange={handleChange}
-                        />
-                    </div>
+                    <Form.Group controlId="SocialLinks">
+                        <Form.Label className={"text-fields"} style={{ width: "100%", marginTop: "10px" }}>Add social media links</Form.Label>
+
+                        {fields.map(({ id, name, type }, index) => {
+                            return (
+                                <div key={id}>
+                                    <Form.Text style={{ width: "100%" }}>Add social media link- {index + 1}</Form.Text>
+                                    <select
+                                        name={`SocialLinks[${index}].Link`}
+                                        ref={register()}
+                                        className={"text-fields"}
+                                        style={{ width: "200px", padding: "4px", margin: "5px 5px 5px 0" }}
+                                    >
+                                        <option value="Select...">Select...</option>
+                                        <option data-icon="fab fa-youtube" value="YouTube">YouTube  &#xf042</option>
+                                        <option value="Spotify">Spotify</option>
+                                        <option value="iTunes">iTunes</option>
+                                        <option value="SoundCloud">SoundCloud</option>
+                                        <option value="LinkedIn">LinkedIn</option>
+                                        <option value="Website">Website</option>
+                                    </select>
+
+                                    <button
+                                        className="btn btn-sm btn-custom-2"
+                                        type="button" onClick={() => remove(index)}>
+                                        Remove </button>
+                                </div>
+                            );
+                        })}
+
+                        {/* <input type="submit" /> */}
+                        <button
+                            className="btn btn-sm  btn-custom-1"
+                            type="button" onClick={() => append({})}
+                        >
+                            Append </button>
+                    </Form.Group>
+
+
                     <SelectInstrument />
                     <SelectStyle />
 
