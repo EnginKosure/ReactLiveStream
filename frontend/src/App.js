@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'react-bootstrap-country-select/dist/react-bootstrap-country-select.css';
 import "./App.scss";
 
 import React, { useEffect } from "react";

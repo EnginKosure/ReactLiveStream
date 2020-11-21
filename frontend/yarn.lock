@@ -9458,6 +9458,13 @@ react-app-polyfill@^2.0.0:
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
 
+react-bootstrap-country-select@^0.7.11:
+  version "0.7.11"
+  resolved "https://registry.yarnpkg.com/react-bootstrap-country-select/-/react-bootstrap-country-select-0.7.11.tgz#67cefb40732db46079a6df968c5fcfa325b7f24a"
+  integrity sha512-eTzqBSelV6E6MG+V6tVr/QufTR4ew+ShLseiCi2hAul7cgU+Qa3ckg9vGDCfqSCuGdDrCl1BKcu7SLKBSALMtg==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-bootstrap@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-1.4.0.tgz#806a8b48b065cedfb28c6c5c7b0c0e3c3b53445d"

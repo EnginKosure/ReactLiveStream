@@ -10,6 +10,8 @@ import { useForm, useFieldArray, useWatch } from 'react-hook-form';
 
 // import { concertActions } from '../../actions';
 import "./concert.scss";
+import SelectCountry from './SelectCountry';
+import SelectStyle from './SelectStyle';
 
 
 
@@ -20,9 +22,9 @@ const ConcertForm = () => {
         control,
         name: "items"
     });
-    // 
+
     //     {
-    //         "About":"Concert about acting in the heart of brussels in the heart of Europe in chrismas",
+    //         "About":"Concert about acting in the heart of brussels in the heart of Europe in christmas an all over the world last check final",
     //       "Style":"African",
     //       "Date":"12/01/2010",
     //       "ConcertLink":"http://wwww.google.com/1",
@@ -36,10 +38,10 @@ const ConcertForm = () => {
     //           {"EmailAddress": "Ralyy.MM@gmail.com"}],
     //       "InstrumentNames":[{"InstrumentName":"accordion"},{"InstrumentName":"bass"},{"InstrumentName":"Piano"}]
     // }
-
     const [concert, setConcert] = useState({
+        Title: '',
         About: '',
-        Style: '',
+        Style: [],
         Date: '',
         ConcertLink: '',
         PictureLink: '',
@@ -48,7 +50,8 @@ const ConcertForm = () => {
         CountryName: '',
         InstrumentationValue: '',
         ArtistEmails: [],
-        InstrumentNames: []
+        InstrumentNames: [],
+        Instrumentation: '',
     });
     const [submitted, setSubmitted] = useState(false);
     const registering = useSelector(state => state.registration.registering);
@@ -68,7 +71,7 @@ const ConcertForm = () => {
     //     e.preventDefault();
 
     //     setSubmitted(true);
-    //     if (concert.Date && concert.ArtistEmails && concert.About) {
+    //     if (concert.Date && concert.ArtistEmails && concert.About && concert.Title) {
     //         // dispatch(concertActions.register(concert));
     //     }
     // }
@@ -81,13 +84,29 @@ const ConcertForm = () => {
                     <div >
 
                         <Form onSubmit={handleSubmit(console.log)}>
+                            <Form.Group
+                            // controlId="Title"
+                            >
+                                <Form.Label htmlFor="Title" className="text-fields">Title</Form.Label>
+                                <Form.Control
+                                    name="Title"
+                                    className={"form-control email text-fields" + (submitted && !concert.Title ? ' is-invalid' : '')}
+                                    value={concert.Title}
+                                    placeholder="Title of the concert..."
+                                    onChange={handleChange}
+                                />
+                                {submitted && !concert.About &&
+                                    <div className="invalid-feedback">This field is required</div>
+                                }
+                            </Form.Group>
+
                             <Form.Group controlId="About">
-                                <Form.Label htmlFor="About">About</Form.Label>
+                                <Form.Label htmlFor="About" className="text-fields">About</Form.Label>
                                 <Form.Control
                                     name="About"
                                     className={"form-control email text-fields" + (submitted && !concert.About ? ' is-invalid' : '')}
                                     value={concert.About}
-                                    placeholder="About the concert..."
+                                    placeholder="Short description of the concert..."
                                     onChange={handleChange}
                                 />
                                 {submitted && !concert.About &&
@@ -96,31 +115,35 @@ const ConcertForm = () => {
                             </Form.Group>
 
                             <Form.Row>
-                                <Form.Group as={Col} controlId="formGridState">
-                                    <Form.Label htmlFor="Style">Style</Form.Label>
+                                <Form.Group as={Col}>
+                                    <Form.Label htmlFor="Instrumentation" className="text-fields">Instrumentation</Form.Label>
                                     <Form.Control
                                         type="text"
-                                        name="Style"
+                                        name="Instrumentation"
                                         className={"form-control email text-fields"}
-                                        value={concert.Style}
+                                        value={concert.Instrumentation}
                                         onChange={handleChange}
                                         as="select"
                                         custom
                                     >
-                                        <option>Rock</option>
-                                        <option>Country</option>
-                                        <option>Jazz</option>
-                                        <option>Independent</option>
-                                        <option>Blues</option>
-                                        <option>Instrumental</option>
-                                        <option>Classical</option>
-                                        <option>Popular</option>
-                                        <option>Electronic</option>
+                                        <option value="Solo">Solo</option>
+                                        <option value="Duo">Duo</option>
+                                        <option value="Trio">Trio</option>
+                                        <option value="Quartet">Quartet</option>
+                                        <option value="Quintet">Quintet</option>
+                                        <option value="Chamber Music">Chamber Music</option>
+                                        <option value="Choir">Choir</option>
+                                        <option value="Band">Band</option>
+                                        <option value="Big Band">Big Band</option>
+                                        <option value="String Quartet">String Quartet</option>
+                                        <option value="Combo">Combo</option>
+                                        <option value="Orchestra">Orchestra</option>
+                                        <option value="Other">Other</option>
                                     </Form.Control>
                                 </Form.Group>
 
                                 <Form.Group as={Col} controlId="formGridZip">
-                                    <Form.Label htmlFor="Date" >Date</Form.Label>
+                                    <Form.Label htmlFor="Date" className="text-fields" >Date</Form.Label>
                                     <Form.Control
                                         type="date"
                                         name="Date"
@@ -135,9 +158,9 @@ const ConcertForm = () => {
                                 </Form.Group>
 
                             </Form.Row>
-
+                            <SelectCountry />
                             <Form.Group>
-                                <Form.Label htmlFor="PictureLink" >Upload picture</Form.Label>
+                                <Form.Label htmlFor="PictureLink" className="text-fields">Upload picture</Form.Label>
                                 <Form.File
                                     type="text"
                                     name="PictureLink"
@@ -148,7 +171,7 @@ const ConcertForm = () => {
                             </Form.Group>
 
                             <Form.Group>
-                                <Form.Label htmlFor="ProgrammaLink" >Upload programma</Form.Label>
+                                <Form.Label htmlFor="ProgrammaLink" className="text-fields" >Upload programma</Form.Label>
                                 <Form.File
                                     type="text"
                                     name="ProgrammaLink"
@@ -231,9 +254,10 @@ const ConcertForm = () => {
                             </Form.Row> */}
 
                             <SelectedInstrument />
+                            <SelectStyle />
 
                             <Form.Group controlId="formGridAddress2">
-                                <Form.Label htmlFor="TeaserLink">Add teaser link</Form.Label>
+                                <Form.Label htmlFor="TeaserLink" className="text-fields">Add teaser link</Form.Label>
                                 <Form.Control
                                     type="text"
                                     name="TeaserLink"
@@ -264,7 +288,7 @@ const ConcertForm = () => {
                             </Form.Group> */}
 
                             <Form.Group controlId="ArtistEmails">
-                                <Form.Label style={{ width: "100%" }}>Add Artist emails</Form.Label>
+                                <Form.Label style={{ width: "100%" }} className="text-fields" >Add Artist emails</Form.Label>
 
                                 {fields.map(({ id, name, type }, index) => {
                                     return (
@@ -274,16 +298,21 @@ const ConcertForm = () => {
                                                 ref={register()}
                                                 name={`ArtistEmails[${index}].EmailAddress`}
                                                 defaultValue={name}
+                                                style={{ width: "200px", margin: "5px 5px 5px 0", fontFamily: "FontAwesome, Montserrat" }}
                                             />
 
-                                            <button type="button" onClick={() => remove(index)}>
+                                            <button
+                                                className="btn btn-sm btn-custom-2"
+                                                type="button" onClick={() => remove(index)}>
                                                 Remove </button>
                                         </div>
                                     );
                                 })}
 
                                 {/* <input type="submit" /> */}
-                                <button type="button" onClick={() => append({})}>
+                                <button
+                                    className="btn btn-sm  btn-custom-1"
+                                    type="button" onClick={() => append({})}>
                                     Append </button>
                             </Form.Group>
 
