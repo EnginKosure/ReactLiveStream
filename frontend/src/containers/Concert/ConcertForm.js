@@ -154,7 +154,7 @@ const ConcertForm = () => {
                             </Form.Row>
                             <SelectCountry />
                             <Form.Group>
-                                <Form.Label htmlFor="PictureLink" >Upload picture</Form.Label>
+                                <Form.Label htmlFor="PictureLink" className="text-fields">Upload picture</Form.Label>
                                 <Form.File
                                     type="text"
                                     name="PictureLink"
@@ -165,7 +165,7 @@ const ConcertForm = () => {
                             </Form.Group>
 
                             <Form.Group>
-                                <Form.Label htmlFor="ProgrammaLink" >Upload programma</Form.Label>
+                                <Form.Label htmlFor="ProgrammaLink" className="text-fields" >Upload programma</Form.Label>
                                 <Form.File
                                     type="text"
                                     name="ProgrammaLink"

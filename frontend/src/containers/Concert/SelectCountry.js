@@ -6,7 +6,7 @@ const SelectCountry = () => {
     const [value, setValue] = useState('be');
 
     return (
-        <>
+        <div style={{ marginBottom: "10px" }}>
             <h6 className="text-fields">Select Country</h6>
             <CountrySelect
                 value={value}
@@ -21,7 +21,7 @@ const SelectCountry = () => {
                 }}
                 classPrefix='country-select'
             />
-        </>
+        </div>
     );
 
 };
