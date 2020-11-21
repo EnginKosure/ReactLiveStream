@@ -20,9 +20,9 @@ const ConcertForm = () => {
         control,
         name: "items"
     });
-    // 
+
     //     {
-    //         "About":"Concert about acting in the heart of brussels in the heart of Europe in chrismas",
+    //         "About":"Concert about acting in the heart of brussels in the heart of Europe in christmas an all over the world last check final",
     //       "Style":"African",
     //       "Date":"12/01/2010",
     //       "ConcertLink":"http://wwww.google.com/1",
@@ -36,10 +36,9 @@ const ConcertForm = () => {
     //           {"EmailAddress": "Ralyy.MM@gmail.com"}],
     //       "InstrumentNames":[{"InstrumentName":"accordion"},{"InstrumentName":"bass"},{"InstrumentName":"Piano"}]
     // }
-
     const [concert, setConcert] = useState({
         About: '',
-        Style: '',
+        Style: [],
         Date: '',
         ConcertLink: '',
         PictureLink: '',
