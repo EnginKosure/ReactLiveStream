@@ -25,11 +25,15 @@ const UpdateProfile = ({ current }) => {
         ArtistPhoto: '',
         ArtistFirstName: '',
         ArtistLastName: '',
+        ArtistNickName: '',
         EmailAddress: '',
         Password: '',
-        StyleName: [],
+        StyleNames: [],
+        InstrumentNames: [],
         CountryName: '',
         SocialLinks: [],
+        Bio: '',
+        PhotoLink: '',
     });
     const [submitted, setSubmitted] = useState(false);
     const registering = useSelector(state => state.registration.registering);
@@ -87,6 +91,18 @@ const UpdateProfile = ({ current }) => {
                         {submitted && !user.ArtistLastName &&
                             <div className="invalid-feedback">Last Name is required</div>
                         }
+                    </div>
+
+                    <div>
+                        <label htmlFor="ArtistNickName" />
+                        <input
+                            type="text"
+                            name="ArtistNickName"
+                            className={"form-control email text-fields"}
+                            value={user.ArtistNickName}
+                            placeholder={current.ArtistNickName}
+                            onChange={handleChange}
+                        />
                     </div>
 
                     <div>
@@ -164,7 +180,7 @@ const UpdateProfile = ({ current }) => {
                                         <option value="iTunes">&#xf001; iTunes</option>
                                         <option value="SoundCloud">&#xf1be; SoundCloud</option>
                                         <option value="LinkedIn">&#xf08c; LinkedIn</option>
-                                        <option value="Website">&#xf268; Website</option>
+                                        <option value="WebSite">&#xf268; WebSite</option>
                                     </select>
                                     <input
                                         type="text"
@@ -245,12 +261,12 @@ const UpdateProfile = ({ current }) => {
                     </div>
 
                     <Form.Group>
-                        <Form.Label htmlFor="ArtistPhoto" className="text-fields">Upload profile photo</Form.Label>
+                        <Form.Label htmlFor="PhotoLink" className="text-fields">Upload profile photo</Form.Label>
                         <Form.File
                             type="text"
-                            name="ArtistPhoto"
+                            name="PhotoLink"
                             className={"form-control email text-fields"}
-                            value={user.ArtistPhoto}
+                            value={user.PhotoLink}
                             onChange={handleChange}
                         />
                     </Form.Group>

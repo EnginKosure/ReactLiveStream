@@ -25,7 +25,6 @@ const ArtistSignUp = () => {
     // const [password, setPassword] = useState("");
 
     const [user, setUser] = useState({
-        ArtistPhoto: '',
         ArtistFirstName: '',
         ArtistLastName: '',
         EmailAddress: '',
