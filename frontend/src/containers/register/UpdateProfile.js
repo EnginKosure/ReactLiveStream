@@ -100,7 +100,7 @@ const UpdateProfile = ({ current }) => {
                             name="ArtistNickName"
                             className={"form-control email text-fields"}
                             value={user.ArtistNickName}
-                            placeholder={current.ArtistNickName}
+                            placeholder={current.ArtistNickName || "Artist nick name"}
                             onChange={handleChange}
                         />
                     </div>
