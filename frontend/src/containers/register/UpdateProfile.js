@@ -17,7 +17,9 @@ const UpdateProfile = ({ current }) => {
         ArtistFirstName: '',
         ArtistLastName: '',
         EmailAddress: '',
-        Password: ''
+        Password: '',
+        StyleName: [],
+        CountryName: ''
     });
     const [submitted, setSubmitted] = useState(false);
     const registering = useSelector(state => state.registration.registering);
