@@ -14,7 +14,6 @@ import SelectCountry from './SelectCountry';
 import SelectStyle from './SelectStyle';
 
 
-
 const ConcertForm = () => {
 
     const { register, control, handleSubmit } = useForm();
@@ -103,7 +102,7 @@ const ConcertForm = () => {
                             }
                         </Form.Group>
 
-                        <Form.Group controlId="About">
+                        <Form.Group>
                             <Form.Label htmlFor="About" className="text-fields">About</Form.Label>
                             <Form.Control
                                 name="About"
@@ -166,7 +165,6 @@ const ConcertForm = () => {
                                             // ref={register}
                                             value={value}
                                             onChange={onChange}
-
                                         />
                                         {submitted && !concert.Date &&
                                             <div className="invalid-feedback">Date is required</div>
@@ -175,9 +173,7 @@ const ConcertForm = () => {
                                 )}
                             />
 
-
                         </Form.Row>
-
 
                         <Controller
                             control={control}
@@ -204,15 +200,10 @@ const ConcertForm = () => {
                                         // onChange={handleChange}
                                         value={value}
                                         onChange={onChange}
-
                                     />
                                 </Form.Group>
                             )}
                         />
-
-
-
-
 
                         <Controller
                             control={control}
@@ -234,80 +225,6 @@ const ConcertForm = () => {
                             )}
                         />
 
-
-
-
-                        {/* <Form.Row>
-                                <Form.Group as={Col} controlId="Somelink">
-                                    <Form.Label htmlFor="PictureLink" >Upload picture</Form.Label>
-                                    <Form.Control type="email" placeholder="Enter email" />
-
-                                </Form.Group>
-
-                                <Form.Group as={Col} controlId="formGridPassword">
-                                    <Form.Label>Password</Form.Label>
-                                    <Form.Control type="password" placeholder="Password" />
-                                </Form.Group>
-                            </Form.Row> */}
-
-                        {/* <Form.Row controlId="Instrument">
-                                <Form.Label style={{ width: "100%" }}>Add instrument info</Form.Label>
-                                <Form.Group as={Col} >
-                                    <Form.Check type="checkbox" label="accordion" />
-                                    <Form.Check type="checkbox" label="bass" />
-                                    <Form.Check type="checkbox" label="bassoon" />
-                                    <Form.Check type="checkbox" label="banjo" />
-                                    <Form.Check type="checkbox" label="cello" />
-                                    <Form.Check type="checkbox" label="clarinet" />
-                                    <Form.Check type="checkbox" label="classical guitar" />
-                                    <Form.Check type="checkbox" label="clavichord" />
-                                    <Form.Check type="checkbox" label="double bass" />
-                                    <Form.Check type="checkbox" label="drums" />
-                                    <Form.Check type="checkbox" label="electrical guitar" />
-                                </Form.Group>
-
-                                <Form.Group as={Col}>
-                                    <Form.Check type="checkbox" label="electronics" />
-                                    <Form.Check type="checkbox" label="english horn" />
-                                    <Form.Check type="checkbox" label="flugelhorn" />
-                                    <Form.Check type="checkbox" label="flute" />
-                                    <Form.Check type="checkbox" label="french horn" />
-                                    <Form.Check type="checkbox" label="harmonica" />
-                                    <Form.Check type="checkbox" label="harp" />
-                                    <Form.Check type="checkbox" label="harpsichord" />
-                                    <Form.Check type="checkbox" label="keyboard" />
-                                    <Form.Check type="checkbox" label="lute" />
-                                    <Form.Check type="checkbox" label="mandolin" />
-                                </Form.Group>
-
-                                <Form.Group as={Col} >
-                                    <Form.Check type="checkbox" label="oboe" />
-                                    <Form.Check type="checkbox" label="organ" />
-                                    <Form.Check type="checkbox" label="other" />
-                                    <Form.Check type="checkbox" label="oud" />
-                                    <Form.Check type="checkbox" label="piccolo" />
-                                    <Form.Check type="checkbox" label="recorder" />
-                                    <Form.Check type="checkbox" label="saxophone" />
-                                    <Form.Check type="checkbox" label="sitar" />
-                                    <Form.Check type="checkbox" label="theorbo" />
-                                    <Form.Check type="checkbox" label="traverso" />
-                                    <Form.Check type="checkbox" label="trombone" />
-                                </Form.Group>
-
-                                <Form.Group as={Col} >
-                                    <Form.Check type="checkbox" label="trumpet" />
-                                    <Form.Check type="checkbox" label="tuba" />
-                                    <Form.Check type="checkbox" label="ukulele" />
-                                    <Form.Check type="checkbox" label="vihuela" />
-                                    <Form.Check type="checkbox" label="viola" />
-                                    <Form.Check type="checkbox" label="viola da gamba" />
-                                    <Form.Check type="checkbox" label="viola d'amore" />
-                                    <Form.Check type="checkbox" label="violin" />
-                                    <Form.Check type="checkbox" label="voice" />
-                                </Form.Group>
-                            </Form.Row> */}
-
-
                         <Controller
                             control={control}
                             name="InstrumentNames"
@@ -319,7 +236,6 @@ const ConcertForm = () => {
                             )}
                         />
                         {/* <SelectedInstrument /> */}
-
 
                         <Controller
                             control={control}
@@ -333,7 +249,7 @@ const ConcertForm = () => {
                         />
                         {/* <SelectStyle /> */}
 
-                        <Form.Group controlId="formGridAddress2">
+                        <Form.Group>
                             <Form.Label htmlFor="TeaserLink" className="text-fields">Add teaser link</Form.Label>
                             <Form.Control
                                 type="text"
@@ -346,25 +262,6 @@ const ConcertForm = () => {
 
                             />
                         </Form.Group>
-
-                        {/* <InputGroup as={Form.Group} className="mb-3">
-                                <Form.Label htmlFor="ArtistEmails">Add Artist email 1</Form.Label>
-                                <Form.Control
-                                    placeholder="Email of the artist1"
-                                    aria-label="ArtistEmails"
-                                    aria-describedby="basic-addon1"
-                                />
-                            </InputGroup> */}
-
-                        {/* <Form.Group controlId="ArtistEmails">
-                                <Form.Label>Email address(es)</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email (of the artist(s))" />
-                                <Form.Control type="email" placeholder="Enter email (of the artist(s))" />
-
-                                <Form.Text className="text-muted">
-                                    We'll never share your email with anyone else.
-                                </Form.Text>
-                            </Form.Group> */}
 
                         <Form.Group controlId="ArtistEmails">
                             <Form.Label style={{ width: "100%" }} className="text-fields" >Add Artist emails</Form.Label>
@@ -395,7 +292,7 @@ const ConcertForm = () => {
                                 Append </button>
                         </Form.Group>
 
-                        <Form.Group as={Col} controlId="formGridCity">
+                        <Form.Group as={Col}>
                             <Form.Label htmlFor="ConcertLink">
                                 <Button variant="info">Create concert link...</Button>
                             </Form.Label>
