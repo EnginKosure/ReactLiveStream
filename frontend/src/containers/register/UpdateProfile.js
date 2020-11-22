@@ -7,22 +7,19 @@ import { userActions } from '../../actions';
 import "./register.scss";
 import SelectCountry from '../Concert/SelectCountry';
 import Form from 'react-bootstrap/Form';
-import { useForm, useFieldArray, useWatch } from 'react-hook-form';
-
-
-
-
+import { useForm, useFieldArray, useWatch, Controller } from 'react-hook-form';
 
 const UpdateProfile = ({ current }) => {
 
-    const { register, control, handleSubmit } = useForm();
+    const { register, control, handleSubmit, setValue, reset } = useForm();
     const { fields, append, remove } = useFieldArray({
         control,
         name: "items"
     });
 
+    const onSubmit = data => console.log(data);
+
     const [user, setUser] = useState({
-        ArtistPhoto: '',
         ArtistFirstName: '',
         ArtistLastName: '',
         ArtistNickName: '',
@@ -53,15 +50,30 @@ const UpdateProfile = ({ current }) => {
         e.preventDefault();
 
         setSubmitted(true);
-        // if (user.ArtistFirstName && user.ArtistLastName && user.EmailAddress) {
-        //     dispatch(userActions.register(user));
-        // }
+        if (user.ArtistFirstName && user.ArtistLastName && user.EmailAddress) {
+            console.log(user);
+            // dispatch(userActions.register(user));
+            // fetch('/api/artists', {
+            //     method: 'POST',
+            //     body: JSON.stringify(user),
+            //     headers: {
+            //         "Content-type": "application/json;charset=UTF-8"
+            //     }
+            // })
+            //     .then((response) => response.text())
+            //     .then((result) => {
+            //         console.log('Success:', result);
+            //     })
+            //     .catch(error => {
+            //         console.error('Error:', error);
+            //     });
+        }
     }
 
     return (
         <div className="update-cont-main">
             <div className="auth-inner-update" >
-                <form name="form" onSubmit={handleSubmit}>
+                <form name="form" onSubmit={handleSubmit(onSubmit)}>
                     <h4 className="text-update">Update your profile</h4>
                     <div>
                         <label htmlFor="ArtistFirstName" />
@@ -69,9 +81,10 @@ const UpdateProfile = ({ current }) => {
                             type="text"
                             name="ArtistFirstName"
                             className={"form-control email text-fields" + (submitted && !user.ArtistFirstName ? ' is-invalid' : '')}
-                            value={user.ArtistFirstName}
+                            // value={user.ArtistFirstName}
                             placeholder={current.ArtistFirstName}
-                            onChange={handleChange}
+                            // onChange={handleChange}
+                            ref={register}
                         />
                         {submitted && !user.ArtistFirstName &&
                             <div className="invalid-feedback">First Name is required</div>
@@ -84,9 +97,11 @@ const UpdateProfile = ({ current }) => {
                             type="text"
                             name="ArtistLastName"
                             className={"form-control email text-fields" + (submitted && !user.ArtistLastName ? ' is-invalid' : '')}
-                            value={user.ArtistLastName}
+                            // value={user.ArtistLastName}
                             placeholder={current.ArtistLastName}
-                            onChange={handleChange}
+                            // onChange={handleChange}
+                            ref={register}
+
                         />
                         {submitted && !user.ArtistLastName &&
                             <div className="invalid-feedback">Last Name is required</div>
@@ -99,9 +114,10 @@ const UpdateProfile = ({ current }) => {
                             type="text"
                             name="ArtistNickName"
                             className={"form-control email text-fields"}
-                            value={user.ArtistNickName}
+                            // value={user.ArtistNickName}
                             placeholder={current.ArtistNickName || "Artist nick name"}
-                            onChange={handleChange}
+                            // onChange={handleChange}
+                            ref={register}
                         />
                     </div>
 
@@ -111,9 +127,10 @@ const UpdateProfile = ({ current }) => {
                             type="email"
                             name="EmailAddress"
                             className={"form-control email text-fields" + (submitted && !user.EmailAddress ? ' is-invalid' : '')}
-                            value={user.EmailAddress}
+                            // value={user.EmailAddress}
                             placeholder={current.EmailAddress}
-                            onChange={handleChange}
+                            // onChange={handleChange}
+                            ref={register}
                         />
                         {submitted && !user.EmailAddress &&
                             <div className="invalid-feedback">Email is required</div>
@@ -125,9 +142,10 @@ const UpdateProfile = ({ current }) => {
                             type="password"
                             name="Password"
                             className={"form-control password text-fields" + (submitted && !user.Password ? ' is-invalid' : '')}
-                            value={user.Password}
+                            // value={user.Password}
                             placeholder="Enter new password"
-                            onChange={handleChange}
+                            // onChange={handleChange}
+                            ref={register}
                         />
                         {submitted && !user.Password &&
                             <div className="invalid-feedback">Password is required</div>
@@ -139,9 +157,10 @@ const UpdateProfile = ({ current }) => {
                                 type="password"
                                 name="Password"
                                 className={"form-control password text-fields" + (submitted && !user.Password ? ' is-invalid' : '')}
-                                value={user.Password}
+                                // value={user.Password}
                                 placeholder="Confirm password"
-                                onChange={handleChange}
+                                // onChange={handleChange}
+                                ref={register}
                             />
                             {submitted && !user.Password &&
                                 <div className="invalid-feedback">Password is required</div>
@@ -170,7 +189,8 @@ const UpdateProfile = ({ current }) => {
                                 <div key={id}>
                                     <Form.Text style={{ width: "100%" }}>Add social media link- {index + 1}</Form.Text>
                                     <select
-
+                                        // ref={register}
+                                        name="SocialLinks"
                                         className={"text-fields"}
                                         style={{ width: "200px", padding: "4px", margin: "5px 5px 5px 0", fontFamily: "FontAwesome, Montserrat" }}
                                     >
@@ -185,10 +205,10 @@ const UpdateProfile = ({ current }) => {
                                     <input
                                         type="text"
                                         name={`SocialLinks[${index}].Link`}
-                                        ref={register()}
+                                        ref={register}
                                         className={"email text-fields"}
-                                        placeholder="Add social media link"
-                                        defaultValue={name}
+                                        placeholder="Paste social media link"
+                                        // defaultValue={name}
                                         // onChange={handleChange}
                                         style={{ width: "200px", margin: "5px 5px 5px 0", fontFamily: "FontAwesome, Montserrat" }}
                                     />
@@ -209,9 +229,29 @@ const UpdateProfile = ({ current }) => {
                             Append </button>
                     </Form.Group>
 
+                    <Controller
+                        control={control}
+                        name="InstrumentNames"
+                        render={({ onChange, value, name }) => (
+                            <SelectInstrument
+                                onChange={onChange}
+                                value={value}
+                            />
+                        )}
+                    />
+                    {/* <SelectInstrument /> */}
 
-                    <SelectInstrument />
-                    <SelectStyle />
+                    <Controller
+                        control={control}
+                        name="StyleNames"
+                        render={({ onChange, value, name }) => (
+                            <SelectStyle
+                                onChange={onChange}
+                                value={value}
+                            />
+                        )}
+                    />
+                    {/* <SelectStyle /> */}
 
                     {/* <div>
                         <label htmlFor="Style" />
@@ -242,40 +282,56 @@ const UpdateProfile = ({ current }) => {
                         }
                     </div> */}
 
-                    <SelectCountry />
+                    <Controller
+                        control={control}
+                        name="CountryName"
+                        render={({ onChange, value, name }) => (
+                            <SelectCountry
+                                onChange={onChange}
+                                value={value}
+                            />
+                        )}
+                    />
+                    {/* <SelectCountry /> */}
 
 
                     <div>
-                        <label htmlFor="ArtistBio" />
+                        <label htmlFor="Bio" />
                         <textarea
                             type="text"
-                            name="ArtistBio"
+                            name="Bio"
                             className={"form-control text-fields"}
-                            value={user.ArtistBio}
+                            // value={user.Bio}
                             placeholder="Biography..."
-                            onChange={handleChange}
+                            // onChange={handleChange}
+                            ref={register}
                             cols={40}
                             rows={3}
                         />
 
                     </div>
 
-                    <Form.Group>
-                        <Form.Label htmlFor="PhotoLink" className="text-fields">Upload profile photo</Form.Label>
-                        <Form.File
-                            type="text"
-                            name="PhotoLink"
-                            className={"form-control email text-fields"}
-                            value={user.PhotoLink}
-                            onChange={handleChange}
-                        />
-                    </Form.Group>
+                    <Controller
+                        control={control}
+                        name="PhotoLink"
+                        render={({ onChange, value, name }) => (
+
+                            <Form.Group>
+                                <Form.Label htmlFor="PhotoLink" className="text-fields">Upload profile photo</Form.Label>
+                                <Form.File
+                                    type="file"
+                                    className={"form-control email text-fields"}
+                                    value={value}
+                                    onChange={onChange}
+                                />
+                            </Form.Group>
+                        )}
+                    />
+
+
 
                     <div className="form-group">
-                        <button className="btn btn-primary btn-custom">
-                            {registering && <span className="spinner-border spinner-border-sm mr-1"></span>}
-                        Update
-                    </button>
+                        <input type="submit" className="btn btn-primary btn-custom" />
                         <Link to="/signin" className="btn btn-link fgpw">Cancel</Link>
                     </div>
                 </form>
