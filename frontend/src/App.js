@@ -7,13 +7,14 @@ import { Router, Switch, Redirect, Route } from "react-router-dom";
 // import { Route } from 'react-router';
 import { useDispatch, useSelector } from "react-redux";
 
-import Navbar from './containers/Navbar/Navbar';
-import signin from './containers/register/SignIn';
-import profile from './containers/profile/profile';
-import signup from './containers/register/ArtistSignUp';
-import Footer from './containers/Footer/Footer';
+import Navbar from "./containers/Navbar/Navbar";
+import signin from "./containers/register/SignIn";
+import profile from "./containers/profile/profile";
+import signup from "./containers/register/ArtistSignUp";
+import Footer from "./containers/Footer/Footer";
 import concertInfo from "./containers/Carousel/ConcertInfo/ConcertInfo";
-import ConcertContainer from './containers/Concert/ConcertContainer';
+import ConcertContainer from "./containers/Concert/ConcertContainer";
+// import ConcertForm from "./containers/Concert/ConcertForm";
 
 import { history } from "./helpers";
 import { alertActions } from "./actions";
@@ -34,12 +35,10 @@ function App() {
   }, []);
   return (
     <div className="App">
-
       <div className="col-md-8 offset-md-2">
-        {alert.message &&
+        {alert.message && (
           <div className={`alert ${alert.type}`}>{alert.message}</div>
-        }
-
+        )}
       </div>
 
       <Router history={history}>
@@ -50,14 +49,16 @@ function App() {
           <Route path="/signup" component={signup} />
           <Route path="/profile" component={profile} />
           <Route path="/concert" component={ConcertContainer} />
-          <Route path="/concertInfo" component={concertInfo} />
+          {/* <Route path="/concertInfo" component={concertInfo} /> */}
+          {/* <Route path="/concert" component={ConcertForm} /> */}
+          {/* <Route path="/concertInfo" component={concertInfo} /> */}
+          <Route path="/detail/:id" component={concertInfo} />
+
           <Redirect from="*" to="/" />
         </Switch>
 
         <Footer />
-
       </Router>
-
     </div>
   );
 }
