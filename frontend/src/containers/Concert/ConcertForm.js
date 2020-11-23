@@ -24,22 +24,6 @@ const ConcertForm = () => {
 
     const onSubmit = data => console.log(data);
 
-
-    //     {
-    //         "About":"Concert about acting in the heart of brussels in the heart of Europe in christmas an all over the world last check final",
-    //       "Style":"African",
-    //       "Date":"12/01/2010",
-    //       "ConcertLink":"http://wwww.google.com/1",
-    //       "PictureLink":"http://wwww.google.com/2",
-    //       "ProgrammaLink":"http://wwww.google.com/2",
-    //       "TeaserLink":"http://wwww.google.com/2",
-    //       "CountryName":"Belgium",
-    //       "InstrumentationValue":"Solo",
-    //       "ArtistEmails": [{"EmailAddress": "par@gmail.com"},
-    //           {"EmailAddress": "rasaa@gmail.com"},
-    //           {"EmailAddress": "Ralyy.MM@gmail.com"}],
-    //       "InstrumentNames":[{"InstrumentName":"accordion"},{"InstrumentName":"bass"},{"InstrumentName":"Piano"}]
-    // }
     const [concert, setConcert] = useState({
         Title: '',
         About: '',
@@ -55,6 +39,25 @@ const ConcertForm = () => {
         InstrumentNames: [],
         Instrumentation: '',
     });
+    /*
+    {
+    About: "It is a non-commercial charity concertwer",
+    ArtistEmails: [{EmailAddress: "test@test.com"},{EmailAddress: "csdvds@gmail.com"}],
+    ConcertLink: "ascsdcssdadzxcvsdc",
+    CountryName: { id: "as", name: "American Samoa", flag: "🇦🇸", alpha2: "as", alpha3: "asm", … },
+    Date: "2020-11-29",
+    InstrumentNames: [{ label: "bassoon", value: "bassoon" },{ label: "banjo", value: "banjo" },
+    Instrumentation: "Chamber Music",
+    PictureLink: "C:\fakepath\Screenshot 2020-10-09 at 11.56.52.png",
+    ProgrammaLink: "C:\fakepath\Screenshot 2020-06-06 at 20.42.47.png",
+    StyleNames: [{ label: "African", value: "African" },{ label: "Alternative", value: "Alternative" }],
+    TeaserLink: "Teaser link https://fhdcvsdfjnskdc.com",
+    Title: "title of the concertwre",
+}*/
+
+
+
+
     const [submitted, setSubmitted] = useState(false);
     const registering = useSelector(state => state.registration.registering);
     // const dispatch = useDispatch();
@@ -312,14 +315,10 @@ const ConcertForm = () => {
 
                         {/* <CheckBoxGenre /> */}
 
-
                     </div>
 
                     <div className="form-group">
-                        <button className="btn btn-primary btn-custom">
-                            {registering && <span className="spinner-border spinner-border-sm mr-1"></span>}
-                        Submit
-                    </button>
+                        <input type="submit" className="btn btn-primary btn-custom" />
                         <Link to="/" className="btn btn-link fgpw">Cancel</Link>
                     </div>
                 </form>
