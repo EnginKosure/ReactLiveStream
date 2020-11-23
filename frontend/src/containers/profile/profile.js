@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import UserCard from '../../components/UserCard';
 import { useDispatch, useSelector } from 'react-redux';
 import UpdateProfile from '../register/UpdateProfile';
+import ConcertVideo from '../profileEx/ConcertVideo/ConcertVideo';
+import ConcertVideoList from '../profileEx/ConcertVideoList/ConcertVideoList';
 
 import './profile.scss';
 
