@@ -75,17 +75,17 @@ const UpdateProfile = ({ current }) => {
         const refactoredObj = {
             ArtistFirstName: data.ArtistFirstName,
             ArtistLastName: data.ArtistLastName,
-            ArtistNickName: data.ArtistNickName,
+            ArtistNickName: data?.ArtistNickName,
             EmailAddress: data.EmailAddress,
             Password: data.Password,
-            Bio: data.Bio,
-            PhotoLink: data.PhotoLink,
-            Spotify: data?.SocialLinks[0]?.Link || "",
+            Bio: data?.Bio || "",
+            PhotoLink: data?.PhotoLink || "",
             YouTube: data?.SocialLinks[1]?.Link || "",
+            Spotify: data?.SocialLinks[0]?.Link || "",
             iTunes: data?.SocialLinks[2]?.Link || "",
             SoundCloud: data?.SocialLinks[3]?.Link || "",
-            WebSite: data?.SocialLinks[4]?.Link || "",
             LinkedIn: data?.SocialLinks[5]?.Link || "",
+            WebSite: data?.SocialLinks[4]?.Link || "",
             CountryName: data?.CountryName?.name || "",
             StyleNames:
                 [
