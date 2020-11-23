@@ -58,7 +58,9 @@ const UpdateProfile = ({ current }) => {
         ]
     }
     const postData = async (x) => {
-        const res = await axios.post("/api/artists", testObj)
+        // const res = await axios.post("/api/artists", testObj)
+        const res = await axios.post("/api/artists", x)
+
         console.log(res.data);
         res.then(
             (response) => { console.log(response.json()) },
