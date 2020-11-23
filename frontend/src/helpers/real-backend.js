@@ -56,18 +56,19 @@ export function configureRealBackend() {
             // route functions
 
             function authenticate() {
-                const { EmailAddress, Password } = body;
-                const user = users.find(x => x.EmailAddress === EmailAddress && x.Password === Password);
-                if (!user) return error('Email or password is incorrect');
-                return ok({
-                    id: user.id,
-                    ArtistPhoto: user.ArtistPhoto,
-                    ArtistFirstName: user.ArtistFirstName,
-                    ArtistLastName: user.ArtistLastName,
-                    ArtistNickName: user.ArtistNickName,
-                    EmailAddress: user.EmailAddress,
-                    token: 'fake-jwt-token'
-                });
+                // const { EmailAddress, Password } = body;
+                // const user = users.find(x => x.EmailAddress === EmailAddress && x.Password === Password);
+
+                // if (!user) return error('Email or password is incorrect');
+                // return ok({
+                //     id: user.id,
+                //     ArtistPhoto: user.ArtistPhoto,
+                //     ArtistFirstName: user.ArtistFirstName,
+                //     ArtistLastName: user.ArtistLastName,
+                //     ArtistNickName: user.ArtistNickName,
+                //     EmailAddress: user.EmailAddress,
+                //     token: 'fake-jwt-token'
+                // });
             }
 
             function register() {
