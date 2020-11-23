@@ -87,9 +87,7 @@ const ConcertForm = () => {
                 <form name="form" onSubmit={handleSubmit(onSubmit)}>
                     <h4 className="text">Create your concert!</h4>
                     <div >
-                        <Form.Group
-                        // controlId="Title"
-                        >
+                        <Form.Group>
                             <Form.Label htmlFor="Title" className="text-fields">Title</Form.Label>
                             <Form.Control
                                 name="Title"
@@ -98,7 +96,6 @@ const ConcertForm = () => {
                                 placeholder="Title of the concert..."
                                 // onChange={handleChange}
                                 ref={register}
-
                             />
                             {submitted && !concert.About &&
                                 <div className="invalid-feedback">This field is required</div>
@@ -114,7 +111,6 @@ const ConcertForm = () => {
                                 placeholder="Short description of the concert..."
                                 // onChange={handleChange}
                                 ref={register}
-
                             />
                             {submitted && !concert.About &&
                                 <div className="invalid-feedback">This field is required</div>
@@ -133,7 +129,6 @@ const ConcertForm = () => {
                                     as="select"
                                     custom
                                     ref={register}
-
                                 >
                                     <option value="Solo">Solo</option>
                                     <option value="Duo">Duo</option>
@@ -150,7 +145,6 @@ const ConcertForm = () => {
                                     <option value="Other">Other</option>
                                 </Form.Control>
                             </Form.Group>
-
 
                             <Controller
                                 control={control}
@@ -175,7 +169,6 @@ const ConcertForm = () => {
                                     </Form.Group>
                                 )}
                             />
-
                         </Form.Row>
 
                         <Controller
@@ -262,7 +255,6 @@ const ConcertForm = () => {
                                 placeholder={"Teaser link"}
                                 // onChange={handleChange}
                                 ref={register}
-
                             />
                         </Form.Group>
 
