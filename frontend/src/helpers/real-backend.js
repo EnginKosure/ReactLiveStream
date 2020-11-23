@@ -1,9 +1,9 @@
 // array in local storage for registered users
 // let users = JSON.parse(localStorage.getItem('users')) || [];
 //Fetch the registered users from backend https://aplaudoapi.azurewebsites.net/api/artists/
-// import axios from 'axios';
-const axios = require('axios').default;
-let users = axios.get('https://aplaudoapi.azurewebsites.net/api/artists')
+import axios from 'axios';
+// const axios = require('axios').default;
+let users = axios.get('/api/artists')
     .then(response => response.data)
 // .then(data => console.log(data));
 // data:[{
@@ -14,6 +14,14 @@ let users = axios.get('https://aplaudoapi.azurewebsites.net/api/artists')
 //     EmailAddress: null,
 //     Password: null
 //   },]
+
+// let users = fetch('/api/artists', {
+//     method: 'GET',
+//     headers: {
+//         "Content-type": "application/json;charset=UTF-8"
+//     }
+// })
+//     .then((response) => response.text())
 
 
 export function configureRealBackend() {
@@ -26,15 +34,16 @@ export function configureRealBackend() {
             // wrap in timeout to simulate server api call
             // setTimeout(handleRoute, 500);
 
+            // eslint-disable-next-line no-unused-vars
             function handleRoute() {
                 switch (true) {
-                    case url.endsWith('/users/authenticate') && method === 'POST':
+                    case url.endsWith('/api/artists/userlogin') && method === 'POST':
                         return authenticate();
-                    case url.endsWith('/users/signup') && method === 'POST':
+                    case url.endsWith('/api/artists') && method === 'POST':
                         return register();
-                    case url.endsWith('/users') && method === 'GET':
+                    case url.endsWith('/api/artists') && method === 'GET':
                         return getUsers();
-                    case url.match(/\/users\/\d+$/) && method === 'DELETE':
+                    case url.match(/\/artists\/\d+$/) && method === 'DELETE':
                         return deleteUser();
                     default:
                         // pass through any requests not handled above
@@ -47,30 +56,32 @@ export function configureRealBackend() {
             // route functions
 
             function authenticate() {
-                const { EmailAddress, Password } = body;
-                const user = users.find(x => x.EmailAddress === EmailAddress && x.Password === Password);
-                if (!user) return error('Email or password is incorrect');
-                return ok({
-                    id: user.id,
-                    ArtistPhoto: user.ArtistPhoto,
-                    ArtistFirstName: user.ArtistFirstName,
-                    ArtistLastName: user.ArtistLastName,
-                    ArtistNickName: user.ArtistNickName,
-                    EmailAddress: user.EmailAddress,
-                    token: 'fake-jwt-token'
-                });
+                // const { EmailAddress, Password } = body;
+                // const user = users.find(x => x.EmailAddress === EmailAddress && x.Password === Password);
+
+                // if (!user) return error('Email or password is incorrect');
+                // return ok({
+                //     id: user.id,
+                //     ArtistPhoto: user.ArtistPhoto,
+                //     ArtistFirstName: user.ArtistFirstName,
+                //     ArtistLastName: user.ArtistLastName,
+                //     ArtistNickName: user.ArtistNickName,
+                //     EmailAddress: user.EmailAddress,
+                //     token: 'fake-jwt-token'
+                // });
             }
 
             function register() {
                 const user = body;
 
-                if (users.find(x => x.EmailAddress === user.EmailAddress)) {
-                    return error(`This email  ${user.EmailAddress} is already registered`);
-                }
+                // if (users.find(x => x.EmailAddress === user.EmailAddress)) {
+                //     return error(`This email  ${user.EmailAddress} is already registered`);
+                // }
 
                 // assign user id and a few other properties then save
-                user.id = users.length ? Math.max(...users.map(x => x.id)) + 1 : 1;
-                users.push(user);
+                // user.id = users.length ? Math.max(...users.map(x => x.id)) + 1 : 1;
+                // users.push(user);
+                axios.post('/api/artists', user);
                 localStorage.setItem('users', JSON.stringify(users));
 
                 return ok();

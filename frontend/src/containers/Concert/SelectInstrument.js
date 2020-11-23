@@ -3,7 +3,7 @@ import MultiSelect from "react-multi-select-component";
 import "./SelectedInstrument.scss"
 
 
-function SelectInstrument() {
+function SelectInstrument({ onChange, value, name }) {
     const options = [
         { label: "accordion", value: "accordion" },
         { label: "bass", value: "bass" },
@@ -59,16 +59,19 @@ function SelectInstrument() {
         const re = new RegExp(filter, "i");
         return options.filter(({ value }) => value && value.match(re));
     }
-
-    const [selected, setSelected] = useState([]);
+    //Here below is disabled and we use the value for selected ans onChange for setSelected 
+    // (sent props via react-hook-forms Controller component) from UpdateProfile.js and ConcertForm.js
+    // const [selected, setSelected] = useState([]);
     return (
         <div className="select-wrapper">
             <h6 className="text-fields">Select Instruments</h6>
             {/* <pre className="preview-selected">{JSON.stringify(selected)}</pre> */}
             <MultiSelect
                 options={options}
-                value={selected}
-                onChange={setSelected}
+                // value={selected}
+                value={value}
+                // onChange={setSelected}
+                onChange={onChange}
                 labelledBy={"Select"}
                 filterOptions={filterOptions}
                 className="multi-select"

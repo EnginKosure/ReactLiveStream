@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { userActions } from '../../actions';
@@ -10,6 +10,7 @@ import Search from '../../components/Search';
 
 
 const ArtistSignUp = () => {
+    const location = useLocation();
 
     // {
     //     "ArtistFirstName": "Bin",
@@ -25,7 +26,6 @@ const ArtistSignUp = () => {
     // const [password, setPassword] = useState("");
 
     const [user, setUser] = useState({
-        ArtistPhoto: '',
         ArtistFirstName: '',
         ArtistLastName: '',
         EmailAddress: '',
@@ -51,7 +51,28 @@ const ArtistSignUp = () => {
         setSubmitted(true);
         if (user.ArtistFirstName && user.ArtistLastName && user.EmailAddress && user.Password) {
             dispatch(userActions.register(user));
+            if (user.EmailAddress && user.Password) {
+                // get return url from location state or default to home page
+                const { from } = location.state || { from: { pathname: "/" } };
+                dispatch(userActions.login(user.EmailAddress, user.Password, from));
+            }
+
+            // fetch('/api/artists', {
+            //     method: 'POST',
+            //     body: JSON.stringify(user),
+            //     headers: {
+            //         "Content-type": "application/json;charset=UTF-8"
+            //     }
+            // })
+            //     .then((response) => response.text())
+            //     .then((result) => {
+            //         console.log('Success:', result);
+            //     })
+            //     .catch(error => {
+            //         console.error('Error:', error);
+            //     });
         }
+
     }
 
     return (

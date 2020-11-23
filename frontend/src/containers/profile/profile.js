@@ -6,7 +6,7 @@ import UpdateProfile from '../register/UpdateProfile';
 import './profile.scss';
 
 const Profile = () => {
-    const user = useSelector(state => state?.users?.items[state.users.items.length - 1]);
+    const user = useSelector(state => state?.users?.items[state?.users?.items?.length - 1]);
     return (
         <div className="profile-container">
             <div className="user-inner">
