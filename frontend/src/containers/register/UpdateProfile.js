@@ -39,34 +39,34 @@ const UpdateProfile = ({ current }) => {
 
         console.log(data);
 
-        const options = {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            mode: 'cors', // no-cors, cors, *same-origin
-            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: 'include', // include, *same-origin, omit, chosen include to allowed sending cookies
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                COOKIE: 'key=value; Path=/; Expires=Thu, 09 Jul 2020 07:20:21 GMT; HttpOnly',
-            },
-            body: JSON.stringify({ data }), // body data type must match "Content-Type" header in this case it is json
-        };
+        // const options = {
+        //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        //     mode: 'cors', // no-cors, cors, *same-origin
+        //     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        //     credentials: 'include', // include, *same-origin, omit, chosen include to allowed sending cookies
+        //     headers: {
+        //         'Content-Type': 'application/json;charset=UTF-8',
+        //         COOKIE: 'key=value; Path=/; Expires=Thu, 09 Jul 2020 07:20:21 GMT; HttpOnly',
+        //     },
+        //     body: JSON.stringify({ data }), // body data type must match "Content-Type" header in this case it is json
+        // };
 
-        fetch("/api/artists", options)
-            .then(res => {
-                //return res.json!
-                return res.json();
-            })
-            .then(data => {
-                // do something with data
-                console.log('Success:', data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+        // fetch("/api/artists", options)
+        //     .then(res => {
+        //         //return res.json!
+        //         return res.json();
+        //     })
+        //     .then(data => {
+        //         // do something with data
+        //         console.log('Success:', data);
+        //     })
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //     });
 
 
 
-        // postData(data)
+        postData(data)
 
 
         // https://aplaudoapi.azurewebsites.net/api/artists
