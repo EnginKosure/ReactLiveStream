@@ -8,10 +8,10 @@ import './index.css';
 import App from './App';
 // import registerServiceWorker from './registerServiceWorker';
 
-import { configureFakeBackend } from './helpers';
-configureFakeBackend();
-// import { configureRealBackend } from './helpers';
-// configureRealBackend();
+// import { configureFakeBackend } from './helpers';
+// configureFakeBackend();
+import { configureRealBackend } from './helpers';
+configureRealBackend();
 
 
 ReactDOM.render(
