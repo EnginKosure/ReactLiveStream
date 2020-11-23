@@ -25,9 +25,40 @@ const UpdateProfile = ({ current }) => {
     useEffect(() => {
         getData();
     }, [])
-
+    const testObj = {
+        ArtistFirstName: "Rasha",
+        ArtistLastName: "Ali",
+        ArtistNickName: "Rasha",
+        EmailAddress: "Rashaali@gmail.com",
+        Password: "123456",
+        Bio: "Here is my Bio",
+        PhotoLink: "http://wwww.google.com/2",
+        Spotify: "sot",
+        YouTube: "http://wwww.google.com/2",
+        iTunes: "tunes",
+        SoundCloud: "sound",
+        WebSite: "http://wwww.google.com/2",
+        LinkedIn: "http://wwww.google.com/linkedin",
+        CountryName: "Belgium",
+        StyleNames:
+            [
+                { StyleName: "Asian" },
+                { StyleName: "African" }
+            ],
+        InstrumentNames: [
+            {
+                InstrumentName: "accordion"
+            },
+            {
+                InstrumentName: "bass"
+            },
+            {
+                InstrumentName: "Piano"
+            }
+        ]
+    }
     const postData = async (x) => {
-        const res = await axios.post("/api/artists", JSON.stringify(x))
+        const res = await axios.post("/api/artists", testObj)
         console.log(res.data);
         res.then(
             (response) => { console.log(response.json()) },

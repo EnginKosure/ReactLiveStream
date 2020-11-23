@@ -43,6 +43,8 @@ export function configureRealBackend() {
                         return register();
                     case url.endsWith('/api/artists') && method === 'GET':
                         return getUsers();
+                    case url.endsWith('/changepassword') && method === 'PUT':
+                        return register();
                     case url.match(/\/artists\/\d+$/) && method === 'DELETE':
                         return deleteUser();
                     default:
