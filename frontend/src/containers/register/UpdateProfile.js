@@ -32,6 +32,22 @@ const UpdateProfile = ({ current }) => {
         Bio: '',
         PhotoLink: '',
     });
+
+    /*
+    {
+        ArtistFirstName: "dwce",
+        ArtistLastName: "vsadv",
+        ArtistNickName: "vdsv",
+        Bio: "sfsdfcsdcsdczdacvsdcxvdscxdc",
+        CountryName:{ alpha2: "dz",alpha3: "dza",flag: "🇩🇿",id: "dz",ioc: "alg",name: "Algeria"},
+        EmailAddress: "test@test",
+        InstrumentNames: [{label: "bass", value: "bass"}, label: "bassoon", value: "bassoon"}],
+        Password: "123"
+        PhotoLink: "C:\fakepath\Screenshot 2020-10-11 at 20.04.52.png",
+        SocialLinks: [{Link: "dsdsdsd"},{Link: "/kabel"}],
+        StyleNames: [{label: "African", value: "African"},{label: "Alternative", value: "Alternative"} ]
+    }
+    */
     const [submitted, setSubmitted] = useState(false);
     const registering = useSelector(state => state.registration.registering);
     // const dispatch = useDispatch();
@@ -168,19 +184,6 @@ const UpdateProfile = ({ current }) => {
                         </div>
                     </div>}
 
-
-                    {/*   <div>
-                        <label htmlFor="SocialLink1" />
-                        <input
-                            type="text"
-                            name="SocialLink1"
-                            className={"form-control email text-fields"}
-                            value={user.SocialLink1}
-                            placeholder={current.SocialLink1 || "Add social media-1"}
-                            onChange={handleChange}
-                        />
-                    </div> */}
-
                     <Form.Group controlId="SocialLinks">
                         <Form.Label className={"text-fields"} style={{ width: "100%", marginTop: "10px" }}>Add social media links</Form.Label>
 
@@ -253,35 +256,6 @@ const UpdateProfile = ({ current }) => {
                     />
                     {/* <SelectStyle /> */}
 
-                    {/* <div>
-                        <label htmlFor="Style" />
-                        <input
-                            type="text"
-                            name="Style"
-                            className={"form-control email text-fields" + (submitted && !user.Style ? ' is-invalid' : '')}
-                            value={user.Style}
-                            placeholder={current.Style || "Add style info"}
-                            onChange={handleChange}
-                        />
-                        {submitted && !user.Style &&
-                            <div className="invalid-feedback">First Name is required</div>
-                        }
-                    </div>
-                    <div>
-                        <label htmlFor="Instrument" />
-                        <input
-                            type="text"
-                            name="Instrument"
-                            className={"form-control email text-fields" + (submitted && !user.ArtistFirstName ? ' is-invalid' : '')}
-                            value={user.Instrument}
-                            placeholder={current.Instrument || "Add instrument info"}
-                            onChange={handleChange}
-                        />
-                        {submitted && !user.ArtistFirstName &&
-                            <div className="invalid-feedback">First Name is required</div>
-                        }
-                    </div> */}
-
                     <Controller
                         control={control}
                         name="CountryName"
@@ -293,7 +267,6 @@ const UpdateProfile = ({ current }) => {
                         )}
                     />
                     {/* <SelectCountry /> */}
-
 
                     <div>
                         <label htmlFor="Bio" />
@@ -327,8 +300,6 @@ const UpdateProfile = ({ current }) => {
                             </Form.Group>
                         )}
                     />
-
-
 
                     <div className="form-group">
                         <input type="submit" className="btn btn-primary btn-custom" />
