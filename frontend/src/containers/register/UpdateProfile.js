@@ -8,6 +8,7 @@ import "./register.scss";
 import SelectCountry from '../Concert/SelectCountry';
 import Form from 'react-bootstrap/Form';
 import { useForm, useFieldArray, useWatch, Controller } from 'react-hook-form';
+import axios from 'axios';
 
 const UpdateProfile = ({ current }) => {
 
@@ -16,8 +17,77 @@ const UpdateProfile = ({ current }) => {
         control,
         name: "items"
     });
+    // https://aplaudoapi.azurewebsites.net/api/artists
+    const getData = async () => {
+        const { data } = await axios.get("/api/artists");
+        console.log(data);
+    }
+    useEffect(() => {
+        getData();
+    }, [])
 
-    const onSubmit = data => console.log(data);
+    const postData = async (x) => {
+        const res = await axios.post("/api/artists", JSON.stringify(x))
+        console.log(res.data);
+        res.then(
+            (response) => { console.log(response.json()) },
+            (error) => { console.log(error) }
+        );
+    }
+
+    const onSubmit = data => {
+
+        console.log(data);
+
+        const options = {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, cors, *same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'include', // include, *same-origin, omit, chosen include to allowed sending cookies
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                COOKIE: 'key=value; Path=/; Expires=Thu, 09 Jul 2020 07:20:21 GMT; HttpOnly',
+            },
+            body: JSON.stringify({ data }), // body data type must match "Content-Type" header in this case it is json
+        };
+
+        fetch("/api/artists", options)
+            .then(res => {
+                //return res.json!
+                return res.json();
+            })
+            .then(data => {
+                // do something with data
+                console.log('Success:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+
+        // postData(data)
+
+
+        // https://aplaudoapi.azurewebsites.net/api/artists
+        // fetch('/api/artists', {
+
+
+        // fetch('https://aplaudoapi.azurewebsites.net/api/artists', {
+        //     method: 'POST',
+        //     body: JSON.stringify(data),
+        //     headers: {
+        //         "Content-type": "application/json;charset=UTF-8"
+        //     }
+        // })
+        //     .then((response) => response.text())
+        //     .then((result) => {
+        //         console.log('Success:', result);
+        //     })
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //     });
+    }
 
     const [user, setUser] = useState({
         ArtistFirstName: '',
