@@ -72,6 +72,47 @@ const UpdateProfile = ({ current }) => {
 
         console.log(data);
 
+        const refactoredObj = {
+            ArtistFirstName: data.ArtistFirstName,
+            ArtistLastName: data.ArtistLastName,
+            ArtistNickName: data.ArtistNickName,
+            EmailAddress: data.EmailAddress,
+            Password: data.Password,
+            Bio: data.Bio,
+            PhotoLink: data.PhotoLink,
+            Spotify: data?.SocialLinks[0]?.Link || "",
+            YouTube: data?.SocialLinks[1]?.Link || "",
+            iTunes: data?.SocialLinks[2]?.Link || "",
+            SoundCloud: data?.SocialLinks[3]?.Link || "",
+            WebSite: data?.SocialLinks[4]?.Link || "",
+            LinkedIn: data?.SocialLinks[5]?.Link || "",
+            CountryName: data?.CountryName?.name || "",
+            StyleNames:
+                [
+                    { StyleName: data?.StyleNames[0]?.label || "" },
+                    { StyleName: data?.StyleNames[1]?.label || "" },
+                    { StyleName: data?.StyleNames[2]?.label || "" },
+                    { StyleName: data?.StyleNames[3]?.label || "" },
+                ],
+            // InstrumentNames: [{label: "bass", value: "bass"}, label: "bassoon", value: "bassoon"}],
+            InstrumentNames: [
+                {
+                    InstrumentName: data?.InstrumentNames[0]?.label || "",
+                },
+                {
+                    InstrumentName: data?.InstrumentNames[1]?.label || "",
+                },
+                {
+                    InstrumentName: data?.InstrumentNames[2]?.label || "",
+                },
+                {
+                    InstrumentName: data?.InstrumentNames[3]?.label || "",
+                },
+
+            ]
+        }
+        console.log(refactoredObj);
+
         // const options = {
         //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
         //     mode: 'cors', // no-cors, cors, *same-origin
@@ -99,7 +140,7 @@ const UpdateProfile = ({ current }) => {
 
 
 
-        postData(data)
+        postData(refactoredObj)
 
 
         // https://aplaudoapi.azurewebsites.net/api/artists
