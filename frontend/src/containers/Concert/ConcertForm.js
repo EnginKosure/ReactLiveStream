@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import CheckBoxGenre from './CheckBoxGenre';
@@ -21,8 +22,6 @@ const ConcertForm = () => {
         control,
         name: "items"
     });
-
-    const onSubmit = data => console.log(data);
 
     const [concert, setConcert] = useState({
         Title: '',
@@ -55,7 +54,78 @@ const ConcertForm = () => {
     Title: "title of the concertwre",
 }*/
 
+    const testObj = {
+        ConcertId: 14,
+        About: "This concert is really fun and different let' stry to update ",
+        ConcertTitle: "Title is really what matters ",
+        Style: "African",
+        Date: "12/01/2010",
+        ConcertLink: "http://wwww.google.com/44",
+        PictureLink: "http://wwww.google.com/442",
+        ProgrammaLink: "http://wwww.google.com/44",
+        TeaserLink: "http://wwww.google.com/44",
+        CountryName: "Belgium",
+        InstrumentationValue: "Solo",
+        ArtistEmails: [
+            { EmailAddress: "par@gmail.com" },
+            { EmailAddress: "rasaa@gmail.com" },
+            { EmailAddress: "Ralyy.MM@gmail.com" }
+        ],
+        InstrumentNames: [
+            { InstrumentName: "accordion" },
+            { InstrumentName: "bass" },
+            { InstrumentName: "Piano" }
+        ]
+    }
 
+    const postData = async (x) => {
+        // const res = await axios.post("/api/artists", testObj)
+        const res = await axios.post("/api/concerts", x)
+
+        console.log(res.data);
+        res.then(
+            (response) => { console.log(response.json()) },
+            (error) => { console.log(error) }
+        );
+    }
+    const onSubmit = data => {
+
+        console.log(data);
+
+        const refactoredObj = {
+            About: data?.About,
+            ConcertTitle: data?.Title,
+            Style: data?.StyleNames[0]?.label || "",
+            Date: data?.Date.replace(/-/g, "/"),
+            ConcertLink: data?.ConcertLink || "",
+            PictureLink: data?.PictureLink || "",
+            ProgrammaLink: data?.ProgrammaLink || "",
+            TeaserLink: data?.TeaserLink || "",
+            CountryName: data?.CountryName?.name || "",
+            InstrumentationValue: data?.Instrumentation || "",
+            ArtistEmails: data?.ArtistEmails,
+            InstrumentNames: [
+                {
+                    InstrumentName: data?.InstrumentNames[0]?.label || "",
+                },
+                {
+                    InstrumentName: data?.InstrumentNames[1]?.label || "",
+                },
+                {
+                    InstrumentName: data?.InstrumentNames[2]?.label || "",
+                },
+                {
+                    InstrumentName: data?.InstrumentNames[3]?.label || "",
+                },
+
+            ]
+        }
+
+        console.log(refactoredObj);
+
+        postData(refactoredObj)
+
+    }
 
 
     const [submitted, setSubmitted] = useState(false);

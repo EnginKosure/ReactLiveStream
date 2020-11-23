@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { userActions } from '../../actions';
@@ -6,20 +7,22 @@ import "./register.scss";
 import aplaudo from '../../assets/logo.png';
 import Search from '../../components/Search';
 
-import BootstrapCarousel from '../Carousel/Carousel';
-import About from '../About/About';
+const ForgetPassword = () => {
 
-
-
-const Register = () => {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
+  const instance = axios.create({
+    baseURL: 'https://aplaudoapi.azurewebsites.net',
+    timeout: 1000,
+    headers: {
+      "Content-type": "application/json;charset=UTF-8"
+    }
+  });
   const [inputs, setInputs] = useState({
     EmailAddress: '',
-    Password: ''
+    Password: '',
+    ConfirmPassword: '',
   });
   const [submitted, setSubmitted] = useState(false);
-  const { EmailAddress, Password } = inputs;
+  const { EmailAddress, Password, ConfirmPassword } = inputs;
   const loggingIn = useSelector(state => state.authentication.loggingIn);
   const dispatch = useDispatch();
   const location = useLocation();
@@ -34,14 +37,30 @@ const Register = () => {
     setInputs(inputs => ({ ...inputs, [name]: value }));
   }
 
+  const putData = async (x) => {
+    console.log(x);
+    const res = await instance.put("/api/artists/changepassword", x);
+    console.log(res.data.json);
+    console.log(res.data);
+    res.then(
+      (response) => { console.log(response.json()) },
+      (error) => { console.log(error) }
+    );
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
 
     setSubmitted(true);
-    if (EmailAddress && Password) {
+    if (EmailAddress && Password && Password === ConfirmPassword) {
       // get return url from location state or default to home page
-      const { from } = location.state || { from: { pathname: "/" } };
-      dispatch(userActions.login(EmailAddress, Password, from));
+      // const { from } = location.state || { from: { pathname: "/" } };
+      // dispatch(userActions.login(EmailAddress, Password, from));
+
+      // https://aplaudoapi.azurewebsites.net/api/artists/changepassword
+
+      putData({ EmailAddress, Password });
+
     }
   }
 
@@ -87,27 +106,31 @@ const Register = () => {
                 <div className="invalid-feedback">Password is required</div>
               }
             </div>
-            <p className="fgpw">
-              <Link to="/changepassword" className="btn btn-link fgpw">Forgot your password?</Link>
-            </p>
+
             <div className="form-group">
-              <button className="btn btn-primary btn-custom">
-                {loggingIn && <span className="spinner-border spinner-border-sm mr-1"></span>}
-                          Login
-                      </button>
+              <label htmlFor="ConfirmPassword" />
+              <input
+                type="password"
+                name="ConfirmPassword"
+                className={"form-control password text-fields" + (submitted && !ConfirmPassword && ConfirmPassword !== Password ? " is-invalid" : "")}
+                value={ConfirmPassword}
+                placeholder="Confirm password"
+                onChange={handleChange}
+              />
+              {submitted && !Password &&
+                <div className="invalid-feedback">Passwords must match to be confirmed.</div>
+              }
+            </div>
+
+            <div className="form-group">
+              <input type="submit" className="btn btn-primary btn-custom" />
               <Link to="/signup" className="btn btn-link fgpw">Register</Link>
             </div>
           </form>
         </div>
       </div>
-      <div className="contanier">
-        <BootstrapCarousel />
-      </div>
-      <div className="contanier">
-        <About />
-      </div>
     </div>
 
   );
 };
-export default Register;
+export default ForgetPassword;

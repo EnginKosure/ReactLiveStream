@@ -25,9 +25,42 @@ const UpdateProfile = ({ current }) => {
     useEffect(() => {
         getData();
     }, [])
-
+    const testObj = {
+        ArtistFirstName: "Rasha",
+        ArtistLastName: "Ali",
+        ArtistNickName: "Rasha",
+        EmailAddress: "Rashaali@gmail.com",
+        Password: "123456",
+        Bio: "Here is my Bio",
+        PhotoLink: "http://wwww.google.com/2",
+        Spotify: "sot",
+        YouTube: "http://wwww.google.com/2",
+        iTunes: "tunes",
+        SoundCloud: "sound",
+        WebSite: "http://wwww.google.com/2",
+        LinkedIn: "http://wwww.google.com/linkedin",
+        CountryName: "Belgium",
+        StyleNames:
+            [
+                { StyleName: "Asian" },
+                { StyleName: "African" }
+            ],
+        InstrumentNames: [
+            {
+                InstrumentName: "accordion"
+            },
+            {
+                InstrumentName: "bass"
+            },
+            {
+                InstrumentName: "Piano"
+            }
+        ]
+    }
     const postData = async (x) => {
-        const res = await axios.post("/api/artists", JSON.stringify(x))
+        // const res = await axios.post("/api/artists", testObj)
+        const res = await axios.post("/api/artists", x)
+
         console.log(res.data);
         res.then(
             (response) => { console.log(response.json()) },
@@ -38,6 +71,47 @@ const UpdateProfile = ({ current }) => {
     const onSubmit = data => {
 
         console.log(data);
+
+        const refactoredObj = {
+            ArtistFirstName: data.ArtistFirstName,
+            ArtistLastName: data.ArtistLastName,
+            ArtistNickName: data?.ArtistNickName,
+            EmailAddress: data.EmailAddress,
+            Password: data.Password,
+            Bio: data?.Bio || "",
+            PhotoLink: data?.PhotoLink || "",
+            YouTube: data?.SocialLinks[1]?.Link || "",
+            Spotify: data?.SocialLinks[0]?.Link || "",
+            iTunes: data?.SocialLinks[2]?.Link || "",
+            SoundCloud: data?.SocialLinks[3]?.Link || "",
+            LinkedIn: data?.SocialLinks[5]?.Link || "",
+            WebSite: data?.SocialLinks[4]?.Link || "",
+            CountryName: data?.CountryName?.name || "",
+            StyleNames:
+                [
+                    { StyleName: data?.StyleNames[0]?.label || "" },
+                    { StyleName: data?.StyleNames[1]?.label || "" },
+                    { StyleName: data?.StyleNames[2]?.label || "" },
+                    { StyleName: data?.StyleNames[3]?.label || "" },
+                ],
+            // InstrumentNames: [{label: "bass", value: "bass"}, label: "bassoon", value: "bassoon"}],
+            InstrumentNames: [
+                {
+                    InstrumentName: data?.InstrumentNames[0]?.label || "",
+                },
+                {
+                    InstrumentName: data?.InstrumentNames[1]?.label || "",
+                },
+                {
+                    InstrumentName: data?.InstrumentNames[2]?.label || "",
+                },
+                {
+                    InstrumentName: data?.InstrumentNames[3]?.label || "",
+                },
+
+            ]
+        }
+        console.log(refactoredObj);
 
         // const options = {
         //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -66,7 +140,7 @@ const UpdateProfile = ({ current }) => {
 
 
 
-        postData(data)
+        postData(refactoredObj)
 
 
         // https://aplaudoapi.azurewebsites.net/api/artists

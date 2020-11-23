@@ -43,6 +43,8 @@ export function configureRealBackend() {
                         return register();
                     case url.endsWith('/api/artists') && method === 'GET':
                         return getUsers();
+                    case url.endsWith('/changepassword') && method === 'PUT':
+                        return updateUser();
                     case url.match(/\/artists\/\d+$/) && method === 'DELETE':
                         return deleteUser();
                     default:
@@ -82,6 +84,22 @@ export function configureRealBackend() {
                 // user.id = users.length ? Math.max(...users.map(x => x.id)) + 1 : 1;
                 // users.push(user);
                 axios.post('/api/artists', user);
+                localStorage.setItem('users', JSON.stringify(users));
+
+                return ok();
+            }
+
+            function updateUser() {
+                const user = body;
+
+                // if (users.find(x => x.EmailAddress === user.EmailAddress)) {
+                //     return error(`This email  ${user.EmailAddress} is already registered`);
+                // }
+
+                // assign user id and a few other properties then save
+                // user.id = users.length ? Math.max(...users.map(x => x.id)) + 1 : 1;
+                // users.push(user);
+                axios.put("/api/artists/changepassword", user)
                 localStorage.setItem('users', JSON.stringify(users));
 
                 return ok();
