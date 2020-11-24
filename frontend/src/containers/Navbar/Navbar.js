@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import Search from "../../components/Search";
+import VideoEnvironment from '../VideoEnvironment/videoEnvironment';
 
 import "./Navbar.scss";
 
@@ -30,7 +31,7 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           {pathname !== "/signin" ? <Search /> : null}
-          <ul className="navbar-nav ml-auto">
+          {pathname === "/signin" ? <ul className="navbar-nav ml-auto">
             <li className="nav-item" data-toggle="collapse" data-target=".in">
               <NavLink to="/signin" className="nav-link menu-item">
                 Sign in
@@ -41,15 +42,26 @@ const Navbar = () => {
                 Register
               </NavLink>
             </li>
-            <li className="nav-item" data-toggle="m" data-target=".in">
-              {/* <NavLink to="/profile" className="nav-link menu-item">
-                Profile
-              </NavLink> */}
-            </li>
-          </ul>
+          </ul> : <ul className="navbar-nav ml-auto">
+              <li className="nav-item" data-toggle="collapse" data-target=".in">
+                <NavLink to="/concertvideo" className="nav-link menu-item" >
+                  Concert
+                </NavLink>
+              </li>
+              <li className="nav-item" data-toggle="collapse" data-target=".in">
+                <NavLink to="/signup" className="nav-link menu-item">
+                  Notifix
+              </NavLink>
+              </li>
+              <li className="nav-item" data-toggle="m" data-target=".in">
+                <NavLink to="/profile" className="nav-link menu-item">
+                  USERNAME
+                </NavLink>
+              </li>
+            </ul>}
         </div>
-      </nav>
-    </div>
+      </nav >
+    </div >
   );
 };
 

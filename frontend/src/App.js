@@ -14,6 +14,7 @@ import signup from "./containers/register/ArtistSignUp";
 import Footer from "./containers/Footer/Footer";
 import concertInfo from "./containers/Carousel/ConcertInfo/ConcertInfo";
 import ConcertContainer from "./containers/Concert/ConcertContainer";
+import concertvideo from './containers/VideoEnvironment/videoEnvironment';
 // import ConcertForm from "./containers/Concert/ConcertForm";
 
 import { history } from "./helpers";
@@ -53,6 +54,7 @@ function App() {
           {/* <Route path="/concert" component={ConcertForm} /> */}
           {/* <Route path="/concertInfo" component={concertInfo} /> */}
           <Route path="/detail/:id" component={concertInfo} />
+          <Route path="/concertvideo" component={concertvideo} />
 
           <Redirect from="*" to="/" />
         </Switch>
