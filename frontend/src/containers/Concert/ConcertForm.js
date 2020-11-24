@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,6 +22,12 @@ const ConcertForm = () => {
         control,
         name: "items"
     });
+    const concertButtonElm = useRef(null)
+
+    const onButtonClick = () => {
+        getConcertLink()
+    }
+
 
     const [concert, setConcert] = useState({
         Title: '',
@@ -88,6 +94,22 @@ const ConcertForm = () => {
             (error) => { console.log(error) }
         );
     }
+
+    const getConcertLink = async () => {
+        const res = await axios.get("http://localhost:3007/new-room")
+        console.log(res);
+        // res.then(r => console.log(r))
+    }
+
+
+    //     {data: "b6f54866-a6b8-49e1-a3ab-b573c62f1c48", status: 200, statusText: "OK", headers: {…}, config: {…}, …}
+    // config: {url: "http://localhost:3007/new-room", method: "get", headers: {…}, transformRequest: Array(1), transformResponse: Array(1), …}
+    // data: "b6f54866-a6b8-49e1-a3ab-b573c62f1c48"
+    // headers: {connection: "keep-alive", content-length: "36", content-type: "text/html; charset=utf-8, application/json; charset=utf-8", date: "Tue, 24 Nov 2020 09:50:38 GMT", etag: "W/"24-enoeAp1/TArP+G2I/8yMtyDhVJY"", …}
+    // request: XMLHttpRequest {readyState: 4, timeout: 0, withCredentials: false, upload: XMLHttpRequestUpload, onreadystatechange: ƒ, …}
+    // status: 200
+    // statusText: "OK"
+    // __proto__: Object
     const onSubmit = data => {
 
         console.log(data);
@@ -359,7 +381,7 @@ const ConcertForm = () => {
 
                         <Form.Group as={Col}>
                             <Form.Label htmlFor="ConcertLink">
-                                <Button variant="info">Create concert link...</Button>
+                                <Button onClick={onButtonClick} variant="info">Create concert link...</Button>
                             </Form.Label>
                             <Form.Control
                                 type="text"
