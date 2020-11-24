@@ -59,7 +59,7 @@ const UpdateProfile = ({ current }) => {
     }
     const postData = async (x) => {
         // const res = await axios.post("/api/artists", testObj)
-        const res = await axios.post("/api/artists", x)
+        const res = await axios.post("https://aplaudoapi.azurewebsites.net/api/artists", x)
 
         console.log(res.data);
         res.then(
@@ -80,8 +80,8 @@ const UpdateProfile = ({ current }) => {
             Password: data.Password,
             Bio: data?.Bio || "",
             PhotoLink: data?.PhotoLink || "",
-            YouTube: data?.SocialLinks[1]?.Link || "",
-            Spotify: data?.SocialLinks[0]?.Link || "",
+            YouTube: data?.SocialLinks[0]?.Link || "",
+            Spotify: data?.SocialLinks[1]?.Link || "",
             iTunes: data?.SocialLinks[2]?.Link || "",
             SoundCloud: data?.SocialLinks[3]?.Link || "",
             LinkedIn: data?.SocialLinks[5]?.Link || "",
