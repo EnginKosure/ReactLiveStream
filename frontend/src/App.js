@@ -33,7 +33,7 @@ function App() {
       // clear alert on location change
       dispatch(alertActions.clear());
     });
-  }, []);
+  });
   return (
     <div className="App">
       <div className="col-md-8 offset-md-2">

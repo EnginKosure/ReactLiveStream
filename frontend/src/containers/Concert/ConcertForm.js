@@ -407,7 +407,9 @@ const ConcertForm = () => {
                     </div>
 
                     <div className="form-group">
+                        {/* <Link to="/"> */}
                         <input type="submit" className="btn btn-primary btn-custom" />
+                        {/* </Link> */}
                         <Link to="/" className="btn btn-link fgpw">Cancel</Link>
                     </div>
                 </form>
