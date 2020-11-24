@@ -44,7 +44,7 @@ const Navbar = () => {
             </li>
           </ul> : <ul className="navbar-nav ml-auto">
               <li className="nav-item" data-toggle="collapse" data-target=".in">
-                <NavLink to="/concertvideo" className="nav-link menu-item" >
+                <NavLink to="/videoenvironment" className="nav-link menu-item" >
                   Concert
                 </NavLink>
               </li>

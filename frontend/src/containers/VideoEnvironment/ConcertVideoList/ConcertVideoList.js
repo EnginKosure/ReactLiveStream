@@ -20,7 +20,7 @@ const ConcertVideoList = () => {
  const getData = async () => {
   // const { data } = await axios.get("/api/artists");
   // const user = useSelector(state => state?.users?.items[state.users.items.length - 1]);
-  const url = '/api/concerts?emailaddress=par@gmail.com'
+  const url = 'https://aplaudoapi.azurewebsites.net/api/concerts?emailaddress=par@gmail.com'
   const { data } = await axios.get(url);
   console.log(data);
  }

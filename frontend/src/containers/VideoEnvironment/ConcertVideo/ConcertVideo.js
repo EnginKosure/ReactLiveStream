@@ -8,20 +8,20 @@ const ConcertVideo = () => {
   const apiKey = "04c35731a5ee918f014970082a0088b1"; //temporary
   const baseImageUrl = "https://image.tmdb.org/t/p/w500";
 
-  const { id } = useParams();
-  useEffect(() => {
-    axios
-      .get(movieDetailBaseUrl + id, {
-        params: {
-          api_key: apiKey,
-        },
-      })
-      .then((res) => setConcertDetails(res?.data))
-      .catch()
-      .finally((res) => console.log(res.data));
-  }, [id]);
+  // const { id } = useParams();
+  // useEffect(() => {
+  //   axios
+  //     .get(movieDetailBaseUrl + id, {
+  //       params: {
+  //         api_key: apiKey,
+  //       },
+  //     })
+  //     .then((res) => setConcertDetails(res?.data))
+  //     .catch()
+  //     .finally((res) => console.log(res.data));
+  // }, [id]);
 
-  console.log(concertDetails);
+  // console.log(concertDetails);
   return (
     <p>works</p>
   )
