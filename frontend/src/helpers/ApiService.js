@@ -1,4 +1,5 @@
 // Wouter Wouters
+//TODO: For now, we use the full paths in api calls, later it will be automated via this module.
 const baseURLCloud = window && window._env_
     ? window._env_.REACT_APP_CLOUD_URL
     : "http://localhost:8080";
