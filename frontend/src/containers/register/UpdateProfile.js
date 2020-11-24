@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import SelectInstrument from '../Concert/SelectInstrument';
 import SelectStyle from '../Concert/SelectStyle';
@@ -17,6 +17,9 @@ const UpdateProfile = ({ current }) => {
         control,
         name: "items"
     });
+
+    let history = useHistory();
+
     // https://aplaudoapi.azurewebsites.net/api/artists
     const getData = async () => {
         const { data } = await axios.get("/api/artists");
@@ -141,6 +144,7 @@ const UpdateProfile = ({ current }) => {
 
 
         postData(refactoredObj)
+        history.push("/");
 
 
         // https://aplaudoapi.azurewebsites.net/api/artists
