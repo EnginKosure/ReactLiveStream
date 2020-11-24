@@ -4,6 +4,9 @@ import { useParams, useLocation } from "react-router-dom";
 import "./ConcertInfo.scss";
 // import Navbar from "../../Navbar/Navbar";
 
+const FEATURED_API = "/api/instruments";
+
+
 const ConcertInfo = () => {
   const location = useLocation();
   console.log(location);
@@ -24,6 +27,24 @@ const ConcertInfo = () => {
       .catch()
       .finally();
   }, [id]);
+
+  // fetch("/api/instruments", {
+  //   method: "GET",
+  //   headers: {
+  //     "Content-type": "application/json;charset=UTF-8",
+  //   },
+  // })
+  //   .then((response) => response.text())
+  //   .then((result) => {
+  //     console.log("Success:", result);
+  //   })
+  //   .catch((error) => {
+  //     console.error("Error:", error);
+  //   });
+  // // console.log(concerts);
+  // useEffect(() => {
+  //   ConcertInfo(FEATURED_API);
+  // }, []);
   return (
     <div className="row">
       <div className="col-md-9 offset-md-3">

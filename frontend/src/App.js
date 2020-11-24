@@ -54,6 +54,7 @@ function App() {
           {/* <Route path="/concert" component={ConcertForm} /> */}
           {/* <Route path="/concertInfo" component={concertInfo} /> */}
           <Route path="/detail/:id" component={concertInfo} />
+          <Route path="/concertvideo" component={concertvideo} />
 
           <Redirect from="*" to="/" />
         </Switch>
