@@ -15,11 +15,11 @@ const UserCard = ({ user }) => {
                 <h6 className="user-h6">{user?.ArtistFirstName} {user?.ArtistLastName}</h6>
                 <ul>
                     <li className="active"><Link to="/"><i className="fa fa-columns" aria-hidden="true"></i>User DashBoard</Link></li>
-                    <li><Link to="/profile"><i className="fa fa-user-circle" aria-hidden="true" />Profile Info</Link></li>
-                    <li><Link to="/"><i className="fa fa-cog" aria-hidden="true" />Settings</Link></li>
-                    <li><Link to="/"><i className="fa fa-inbox" aria-hidden="true" />Usage</Link></li>
-                    <li><Link to="/"><i className="fa fa-envelope" aria-hidden="true" />Contacts</Link></li>
-                    <li><Link to="/"><i className="fa fa-question-circle" aria-hidden="true" />Help</Link></li>
+                    <li><a href="#"><i className="fa fa-user-circle" aria-hidden="true" />Profile Info</a></li>
+                    <li><a href="#"><i className="fa fa-cog" aria-hidden="true" />Settings</a></li>
+                    <li><a href="#"><i className="fa fa-inbox" aria-hidden="true" />Usage</a></li>
+                    <li><a href="#"><i className="fa fa-envelope" aria-hidden="true" />Contacts</a></li>
+                    <li><a href="#"><i className="fa fa-question-circle" aria-hidden="true" />Help</a></li>
 
                 </ul>
                 <p>Dark Mode On/Off </p>

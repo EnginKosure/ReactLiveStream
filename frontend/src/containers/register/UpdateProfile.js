@@ -446,9 +446,7 @@ const UpdateProfile = ({ current }) => {
                     />
 
                     <div className="form-group">
-                        {/* <Link to="/"> */}
                         <input type="submit" className="btn btn-primary btn-custom" />
-                        {/* </Link> */}
                         <Link to="/signin" className="btn btn-link fgpw">Cancel</Link>
                     </div>
                 </form>
