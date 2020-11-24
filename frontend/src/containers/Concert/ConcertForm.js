@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,8 +22,11 @@ const ConcertForm = () => {
         control,
         name: "items"
     });
-    const concertButtonElm = useRef(null)
 
+    //state to store the created concert link
+    const [concertLink, setConcertLink] = useState("")
+
+    //click event to create the concert link
     const onButtonClick = () => {
         getConcertLink()
     }
@@ -59,7 +62,7 @@ const ConcertForm = () => {
     TeaserLink: "Teaser link https://fhdcvsdfjnskdc.com",
     Title: "title of the concertwre",
 }*/
-
+    //test object to be sure of backend connection
     const testObj = {
         ConcertId: 14,
         About: "This concert is really fun and different let' stry to update ",
@@ -85,8 +88,7 @@ const ConcertForm = () => {
     }
 
     const postData = async (x) => {
-        // const res = await axios.post("/api/artists", testObj)
-        const res = await axios.post("/api/concerts", x)
+        const res = await axios.post("https://aplaudoapi.azurewebsites.net/api/concerts", x)
 
         console.log(res.data);
         res.then(
@@ -98,7 +100,10 @@ const ConcertForm = () => {
     const getConcertLink = async () => {
         const res = await axios.get("http://localhost:3007/new-room")
         console.log(res);
-        // res.then(r => console.log(r))
+        console.log(res.data)
+        const concertUUID = res.data
+        const concertURL = "http://localhost:3007/"
+        setConcertLink(concertURL + concertUUID)
     }
 
 
@@ -119,7 +124,7 @@ const ConcertForm = () => {
             ConcertTitle: data?.Title,
             Style: data?.StyleNames[0]?.label || "",
             Date: data?.Date.replace(/-/g, "/"),
-            ConcertLink: data?.ConcertLink || "",
+            ConcertLink: concertLink || "",
             PictureLink: data?.PictureLink || "",
             ProgrammaLink: data?.ProgrammaLink || "",
             TeaserLink: data?.TeaserLink || "",
@@ -388,7 +393,7 @@ const ConcertForm = () => {
                                 name="ConcertLink"
                                 className={"form-control email text-fields" + (submitted && !concert.ConcertLink ? ' is-invalid' : '')}
                                 // value={concert.ConcertLink}
-                                placeholder={"Concert link"}
+                                placeholder={concertLink || "Concert link"}
                                 // onChange={handleChange}
                                 ref={register}
                             />
