@@ -37,9 +37,11 @@ const ForgetPassword = () => {
     setInputs(inputs => ({ ...inputs, [name]: value }));
   }
 
-  const putData = async (x) => {
-    console.log(x);
-    const res = await instance.put("https://aplaudoapi.azurewebsites.net/api/artists/changepassword", x);
+  // const testObj = { EmailAddress: "Rashaali2@gmail.com", Password: "4444" }
+
+  const putData = async (u) => {
+    console.log(u);
+    const res = await instance.put("https://aplaudoapi.azurewebsites.net/api/artists/changepassword", u);
     console.log(res.data.json);
     console.log(res.data);
     res.then(
@@ -54,8 +56,8 @@ const ForgetPassword = () => {
     setSubmitted(true);
     if (EmailAddress && Password && Password === ConfirmPassword) {
       // get return url from location state or default to home page
-      // const { from } = location.state || { from: { pathname: "/" } };
-      // dispatch(userActions.login(EmailAddress, Password, from));
+      const { from } = location.state || { from: { pathname: "/" } };
+      dispatch(userActions.login(EmailAddress, Password, from));
 
       // https://aplaudoapi.azurewebsites.net/api/artists/changepassword
 
