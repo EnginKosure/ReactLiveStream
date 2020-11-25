@@ -2,13 +2,77 @@
 
 `Demanded by passionate artists, made by professional-souled amateurs...`
 
+## Table of contents
+
+- General Information
+- Used Technologies and Libraries
+- Overall Architecture
+- Structure of the Project
+- Get Started
+- Demo of the Project
+- Project Status
+- TODOs
+- Links to Other Repositories
+- Contact
+- Generic CRA Documentation
+
+## General Information
+
 It is designed to be a platform dedicated for artists to have an account and create/arrange concert streaming.
 
 - Artist can create profile, add/schedule events
 - Live video environment with 1-to-many connection
   (owner has camera and microphone access, audience doesn't)
 
-## Getting Started with Create React App
+## Used Technologies and Libraries:
+
+Create-React-App
+axios, http-proxy-middleware
+bootstrap, react-bootstrap, node-sass, styled-components
+react-hook-form, react-bootstrap-country-select, react-elastic-carousel
+react-multi-select-component
+redux, react-redux, redux-logger, redux-thunk
+
+## Structure of the Project
+
+|frontend
+|-public
+|-src
+|--actions
+|--assets
+|--components
+|--constants
+|--containers
+|----About
+|----Carousel
+|------ConcertInfo
+|------Item
+|----Concert
+|----Footer
+|----Navbar
+|----VideoEnvironment
+|------ConcertVideo
+|------ConcertVideoList
+|----profile
+|----register
+|--context
+|--helpers
+|--reducers
+|--services
+
+## TODOs:
+
+- `styling`: Remove the duplicate styles and apply the styled-components overall.
+
+- `backend connection`: Fully integrate the auth process.
+
+- `add search and filter functionality`
+
+- `add redux overall`: Redux is applied for only user registration operations. Can be applied also to concert operations.
+
+- `add dark mode`
+
+## Generic CRA Documentation - Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -78,23 +142,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-## Used Libraries:
-
-    axios, http-proxy-middleware
-    bootstrap, react-bootstrap, node-sass, styled-components
-    react-hook-form, react-bootstrap-country-select, react-elastic-carousel
-    react-multi-select-component
-    redux, react-redux, redux-logger, redux-thunk
-
-### TODOs:
-
-`styling`: Remove the duplicate styles and apply the styled-components overall.
-
-`backend connection`: Fully integrate the auth process.
-
-`add search and filter functionality`
-
-`add redux overall`
-
-`add dark mode`
