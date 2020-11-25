@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Used Libraries:
+
+    axios, http-proxy-middleware
+    bootstrap, react-bootstrap, node-sass, styled-components
+    react-hook-form, react-bootstrap-country-select, react-elastic-carousel
+    react-multi-select-component
+    redux, react-redux, redux-logger, redux-thunk
+
+### TODOs:
+
+`styling`: Remove the duplicate styles and apply the styled-components overall.
+`backend connection`: Fully integrate the auth process. (For now, it still checks over localStorage )
+`add search and filter functionality`
