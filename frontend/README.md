@@ -1,5 +1,6 @@
 # Aplaudo Project - HYF Bootcamp
 
+<h1 align="center">Hi 👋, We are Aplaudo Team</h1>
 `Demanded by passionate artists, made by professional-souled amateurs...`
 
 ## Table of contents
@@ -77,6 +78,8 @@ redux, react-redux, redux-logger, redux-thunk
 |-.gitignore
 |-package.json
 |-README.md
+
+## Get Started
 
 ## TODOs:
 
