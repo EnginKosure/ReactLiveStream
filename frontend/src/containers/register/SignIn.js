@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { userActions } from '../../actions';
@@ -34,6 +35,18 @@ const Register = () => {
     setInputs(inputs => ({ ...inputs, [name]: value }));
   }
 
+  const postData = async (x) => {
+    // const res = await axios.post("/api/artists", testObj)
+    const res = await axios.post("https://aplaudoapi.azurewebsites.net/api/artists/userlogin", x)
+
+    console.log(res.data);
+    res.then(
+      (response) => { console.log(response.json()) },
+      (error) => { console.log(error) }
+    );
+  }
+
+
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -43,6 +56,7 @@ const Register = () => {
       const { from } = location.state || { from: { pathname: "/" } };
       dispatch(userActions.login(EmailAddress, Password, from));
     }
+    postData({ EmailAddress, Password });
   }
 
   return (
