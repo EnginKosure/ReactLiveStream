@@ -57,20 +57,20 @@ const ArtistSignUp = () => {
                 dispatch(userActions.login(user.EmailAddress, user.Password, from));
             }
 
-            // fetch('/api/artists', {
-            //     method: 'POST',
-            //     body: JSON.stringify(user),
-            //     headers: {
-            //         "Content-type": "application/json;charset=UTF-8"
-            //     }
-            // })
-            //     .then((response) => response.text())
-            //     .then((result) => {
-            //         console.log('Success:', result);
-            //     })
-            //     .catch(error => {
-            //         console.error('Error:', error);
-            //     });
+            fetch('https://aplaudoapi.azurewebsites.net/api/artists', {
+                method: 'POST',
+                body: JSON.stringify(user),
+                headers: {
+                    "Content-type": "application/json;charset=UTF-8"
+                }
+            })
+                .then((response) => response.text())
+                .then((result) => {
+                    console.log('Success:', result);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
         }
 
     }
