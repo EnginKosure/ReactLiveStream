@@ -83,6 +83,12 @@ It is designed to be a platform dedicated for artists to have an account and cre
 
 ## Get Started
 
+Run the project:
+
+- `yarn` or `npm install`
+- `yarn start` or `npm start`
+  You will be able to access the website from http://localhost:3000
+
 ## Demo of the Project
 
 <img src="./src/assets/aplaudo.gif" alt="My Project GIF" width="900" height="600">
@@ -95,11 +101,23 @@ It is designed to be a platform dedicated for artists to have an account and cre
 
 - `backend connection`: Fully integrate the auth process.
 
-- `add search and filter functionality`
+- `add search and filter functionality`: After having enough concert/artist in database, those features can be applied and tested easier.
 
 - `add redux overall`: Redux is applied for only user registration operations. Can be applied also to concert operations.
 
 - `add dark mode`
+
+- `scale up streaming` [Further info](https://github.com/Rashaali84/Aplaudo/blob/main/backend/TODO.md)
+
+## Links to other repositories of the project:
+
+- [Backend-API repository](https://github.com/Rashaali84/AplaudoApi)
+
+- [Main repository that includes create-react-app and video-broadcasting repo](https://github.com/Rashaali84/Aplaudo)
+
+- [Credits for RTCMultiConnection and broadcasting](https://github.com/muaz-khan/RTCMultiConnection/blob/master/demos/video-broadcasting.html)
+
+- [Please check the main README file in backend folder for further info over system architecture](https://github.com/Rashaali84/AplaudoApi)
 
 ## Contact & Contributors
 
