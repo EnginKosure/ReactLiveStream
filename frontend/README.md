@@ -81,6 +81,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 `styling`: Remove the duplicate styles and apply the styled-components overall.
 
-`backend connection`: Fully integrate the auth process. (For now, it still checks over localStorage )
+`backend connection`: Fully integrate the auth process.
 
 `add search and filter functionality`
+
+`add redux overall`
