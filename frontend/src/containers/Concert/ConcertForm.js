@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import CheckBoxGenre from './CheckBoxGenre';
 import Button from 'react-bootstrap/Button';
@@ -23,6 +23,7 @@ const ConcertForm = () => {
         name: "items"
     });
 
+    let history = useHistory();
     //state to store the created concert link
     const [concertLink, setConcertLink] = useState("")
 
@@ -30,7 +31,6 @@ const ConcertForm = () => {
     const onButtonClick = () => {
         getConcertLink()
     }
-
 
     const [concert, setConcert] = useState({
         Title: '',
@@ -151,7 +151,7 @@ const ConcertForm = () => {
         console.log(refactoredObj);
 
         postData(refactoredObj)
-
+        history.push("/");
     }
 
 
