@@ -2,7 +2,7 @@
 <h3 align="center">Hi 👋, We are Aplaudo Team</h3>
 <p align="center">Demanded by passionate artists, made by professional-souled amateurs...</p>
 
-<div align="center">[![GitHub issues](https://img.shields.io/github/issues/Rashaali84/Aplaudo)](https://github.com/Rashaali84/Aplaudo/issues) [![GitHub forks](https://img.shields.io/github/forks/Rashaali84/Aplaudo)](https://github.com/Rashaali84/Aplaudo/network) [![GitHub stars](https://img.shields.io/github/stars/Rashaali84/Aplaudo)](https://github.com/Rashaali84/Aplaudo/stargazers)[![GitHub license](https://img.shields.io/github/license/Rashaali84/AplaudoApi)](https://github.com/Rashaali84/AplaudoApi)</div>
+[![GitHub issues](https://img.shields.io/github/issues/Rashaali84/Aplaudo)](https://github.com/Rashaali84/Aplaudo/issues) [![GitHub forks](https://img.shields.io/github/forks/Rashaali84/Aplaudo)](https://github.com/Rashaali84/Aplaudo/network) [![GitHub stars](https://img.shields.io/github/stars/Rashaali84/Aplaudo)](https://github.com/Rashaali84/Aplaudo/stargazers)[![GitHub license](https://img.shields.io/github/license/Rashaali84/AplaudoApi)](https://github.com/Rashaali84/AplaudoApi)
 
 ## Table of contents
 
