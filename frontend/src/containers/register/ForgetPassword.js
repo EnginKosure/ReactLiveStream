@@ -39,7 +39,7 @@ const ForgetPassword = () => {
 
   const putData = async (x) => {
     console.log(x);
-    const res = await instance.put("/api/artists/changepassword", x);
+    const res = await instance.put("https://aplaudoapi.azurewebsites.net/api/artists/changepassword", x);
     console.log(res.data.json);
     console.log(res.data);
     res.then(

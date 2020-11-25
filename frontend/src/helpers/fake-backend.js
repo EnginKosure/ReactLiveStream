@@ -17,7 +17,7 @@ export function configureFakeBackend() {
                         return authenticate();
                     case url.endsWith('/users/signup') && method === 'POST':
                         return register();
-                    case url.endsWith('/api/artists') && method === 'POST':
+                    case url.endsWith('/signin') && method === 'POST':
                         return register();
                     case url.endsWith('/users') && method === 'GET':
                         return getUsers();
