@@ -80,5 +80,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### TODOs:
 
 `styling`: Remove the duplicate styles and apply the styled-components overall.
+
 `backend connection`: Fully integrate the auth process. (For now, it still checks over localStorage )
+
 `add search and filter functionality`
