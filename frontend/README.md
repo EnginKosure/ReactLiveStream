@@ -93,6 +93,14 @@ redux, react-redux, redux-logger, redux-thunk
 
 - `add dark mode`
 
+## Contact & Contributors
+
+- 📫 How to reach us [saittosun2@gmail.com](saittosun2@gmail.com)
+
+- 📫 How to reach us [enginkosure@gmail.com](enginkosure@gmail.com)
+
+- 📫 How to reach us [rashaali84@gmail.com](rashaali84@gmail.com)
+
 ## Generic CRA Documentation - Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
