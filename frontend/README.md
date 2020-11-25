@@ -27,12 +27,12 @@ It is designed to be a platform dedicated for artists to have an account and cre
 
 ## Used Technologies and Libraries:
 
-Create-React-App
-axios, http-proxy-middleware
-bootstrap, react-bootstrap, node-sass, styled-components
-react-hook-form, react-bootstrap-country-select, react-elastic-carousel
-react-multi-select-component
-redux, react-redux, redux-logger, redux-thunk
+- Create-React-App
+- axios, http-proxy-middleware
+- bootstrap, react-bootstrap, node-sass, styled-components
+- react-hook-form, react-bootstrap-country-select, react-elastic-carousel
+- react-multi-select-component
+- redux, react-redux, redux-logger, redux-thunk
 
 ## Structure of the Project
 
@@ -83,6 +83,12 @@ redux, react-redux, redux-logger, redux-thunk
 
 ## Get Started
 
+## Demo of the Project
+
+<img src="./frontend/src/assets/aplaudo.gif" alt="My Project GIF" width="500" height="600">
+
+- [Link to project](https://aplaudo.herokuapp.com/signin)
+
 ## TODOs:
 
 - `styling`: Remove the duplicate styles and apply the styled-components overall.
@@ -97,11 +103,15 @@ redux, react-redux, redux-logger, redux-thunk
 
 ## Contact & Contributors
 
-- 📫 How to reach us [saittosun2@gmail.com](saittosun2@gmail.com)
+- [Sait Tosun](https://github.com/saittosun)
 
-- 📫 How to reach us [enginkosure@gmail.com](enginkosure@gmail.com)
+- [Engin Kosure](https://github.com/EnginKosure)
 
-- 📫 How to reach us [rashaali84@gmail.com](rashaali84@gmail.com)
+- [Rasha Ali](https://github.com/Rashaali84)
+
+- [Rahal Semu](https://github.com/Rahela-HYF)
+
+- [Wouter Wouters](https://github.com/WouterWouters)
 
 ## Generic CRA Documentation - Getting Started with Create React App
 
