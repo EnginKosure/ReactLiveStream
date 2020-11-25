@@ -35,6 +35,15 @@ redux, react-redux, redux-logger, redux-thunk
 
 ## Structure of the Project
 
+|backend
+|-public
+|--script.js
+|-views
+|--room.ejs
+|-.gitignore
+|-package.json
+|-server.js
+|-TODO.md
 |frontend
 |-public
 |-src
@@ -59,6 +68,15 @@ redux, react-redux, redux-logger, redux-thunk
 |--helpers
 |--reducers
 |--services
+|--App.js
+|--App.scss
+|--App.test.js
+|--index.js
+|--setupProxy.js
+|--setupTests.js
+|-.gitignore
+|-package.json
+|-README.md
 
 ## TODOs:
 

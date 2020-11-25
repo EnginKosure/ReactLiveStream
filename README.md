@@ -15,10 +15,10 @@ Music performers + Music Lovers
 
 #### Links to other repositories of the project:
 
-[Backend-API repository](https://github.com/Rashaali84/AplaudoApi)
+- [Backend-API repository](https://github.com/Rashaali84/AplaudoApi)
 
-[Main repository that includes create-react-app and video-broadcasting repo](https://github.com/Rashaali84/Aplaudo)
+- [Main repository that includes create-react-app and video-broadcasting repo](https://github.com/Rashaali84/Aplaudo)
 
-[Credits for RTCMultiConnection and broadcasting](https://github.com/muaz-khan/RTCMultiConnection/blob/master/demos/video-broadcasting.html)
+- [Credits for RTCMultiConnection and broadcasting](https://github.com/muaz-khan/RTCMultiConnection/blob/master/demos/video-broadcasting.html)
 
-[Please check the README file in frontend folder for more technical info](frontend/README.md)
+- [Please check the README file in frontend folder for more technical info](frontend/README.md)
