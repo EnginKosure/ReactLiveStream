@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+# Aplaudo Project - HYF Bootcamp
+
+`Demanded by passionate artists, made by professional-souled amateurs...`
+
+It is designed to be a platform dedicated for artists to have an account and create/arrange concert streaming.
+
+- Artist can create profile, add/schedule events
+- Live video environment with 1-to-many connection
+  (owner has camera and microphone access, audience doesn't)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -86,3 +96,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 `add search and filter functionality`
 
 `add redux overall`
+
+`add dark mode`
