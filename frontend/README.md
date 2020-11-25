@@ -1,5 +1,4 @@
-# Aplaudo Project - HYF Bootcamp
-
+<h1 align="center">Aplaudo Project - HYF Bootcamp</h1>
 <h3 align="center">Hi 👋, We are Aplaudo Team</h3>
 `Demanded by passionate artists, made by professional-souled amateurs...`
 
