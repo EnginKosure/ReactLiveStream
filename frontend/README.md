@@ -85,7 +85,7 @@ It is designed to be a platform dedicated for artists to have an account and cre
 
 ## Demo of the Project
 
-<img src="./frontend/src/assets/aplaudo.gif" alt="My Project GIF" width="500" height="600">
+<img src="./src/assets/aplaudo.gif" alt="My Project GIF" width="500" height="600">
 
 - [Link to project](https://aplaudo.herokuapp.com/signin)
 
