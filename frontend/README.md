@@ -19,7 +19,7 @@
 
 ## General Information
 
-It is designed to be a platform dedicated for artists to have an account and create/arrange concert streaming.
+This project is designed to be a platform dedicated for artists to have an account and create/arrange concert streaming.
 
 - Artist can create profile, add/schedule events
 - Live video environment with 1-to-many connection
