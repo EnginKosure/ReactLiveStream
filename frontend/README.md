@@ -1,6 +1,29 @@
-# Getting Started with Create React App
+# Aplaudo Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was generated with [Create React App](https://github.com/facebook/create-react-app) version 17.0.1
+
+- Users (if audience) without sign up can access concerts zone and watch the concerts,
+- Users can check the concerts of the week when they click the concert they can see the concert details,
+
+## Overall Architecture
+
+ - In frontend part of the project we used especially React and Bootstrap as a css framework.
+ - To apply the connection with backend we used as a gateway proxy middelware.
+
+## Configure production environment
+
+- Profile,
+- Livestream/event,
+- Search,
+- User Interface(UI),
+- Calender,
+- Monetization,
+- Security,
+- Interaction
+
+## Sturcture of the project
+
+- 
 
 ## Available Scripts
 
@@ -68,3 +91,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### TODOs:
+
+`styling`: Improve scss files according to scss module.
+
+`add social media icons to sign up easily`
+
+`add error boundary file to catch the predictable errors`
+
+`add animation to the carousel`
