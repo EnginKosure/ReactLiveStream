@@ -111,6 +111,8 @@ It is designed to be a platform dedicated for artists to have an account and cre
 
 - [Rahal Semu](https://github.com/Rahela-HYF)
 
+- [Yavuz Ugurtas](https://github.com/yavuzugurtas)
+
 - [Wouter Wouters](https://github.com/WouterWouters)
 
 ## Generic CRA Documentation - Getting Started with Create React App
