@@ -10,11 +10,11 @@
 - Used Technologies and Libraries
 - Overall Architecture
 - Structure of the Project
-- Get Started
+- Getting Started
 - Demo of the Project
 - TODOs
 - Links to Other Repositories
-- Contact
+- Contact & Contributors
 - Generic CRA Documentation
 
 ## General Information
@@ -28,11 +28,11 @@ It is designed to be a platform dedicated for artists to have an account and cre
 ## Used Technologies and Libraries:
 
 - Create-React-App
-- axios, http-proxy-middleware
-- bootstrap, react-bootstrap, node-sass, styled-components
-- react-hook-form, react-bootstrap-country-select, react-elastic-carousel
-- react-multi-select-component
-- redux, react-redux, redux-logger, redux-thunk
+- Axios, http-proxy-middleware
+- Bootstrap, react-bootstrap, node-sass, styled-components
+- React-hook-form, react-bootstrap-country-select, react-elastic-carousel
+- React-multi-select-component
+- Redux, react-redux, redux-logger, redux-thunk
 
 ## Structure of the Project
 
@@ -81,7 +81,7 @@ It is designed to be a platform dedicated for artists to have an account and cre
 |-README.md
 ```
 
-## Get Started
+## Getting Started
 
 Run the project:
 
