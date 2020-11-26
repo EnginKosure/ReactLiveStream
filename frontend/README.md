@@ -6,16 +6,15 @@
 
 ## Table of contents
 
-- General Information
-- Used Technologies and Libraries
-- Overall Architecture
-- Structure of the Project
-- Getting Started
-- Demo of the Project
-- TODOs
-- Links to Other Repositories
-- Contact & Contributors
-- Generic CRA Documentation
+- [General Information](#General Information)
+- [Used Technologies and Libraries](#Used Technologies and Libraries)
+- [Structure of the Project](#Structure of the Project)
+- [Getting Started](#Getting Started)
+- [Demo of the Project](#Demo of the Project)
+- [TODOs](#TODOs)
+- [Links to Other Repositories](#Links to other repositories of the project)
+- [Contact & Contributors](#Contact & Contributors)
+- [Generic CRA Documentation](#Generic CRA Documentation)
 
 ## General Information
 
@@ -25,7 +24,7 @@ This project is designed to be a platform dedicated for artists to have an accou
 - Live video environment with 1-to-many connection
   (owner has camera and microphone access, audience doesn't)
 
-## Used Technologies and Libraries:
+## Used Technologies and Libraries
 
 - Create-React-App
 - Axios, http-proxy-middleware
@@ -35,6 +34,8 @@ This project is designed to be a platform dedicated for artists to have an accou
 - Redux, react-redux, redux-logger, redux-thunk
 
 ## Structure of the Project
+
+- [Please check the main README file in backend folder for further info over system architecture](https://github.com/Rashaali84/AplaudoApi)
 
 ```
 |backend
