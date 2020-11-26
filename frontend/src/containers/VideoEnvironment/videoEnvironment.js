@@ -56,14 +56,12 @@ const VideoEnvironment = () => {
 
   return (
     <div className="container">
+      <h2 className="text-center mt-5 text-uppercase">Concerts Lists</h2>
       <div className="row">
         <div className="col-8">
-          <div className="embed-responsive embed-responsive-16by9">
-            <ConcertVideo />
-          </div>
+          <ConcertVideo />
         </div>
         <div className="col-4">
-          <h2 className="text-center">Concerts Lists</h2>
           <ConcertVideoList />
         </div>
       </div>

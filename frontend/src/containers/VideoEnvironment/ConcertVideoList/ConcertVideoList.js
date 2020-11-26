@@ -23,21 +23,26 @@ const ConcertVideoList = () => {
   const url = 'https://aplaudoapi.azurewebsites.net/api/concerts?emailaddress=par@gmail.com'
   const { data } = await axios.get(url);
   console.log(data);
+  setConcerts(data);
  }
  useEffect(() => {
   getData();
  }, [])
 
  return (
-  <ul className="list-group ">
+  <div class="list-group">
    {concerts.map((concert) => (
-    <a key={concert.ConcerId} {...concert.ConcertLink}></a>
+    <a href="#" class="list-group-item list-group-item-action">
+     <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{concert.About}</h5>
+      <small>{concert.ConcerId} days ago</small>
+     </div>
+     <p class="mb-1">{concert.Style}</p>
+     <small>{concert.EmailAddress}</small>
+    </a>
    ))}
-  </ul>
+  </div>
  )
 }
 
 export default ConcertVideoList;
-// IMG_API + poster_path
-// const IMG_API = "https://image.tmdb.org/t/p/w1280";
-// /9HT9982bzgN5on1sLRmc1GMn6ZC.jpg
