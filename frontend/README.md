@@ -6,15 +6,17 @@
 
 ## Table of contents
 
-- [General Information](#GeneralInformation)
-- [Used Technologies and Libraries](#UsedTechnologiesandLibraries)
-- [Structure of the Project](#StructureoftheProject)
-- [Getting Started](#GettingStarted)
-- [Demo of the Project](#DemooftheProject)
-- [TODOs](#TODOs)
-- [Links to Other Repositories](#Linkstootherrepositoriesoftheproject)
-- [Contact & Contributors](#Contact&Contributors)
-- [Generic CRA Documentation](#GenericCRADocumentation)
+1. [ General Information. ](#desc)
+2. [ Used Technologies and Libraries. ](#used)
+3. [ Structure of the Project. ](#structure)
+4. [ Getting Started. ](#GettingStarted)
+5. [ Demo of the Project. ](#DemooftheProject)
+6. [ TODOs. ](#TODOs)
+7. [ Links to Other Repositories. ](#Linkstootherrepositoriesoftheproject)
+8. [Contact & Contributors. ](#Contact&Contributors)
+9. [ Generic CRA Documentation. ](#GenericCRADocumentation)
+
+<a name="desc"></a>
 
 ## General Information
 
@@ -24,6 +26,8 @@ This project is designed to be a platform dedicated for artists to have an accou
 - Live video environment with 1-to-many connection
   (owner has camera and microphone access, audience doesn't)
 
+<a name="used"></a>
+
 ## Used Technologies and Libraries
 
 - Create-React-App
@@ -32,6 +36,8 @@ This project is designed to be a platform dedicated for artists to have an accou
 - React-hook-form, react-bootstrap-country-select, react-elastic-carousel
 - React-multi-select-component
 - Redux, react-redux, redux-logger, redux-thunk
+
+<a name="structure"></a>
 
 ## Structure of the Project
 
@@ -82,6 +88,8 @@ This project is designed to be a platform dedicated for artists to have an accou
 |-README.md
 ```
 
+<a name="GettingStarted"></a>
+
 ## Getting Started
 
 Run the project:
@@ -96,11 +104,15 @@ Run the project:
   - `npm devStart`
     You will be able to access the video streaming window from http://localhost:3007
 
+<a name="DemooftheProject"></a>
+
 ## Demo of the Project
 
 <img src="./src/assets/aplaudo.gif" alt="My Project GIF" width="900" height="600">
 
 - [Link to project](https://aplaudo.herokuapp.com/signin)
+
+<a name="TODOs"></a>
 
 ## TODOs:
 
@@ -116,6 +128,8 @@ Run the project:
 
 - `scale up streaming` [Further info](https://github.com/Rashaali84/Aplaudo/blob/main/backend/TODO.md)
 
+<a name="TODOs"></a>
+
 ## Links to other repositories of the project:
 
 - [Backend-API repository](https://github.com/Rashaali84/AplaudoApi)
@@ -125,6 +139,8 @@ Run the project:
 - [Credits for RTCMultiConnection and broadcasting](https://github.com/muaz-khan/RTCMultiConnection/blob/master/demos/video-broadcasting.html)
 
 - [Please check the main README file in backend folder for further info over system architecture](https://github.com/Rashaali84/AplaudoApi)
+
+<a name="Contact&Contributors"></a>
 
 ## Contact & Contributors
 
@@ -139,6 +155,8 @@ Run the project:
 - [Yavuz Ugurtas](https://github.com/yavuzugurtas)
 
 - [Wouter Wouters](https://github.com/WouterWouters)
+
+<a name="GenericCRADocumentation"></a>
 
 ## Generic CRA Documentation - Getting Started with Create React App
 
