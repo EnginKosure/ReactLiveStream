@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, Link } from "react-router-dom";
 import Search from "../../components/Search";
 import VideoEnvironment from '../VideoEnvironment/videoEnvironment';
 
@@ -12,12 +12,13 @@ const Navbar = () => {
   return (
     <div className="Navbar">
       <nav className="navbar navbar-expand-lg navbar-light bg-custom nav-menu">
-        <a className="navbar-brand">
+        <Link to="/" className="navbar-brand">
           <img
             src="aplaudoLogoSimpleBlack900.png"
             className="img-fluid logo-image"
+
           />
-        </a>
+        </Link >
         <button
           className="navbar-toggler"
           type="button"
@@ -55,7 +56,7 @@ const Navbar = () => {
               </li>
               <li className="nav-item" data-toggle="m" data-target=".in">
                 <NavLink to="/profile" className="nav-link menu-item">
-                  USERNAME
+                  {/* USERNAME */}
                 </NavLink>
               </li>
             </ul>}
