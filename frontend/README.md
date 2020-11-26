@@ -89,6 +89,12 @@ Run the project:
 - `yarn start` or `npm start`
   You will be able to access the website from http://localhost:3000
 
+  also in backend folder (cd .. && cd backend)
+
+  - `npm install`
+  - `npm devStart`
+    You will be able to access the video streaming window from http://localhost:3007
+
 ## Demo of the Project
 
 <img src="./src/assets/aplaudo.gif" alt="My Project GIF" width="900" height="600">
@@ -97,9 +103,9 @@ Run the project:
 
 ## TODOs:
 
-- `styling`: Remove the duplicate styles and apply the styled-components overall.
+- `styling`: Remove the duplicate styles and apply the styled-components overall. Due to educational reasons, every sort of styling has been applied and tested.
 
-- `backend connection`: Fully integrate the auth process.
+- `backend connection`: Fully integrate the auth process. Due to late and untested integration with backend APIs, for now, there are two different logic inside. One working with redux and making authentication via localStorage and simulating the api calls according the routes; the other one making calls directly to "https://aplaudoapi.azurewebsites.net/api". After stabile and tested connection with backend, fakebackend.js file can be updated accordingly and api calls inside the components can be moved outside again, this way, redux structure can be more robust without memory leaks caused by unmounted components.
 
 - `add search and filter functionality`: After having enough concert/artist in database, those features can be applied and tested easier.
 
