@@ -1,4 +1,167 @@
-# Aplaudo Project
+
+<h1 align="center">Aplaudo Project - HYF Bootcamp</h1>
+<h3 align="center">Hi 👋, We are Aplaudo Team</h3>
+<p align="center">Demanded by passionate artists, made by professional-souled amateurs...</p>
+
+[![GitHub issues](https://img.shields.io/github/issues/Rashaali84/Aplaudo)](https://github.com/Rashaali84/Aplaudo/issues) [![GitHub forks](https://img.shields.io/github/forks/Rashaali84/Aplaudo)](https://github.com/Rashaali84/Aplaudo/network) [![GitHub stars](https://img.shields.io/github/stars/Rashaali84/Aplaudo)](https://github.com/Rashaali84/Aplaudo/stargazers)[![GitHub license](https://img.shields.io/github/license/Rashaali84/AplaudoApi)](https://github.com/Rashaali84/AplaudoApi)
+
+## Table of contents
+
+1. [ General Information. ](#desc)
+2. [ Used Technologies and Libraries. ](#used)
+3. [ Structure of the Project. ](#structure)
+4. [ Getting Started. ](#GettingStarted)
+5. [ Demo of the Project. ](#DemooftheProject)
+6. [ TODOs. ](#TODOs)
+7. [ Links to Other Repositories. ](#Linkstootherrepositoriesoftheproject)
+8. [Contact & Contributors. ](#Contact&Contributors)
+9. [ Generic CRA Documentation. ](#GenericCRADocumentation)
+
+<a name="desc"></a>
+
+## General Information
+
+This project is designed to be a platform dedicated for artists to have an account and create/arrange concert streaming.
+
+- Artist can create profile, add/schedule events
+- Live video environment with 1-to-many connection
+  (owner has camera and microphone access, audience doesn't)
+
+<a name="used"></a>
+
+## Used Technologies and Libraries
+
+- Create-React-App
+- Axios, http-proxy-middleware
+- Bootstrap, react-bootstrap, node-sass, styled-components
+- React-hook-form, react-bootstrap-country-select, react-elastic-carousel
+- React-multi-select-component
+- Redux, react-redux, redux-logger, redux-thunk
+
+<a name="structure"></a>
+
+## Structure of the Project
+
+- [Please check the main README file in backend folder for further info over system architecture](https://github.com/Rashaali84/AplaudoApi)
+
+```
+|backend
+|-public
+|--script.js
+|-views
+|--room.ejs
+|-.gitignore
+|-package.json
+|-server.js
+|-TODO.md
+|frontend
+|-public
+|-src
+|--actions
+|--assets
+|--components
+|--constants
+|--containers
+|----About
+|----Carousel
+|------ConcertInfo
+|------Item
+|----Concert
+|----Footer
+|----Navbar
+|----VideoEnvironment
+|------ConcertVideo
+|------ConcertVideoList
+|----profile
+|----register
+|--context
+|--helpers
+|--reducers
+|--services
+|--App.js
+|--App.scss
+|--App.test.js
+|--index.js
+|--setupProxy.js
+|--setupTests.js
+|-.gitignore
+|-package.json
+|-README.md
+```
+
+<a name="GettingStarted"></a>
+
+## Getting Started
+
+Run the project:
+
+- `yarn` or `npm install`
+- `yarn start` or `npm start`
+  You will be able to access the website from http://localhost:3000
+
+  also in backend folder (cd .. && cd backend)
+
+  - `npm install`
+  - `npm devStart`
+    You will be able to access the video streaming window from http://localhost:3007
+
+<a name="DemooftheProject"></a>
+
+## Demo of the Project
+
+<img src="./src/assets/aplaudo.gif" alt="My Project GIF" width="900" height="600">
+
+- [Link to project](https://aplaudo.herokuapp.com/signin)
+
+<a name="TODOs"></a>
+
+## TODOs:
+
+- `styling`: Remove the duplicate styles and apply the styled-components overall. Due to educational reasons, every sort of styling has been applied and tested.
+
+- `backend connection`: Fully integrate the auth process. Due to late and untested integration with backend APIs, for now, there are two different logic inside. One working with redux and making authentication via localStorage and simulating the api calls according the routes; the other one making calls directly to "https://aplaudoapi.azurewebsites.net/api". After stabile and tested connection with backend, fakebackend.js file can be updated accordingly and api calls inside the components can be moved outside again, this way, redux structure can be more robust without memory leaks caused by unmounted components.
+
+- `add search and filter functionality`: After having enough concert/artist in database, those features can be applied and tested easier.
+
+- `add redux overall`: Redux is applied for only user registration operations. Can be applied also to concert operations.
+
+- `add dark mode`
+
+- `add integration with other social accounts for register`
+
+- `scale up streaming` [Further info](https://github.com/Rashaali84/Aplaudo/blob/main/backend/TODO.md)
+
+<a name="Linkstootherrepositoriesoftheproject"></a>
+
+## Links to other repositories of the project:
+
+- [Backend-API repository](https://github.com/Rashaali84/AplaudoApi)
+
+- [Main repository that includes create-react-app and video-broadcasting repo](https://github.com/Rashaali84/Aplaudo)
+
+- [Credits for RTCMultiConnection and broadcasting](https://github.com/muaz-khan/RTCMultiConnection/blob/master/demos/video-broadcasting.html)
+
+- [Please check the main README file in backend folder for further info over system architecture](https://github.com/Rashaali84/AplaudoApi)
+
+<a name="Contact&Contributors"></a>
+
+## Contact & Contributors
+
+- [Sait Tosun](https://github.com/saittosun)
+
+- [Engin Kosure](https://github.com/EnginKosure)
+
+- [Rasha Ali](https://github.com/Rashaali84)
+
+- [Rahal Semu](https://github.com/Rahela-HYF)
+
+- [Yavuz Ugurtas](https://github.com/yavuzugurtas)
+
+- [Wouter Wouters](https://github.com/WouterWouters)
+
+<a name="GenericCRADocumentation"></a>
+
+## Generic CRA Documentation - Getting Started with Create React App
 
 This project was generated with [Create React App](https://github.com/facebook/create-react-app) version 17.0.1
 
@@ -92,12 +255,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-### TODOs:
-
-`styling`: Improve scss files according to scss module.
-
-`add social media icons to sign up easily`
-
-`add error boundary file to catch the predictable errors`
-
-`add animation to the carousel`
