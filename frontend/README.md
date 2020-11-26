@@ -108,6 +108,8 @@ Run the project:
 
 ## Demo of the Project
 
+[LINK TO DEPLOYED PROJECT](https://aplaudo.herokuapp.com/signin)
+
 <img src="./src/assets/aplaudo.gif" alt="My Project GIF" width="900" height="600">
 
 - [Link to project](https://aplaudo.herokuapp.com/signin)
