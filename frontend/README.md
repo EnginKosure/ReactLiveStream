@@ -126,9 +126,11 @@ Run the project:
 
 - `add dark mode`
 
+- `add integration with other social accounts for register`
+
 - `scale up streaming` [Further info](https://github.com/Rashaali84/Aplaudo/blob/main/backend/TODO.md)
 
-<a name="TODOs"></a>
+<a name="Linkstootherrepositoriesoftheproject"></a>
 
 ## Links to other repositories of the project:
 
