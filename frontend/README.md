@@ -6,15 +6,15 @@
 
 ## Table of contents
 
-- [General Information](#General Information)
-- [Used Technologies and Libraries](#Used Technologies and Libraries)
-- [Structure of the Project](#Structure of the Project)
-- [Getting Started](#Getting Started)
-- [Demo of the Project](#Demo of the Project)
+- [General Information](#GeneralInformation)
+- [Used Technologies and Libraries](#UsedTechnologiesandLibraries)
+- [Structure of the Project](#StructureoftheProject)
+- [Getting Started](#GettingStarted)
+- [Demo of the Project](#DemooftheProject)
 - [TODOs](#TODOs)
-- [Links to Other Repositories](#Links to other repositories of the project)
-- [Contact & Contributors](#Contact & Contributors)
-- [Generic CRA Documentation](#Generic CRA Documentation)
+- [Links to Other Repositories](#Linkstootherrepositoriesoftheproject)
+- [Contact & Contributors](#Contact&Contributors)
+- [Generic CRA Documentation](#GenericCRADocumentation)
 
 ## General Information
 
