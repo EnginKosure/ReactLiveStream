@@ -16,33 +16,33 @@ import axios from "axios";
 // };
 
 const ConcertVideoList = () => {
- const [concerts, setConcerts] = useState([]);
- const getData = async () => {
-  // const { data } = await axios.get("/api/artists");
-  // const user = useSelector(state => state?.users?.items[state.users.items.length - 1]);
-  const url = 'https://aplaudoapi.azurewebsites.net/api/concerts?emailaddress=par@gmail.com'
-  const { data } = await axios.get(url);
-  console.log(data);
-  setConcerts(data);
- }
- useEffect(() => {
-  getData();
- }, [])
+    const [concerts, setConcerts] = useState([]);
+    const getData = async () => {
+        // const { data } = await axios.get("/api/artists");
+        // const user = useSelector(state => state?.users?.items[state.users.items.length - 1]);
+        const url = 'https://aplaudoapi.azurewebsites.net/api/concerts?emailaddress=par@gmail.com'
+        const { data } = await axios.get(url);
+        console.log(data);
+        setConcerts(data);
+    }
+    useEffect(() => {
+        getData();
+    }, [])
 
- return (
-  <div class="list-group">
-   {concerts.map((concert) => (
-    <a href="#" class="list-group-item list-group-item-action">
-     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">{concert.About}</h5>
-      <small>{concert.ConcerId} days ago</small>
-     </div>
-     <p class="mb-1">{concert.Style}</p>
-     <small>{concert.EmailAddress}</small>
-    </a>
-   ))}
-  </div>
- )
+    return (
+        <div className="list-group">
+            {concerts.map((concert) => (
+                <a href="#" className="list-group-item list-group-item-action">
+                    <div className="d-flex w-100 justify-content-between">
+                        <h5 className="mb-1">{concert.About}</h5>
+                        <small>{concert.ConcerId} days ago</small>
+                    </div>
+                    <p className="mb-1">{concert.Style}</p>
+                    <small>{concert.EmailAddress}</small>
+                </a>
+            ))}
+        </div>
+    )
 }
 
 export default ConcertVideoList;

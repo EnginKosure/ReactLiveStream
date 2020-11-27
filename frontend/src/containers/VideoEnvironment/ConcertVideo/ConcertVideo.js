@@ -9,7 +9,7 @@ const ConcertVideo = () => {
   const baseImageUrl = "https://image.tmdb.org/t/p/w500";
 
   return (
-    <div class="embed-responsive embed-responsive-16by9">
+    <div className="embed-responsive embed-responsive-16by9">
       {/* <iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=t_mA7DwKKYA&ab_channel=AbelRoland" allowfullscreen></iframe> */}
       {/* <video id="video-preview" controls loop>
         <source src="http://localhost:3007/3bb2107c-e32d-4d80-9370-be98a82abffd" type="video/mp4" />
@@ -17,7 +17,7 @@ const ConcertVideo = () => {
       {/* <video id="video-preview" controls loop>
         <source src="https://www.youtube.com/watch?v=t_mA7DwKKYA&ab_channel=AbelRoland" type="video/mp4" />
       </video> */}
-      <iframe width="420" height="315"
+      <iframe title="youtube" width="420" height="315"
         src="https://www.youtube.com/embed/t_mA7DwKKYA">
       </iframe>
     </div>

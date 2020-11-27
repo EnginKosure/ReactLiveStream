@@ -13,7 +13,7 @@ const Navbar = () => {
     <div className="Navbar">
       <nav className="navbar navbar-expand-lg navbar-light bg-custom nav-menu">
         <Link to="/" className="navbar-brand">
-          <img
+          <img alt="logo"
             src="aplaudoLogoSimpleBlack900.png"
             className="img-fluid logo-image"
 
