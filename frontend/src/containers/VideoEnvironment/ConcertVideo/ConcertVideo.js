@@ -10,7 +10,7 @@ const ConcertVideo = () => {
 
   return (
     <div className="embed-responsive embed-responsive-16by9">
-      {/* <iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=t_mA7DwKKYA&ab_channel=AbelRoland" allowfullscreen></iframe> */}
+      {/* <iframe className="embed-responsive-item" src="https://www.youtube.com/watch?v=t_mA7DwKKYA&ab_channel=AbelRoland" allowfullscreen></iframe> */}
       {/* <video id="video-preview" controls loop>
         <source src="http://localhost:3007/3bb2107c-e32d-4d80-9370-be98a82abffd" type="video/mp4" />
       </video> */}

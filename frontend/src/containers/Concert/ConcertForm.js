@@ -4,12 +4,10 @@ import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import CheckBoxGenre from './CheckBoxGenre';
 import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
 import { Grid, Row, Col, Form, InputGroup } from 'react-bootstrap';
 import SelectInstrument from './SelectInstrument';
 import { useForm, useFieldArray, useWatch, Controller } from 'react-hook-form';
 
-// import { concertActions } from '../../actions';
 import "./concert.scss";
 import SelectCountry from './SelectCountry';
 import SelectStyle from './SelectStyle';
@@ -107,14 +105,6 @@ const ConcertForm = () => {
     }
 
 
-    //     {data: "b6f54866-a6b8-49e1-a3ab-b573c62f1c48", status: 200, statusText: "OK", headers: {…}, config: {…}, …}
-    // config: {url: "http://localhost:3007/new-room", method: "get", headers: {…}, transformRequest: Array(1), transformResponse: Array(1), …}
-    // data: "b6f54866-a6b8-49e1-a3ab-b573c62f1c48"
-    // headers: {connection: "keep-alive", content-length: "36", content-type: "text/html; charset=utf-8, application/json; charset=utf-8", date: "Tue, 24 Nov 2020 09:50:38 GMT", etag: "W/"24-enoeAp1/TArP+G2I/8yMtyDhVJY"", …}
-    // request: XMLHttpRequest {readyState: 4, timeout: 0, withCredentials: false, upload: XMLHttpRequestUpload, onreadystatechange: ƒ, …}
-    // status: 200
-    // statusText: "OK"
-    // __proto__: Object
     const onSubmit = data => {
 
         console.log(data);
@@ -377,7 +367,6 @@ const ConcertForm = () => {
                                 );
                             })}
 
-                            {/* <input type="submit" /> */}
                             <button
                                 className="btn btn-sm  btn-custom-1"
                                 type="button" onClick={() => append({})}>

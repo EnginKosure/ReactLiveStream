@@ -7,12 +7,12 @@ import { userActions } from '../../actions';
 import "./register.scss";
 import SelectCountry from '../Concert/SelectCountry';
 import Form from 'react-bootstrap/Form';
-import { useForm, useFieldArray, useWatch, Controller } from 'react-hook-form';
+import { useForm, useFieldArray, Controller } from 'react-hook-form';
 import axios from 'axios';
 
 const UpdateProfile = ({ current }) => {
 
-    const { register, control, handleSubmit, setValue, reset } = useForm();
+    const { register, control, handleSubmit } = useForm();
     const { fields, append, remove } = useFieldArray({
         control,
         name: "items"
@@ -116,55 +116,8 @@ const UpdateProfile = ({ current }) => {
         }
         console.log(refactoredObj);
 
-        // const options = {
-        //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        //     mode: 'cors', // no-cors, cors, *same-origin
-        //     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        //     credentials: 'include', // include, *same-origin, omit, chosen include to allowed sending cookies
-        //     headers: {
-        //         'Content-Type': 'application/json;charset=UTF-8',
-        //         COOKIE: 'key=value; Path=/; Expires=Thu, 09 Jul 2020 07:20:21 GMT; HttpOnly',
-        //     },
-        //     body: JSON.stringify({ data }), // body data type must match "Content-Type" header in this case it is json
-        // };
-
-        // fetch("/api/artists", options)
-        //     .then(res => {
-        //         //return res.json!
-        //         return res.json();
-        //     })
-        //     .then(data => {
-        //         // do something with data
-        //         console.log('Success:', data);
-        //     })
-        //     .catch(error => {
-        //         console.error('Error:', error);
-        //     });
-
-
-
         postData(refactoredObj)
         history.push("/");
-
-
-        // https://aplaudoapi.azurewebsites.net/api/artists
-        // fetch('/api/artists', {
-
-
-        // fetch('https://aplaudoapi.azurewebsites.net/api/artists', {
-        //     method: 'POST',
-        //     body: JSON.stringify(data),
-        //     headers: {
-        //         "Content-type": "application/json;charset=UTF-8"
-        //     }
-        // })
-        //     .then((response) => response.text())
-        //     .then((result) => {
-        //         console.log('Success:', result);
-        //     })
-        //     .catch(error => {
-        //         console.error('Error:', error);
-        //     });
     }
 
     const [user, setUser] = useState({
@@ -181,21 +134,6 @@ const UpdateProfile = ({ current }) => {
         PhotoLink: '',
     });
 
-    /*
-    {
-        ArtistFirstName: "dwce",
-        ArtistLastName: "vsadv",
-        ArtistNickName: "vdsv",
-        Bio: "sfsdfcsdcsdczdacvsdcxvdscxdc",
-        CountryName:{ alpha2: "dz",alpha3: "dza",flag: "🇩🇿",id: "dz",ioc: "alg",name: "Algeria"},
-        EmailAddress: "test@test",
-        InstrumentNames: [{label: "bass", value: "bass"}, label: "bassoon", value: "bassoon"}],
-        Password: "123"
-        PhotoLink: "C:\fakepath\Screenshot 2020-10-11 at 20.04.52.png",
-        SocialLinks: [{Link: "dsdsdsd"},{Link: "/kabel"}],
-        StyleNames: [{label: "African", value: "African"},{label: "Alternative", value: "Alternative"} ]
-    }
-    */
     const [submitted, setSubmitted] = useState(false);
     const registering = useSelector(state => state.registration.registering);
     // const dispatch = useDispatch();
@@ -217,20 +155,6 @@ const UpdateProfile = ({ current }) => {
         if (user.ArtistFirstName && user.ArtistLastName && user.EmailAddress) {
             console.log(user);
             // dispatch(userActions.register(user));
-            // fetch('/api/artists', {
-            //     method: 'POST',
-            //     body: JSON.stringify(user),
-            //     headers: {
-            //         "Content-type": "application/json;charset=UTF-8"
-            //     }
-            // })
-            //     .then((response) => response.text())
-            //     .then((result) => {
-            //         console.log('Success:', result);
-            //     })
-            //     .catch(error => {
-            //         console.error('Error:', error);
-            //     });
         }
     }
 
