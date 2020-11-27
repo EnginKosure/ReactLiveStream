@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import UserCard from '../../components/UserCard';
 import DashboardRight from '../../components/DashboardRight';
-
-
 import { userActions } from '../../actions';
 
 function RegisterHomePage() {

@@ -22,13 +22,8 @@ const ConcertForm = () => {
     });
 
     let history = useHistory();
-    //state to store the created concert link
-    const [concertLink, setConcertLink] = useState("")
 
-    //click event to create the concert link
-    const onButtonClick = () => {
-        getConcertLink()
-    }
+
 
     const [concert, setConcert] = useState({
         Title: '',
@@ -45,21 +40,7 @@ const ConcertForm = () => {
         InstrumentNames: [],
         Instrumentation: '',
     });
-    /*
-    {
-    About: "It is a non-commercial charity concertwer",
-    ArtistEmails: [{EmailAddress: "test@test.com"},{EmailAddress: "csdvds@gmail.com"}],
-    ConcertLink: "ascsdcssdadzxcvsdc",
-    CountryName: { id: "as", name: "American Samoa", flag: "🇦🇸", alpha2: "as", alpha3: "asm", … },
-    Date: "2020-11-29",
-    InstrumentNames: [{ label: "bassoon", value: "bassoon" },{ label: "banjo", value: "banjo" },
-    Instrumentation: "Chamber Music",
-    PictureLink: "C:\fakepath\Screenshot 2020-10-09 at 11.56.52.png",
-    ProgrammaLink: "C:\fakepath\Screenshot 2020-06-06 at 20.42.47.png",
-    StyleNames: [{ label: "African", value: "African" },{ label: "Alternative", value: "Alternative" }],
-    TeaserLink: "Teaser link https://fhdcvsdfjnskdc.com",
-    Title: "title of the concertwre",
-}*/
+
     //test object to be sure of backend connection
     const testObj = {
         ConcertId: 14,
@@ -95,6 +76,9 @@ const ConcertForm = () => {
         );
     }
 
+    //state to store the created concert link
+    const [concertLink, setConcertLink] = useState("")
+    //function to get the link
     const getConcertLink = async () => {
         const res = await axios.get("http://localhost:3007/new-room")
         console.log(res);
@@ -104,6 +88,10 @@ const ConcertForm = () => {
         setConcertLink(concertURL + concertUUID)
     }
 
+    //click event to create the concert link
+    const onButtonClick = () => {
+        getConcertLink()
+    }
 
     const onSubmit = data => {
 

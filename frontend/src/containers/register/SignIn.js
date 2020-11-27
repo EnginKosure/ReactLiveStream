@@ -13,8 +13,6 @@ import About from '../About/About';
 
 
 const Register = () => {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
   const [inputs, setInputs] = useState({
     EmailAddress: '',
     Password: ''
