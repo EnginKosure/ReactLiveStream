@@ -2,10 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useLocation } from "react-router-dom";
 import "./ConcertInfo.scss";
-// import Navbar from "../../Navbar/Navbar";
 
 const FEATURED_API = "/api/instruments";
-
 
 const ConcertInfo = () => {
   const location = useLocation();

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import "./Item.scss";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -21,7 +21,6 @@ const Item = ({ title, vote_average, poster_path, overview, id }) => {
   const history = useHistory();
   return (
     <StyledDiv onClick={() => history.push(`/detail/${id}`)}>
-      {/* <Link to="/concertInfo"> */}
       <img
         src={
           poster_path
@@ -32,7 +31,6 @@ const Item = ({ title, vote_average, poster_path, overview, id }) => {
         width="450"
         height="350"
       />
-      {/* </Link> */}
     </StyledDiv>
   );
 };
