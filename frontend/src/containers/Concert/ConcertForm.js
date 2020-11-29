@@ -12,7 +12,6 @@ import "./concert.scss";
 import SelectCountry from './SelectCountry';
 import SelectStyle from './SelectStyle';
 
-
 const ConcertForm = () => {
 
     const { register, control, handleSubmit } = useForm();
@@ -267,8 +266,6 @@ const ConcertForm = () => {
                                     <Form.File
                                         type="file"
                                         className={"form-control email text-fields"}
-                                        // value={concert.PictureLink}
-                                        // onChange={handleChange}
                                         value={value}
                                         onChange={onChange}
                                     />
@@ -288,9 +285,6 @@ const ConcertForm = () => {
                                         className={"form-control email text-fields"}
                                         value={value}
                                         onChange={onChange}
-                                    // value={concert.ProgrammaLink}
-                                    // onChange={handleChange}
-                                    // placeholder={"Programma Link"}
                                     />
                                 </Form.Group>
                             )}
@@ -326,9 +320,7 @@ const ConcertForm = () => {
                                 type="text"
                                 name="TeaserLink"
                                 className={"form-control email text-fields"}
-                                // value={concert.TeaserLink}
                                 placeholder={"Teaser link"}
-                                // onChange={handleChange}
                                 ref={register}
                             />
                         </Form.Group>
@@ -369,9 +361,7 @@ const ConcertForm = () => {
                                 type="text"
                                 name="ConcertLink"
                                 className={"form-control email text-fields" + (submitted && !concert.ConcertLink ? ' is-invalid' : '')}
-                                // value={concert.ConcertLink}
                                 placeholder={concertLink || "Concert link"}
-                                // onChange={handleChange}
                                 ref={register}
                             />
                             {submitted && !concert.ConcertLink &&
