@@ -44,7 +44,6 @@ const Register = () => {
     );
   }
 
-
   function handleSubmit(e) {
     e.preventDefault();
 

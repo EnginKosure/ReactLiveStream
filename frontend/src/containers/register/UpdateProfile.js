@@ -245,9 +245,7 @@ const UpdateProfile = ({ current }) => {
                                 type="password"
                                 name="Password"
                                 className={"form-control password text-fields" + (submitted && !user.Password ? ' is-invalid' : '')}
-                                // value={user.Password}
                                 placeholder="Confirm password"
-                                // onChange={handleChange}
                                 ref={register}
                             />
                             {submitted && !user.Password &&
@@ -283,8 +281,6 @@ const UpdateProfile = ({ current }) => {
                                         ref={register}
                                         className={"email text-fields"}
                                         placeholder="Paste social media link"
-                                        // defaultValue={name}
-                                        // onChange={handleChange}
                                         style={{ width: "200px", margin: "5px 5px 5px 0", fontFamily: "FontAwesome, Montserrat" }}
                                     />
 
@@ -296,7 +292,6 @@ const UpdateProfile = ({ current }) => {
                             );
                         })}
 
-                        {/* <input type="submit" /> */}
                         <button
                             className="btn btn-sm  btn-custom-1"
                             type="button" onClick={() => append({})}
@@ -346,9 +341,7 @@ const UpdateProfile = ({ current }) => {
                             type="text"
                             name="Bio"
                             className={"form-control text-fields"}
-                            // value={user.Bio}
                             placeholder="Biography..."
-                            // onChange={handleChange}
                             ref={register}
                             cols={40}
                             rows={3}

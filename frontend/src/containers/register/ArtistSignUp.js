@@ -12,19 +12,6 @@ import Search from '../../components/Search';
 const ArtistSignUp = () => {
     const location = useLocation();
 
-    // {
-    //     "ArtistFirstName": "Bin",
-    //     "ArtistLastName": "Barly",
-    //     "ArtistNickName": "Barlo",
-    //     "EmailAddress": "rass@gmail.com",
-    //     "Password": "123dwccetere"
-    // }
-    // const [name, setName] = useState("");
-    // const [lastName, setLastName] = useState("");
-    // const [nickName, setNickName] = useState("");
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
-
     const [user, setUser] = useState({
         ArtistFirstName: '',
         ArtistLastName: '',
