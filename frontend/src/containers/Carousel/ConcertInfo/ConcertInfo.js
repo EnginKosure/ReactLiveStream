@@ -51,6 +51,7 @@ const ConcertInfo = () => {
           <div className="card-body">
             <h5 className="card-title">{concertDetails?.original_title}</h5>
             <img
+              alt="concert img"
               src={baseImageUrl + concertDetails?.poster_path}
               width="670"
               height="350"

@@ -20,11 +20,9 @@ const UserCard = ({ user }) => {
                     <li><Link to="/"><i className="fa fa-inbox" aria-hidden="true" />Usage</Link></li>
                     <li><Link to="/"><i className="fa fa-envelope" aria-hidden="true" />Contacts</Link></li>
                     <li><Link to="/"><i className="fa fa-question-circle" aria-hidden="true" />Help</Link></li>
-
                 </ul>
                 <p>Dark Mode On/Off </p>
             </div>
-
         </div>
     )
 }
