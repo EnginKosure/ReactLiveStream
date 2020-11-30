@@ -8,7 +8,6 @@ function DashboardRight({ user }) {
             <section>
                 <div className="flipbox">
                     <div className="back concert">
-
                         <Link to="/concert">Add Concert</Link>
                     </div>
                     <div className="front">
@@ -16,7 +15,6 @@ function DashboardRight({ user }) {
                         <i className="fa fa-fort-awesome"></i>
                     </div>
                 </div>
-
                 <div className="flipbox">
                     <div className="back profile">
                         <Link to="/profile">Update Profile</Link>
@@ -26,7 +24,6 @@ function DashboardRight({ user }) {
                         <i className="fa fa-id-card"></i>
                     </div>
                 </div>
-
             </section>
         </div>
     )
