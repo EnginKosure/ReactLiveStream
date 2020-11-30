@@ -17,13 +17,10 @@ const CheckBox = ({ handleCheckboxChange, label }) => {
                     checked={isChecked}
                     onChange={toggleCheckboxChange}
                 />
-
                 {label}
             </label>
         </div>
     );
 }
-
-
 
 export default CheckBox;
