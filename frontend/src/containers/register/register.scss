@@ -20,14 +20,8 @@
   max-width: 600px;
   min-width: 35%;
   padding: 120px 40px;
-  // margin: 0 auto;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  // min-height: 900px;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
 }
 #profile-wrapper {
   max-width: 1100px;
@@ -146,10 +140,7 @@
   margin: 0 auto;
   font-size: 2rem;
 }
-// .user-name {
-//   display: flex;
-//   flex-direction: column;
-// }
+
 .main-profile-update {
   display: flex;
   .right-form {
@@ -193,7 +184,6 @@
   letter-spacing: -0.015em;
   text-align: center;
   min-width: 80px;
-  // margin-top: 10px;
   color: white;
 }
 

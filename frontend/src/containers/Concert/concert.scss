@@ -17,16 +17,9 @@
 }
 
 .auth-inner {
-  // min-width: 80%;
   padding: 120px 40px;
-  // margin: 0 auto;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  // min-height: 900px;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
 }
 #profile-wrapper {
   max-width: 1100px;
@@ -145,10 +138,7 @@
   margin: 0 auto;
   font-size: 2rem;
 }
-// .user-name {
-//   display: flex;
-//   flex-direction: column;
-// }
+
 .main-profile-update {
   display: flex;
   .right-form {
@@ -165,11 +155,6 @@
   margin: 0 auto;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  // min-height: 900px;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
 }
 .concert-cont-main {
   margin: 0 auto;

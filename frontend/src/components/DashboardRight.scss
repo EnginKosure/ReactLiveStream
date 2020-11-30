@@ -86,7 +86,6 @@ section {
     .back.concert {
       @extend %boxstyle;
       transform: rotateY(180deg);
-      //   background: $secondarybrand;
       background-image: url("../assets/userdb.jpeg");
       background-size: cover;
 
@@ -100,7 +99,6 @@ section {
     .back.profile {
       @extend %boxstyle;
       transform: rotateY(180deg);
-      //   background: $secondarybrand;
       background-image: url("../assets/userpr.jpg");
       background-size: cover;
 
