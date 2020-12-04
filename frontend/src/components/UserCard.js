@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import './UserCard.scss';
-import logo from '../assets/logo_.png';
 import { Link } from 'react-router-dom';
+const UserCardLogo = lazy(() => import('./UserCardLogo'));
+const Loader = () => <p>Loading</p>
+
+// import UserCardLogo from './UserCardLogo';
 const UserCard = ({ user }) => {
     return (
         <div className="card-container">
-            <div className="dash" ><img className="logo" src={logo} alt="logo" /></div>
+            <Suspense fallback={Loader}>
+                <UserCardLogo />
+            </Suspense>
             <div className="navi">
                 <img
                     src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
