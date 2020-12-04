@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import CheckBoxGenre from './CheckBoxGenre';
+// import CheckBoxGenre from './CheckBoxGenre';
 import Button from 'react-bootstrap/Button';
-import { Grid, Row, Col, Form, InputGroup } from 'react-bootstrap';
+import { Col, Form } from 'react-bootstrap';
 import SelectInstrument from './SelectInstrument';
-import { useForm, useFieldArray, useWatch, Controller } from 'react-hook-form';
+import { useForm, useFieldArray, Controller } from 'react-hook-form';
 
 import "./concert.scss";
 import SelectCountry from './SelectCountry';
@@ -21,7 +21,6 @@ const ConcertForm = () => {
     });
 
     let history = useHistory();
-
 
 
     const [concert, setConcert] = useState({
@@ -166,9 +165,7 @@ const ConcertForm = () => {
                             <Form.Control
                                 name="Title"
                                 className={"form-control email text-fields" + (submitted && !concert.Title ? ' is-invalid' : '')}
-                                // value={concert.Title}
                                 placeholder="Title of the concert..."
-                                // onChange={handleChange}
                                 ref={register}
                             />
                             {submitted && !concert.About &&
@@ -181,9 +178,7 @@ const ConcertForm = () => {
                             <Form.Control
                                 name="About"
                                 className={"form-control email text-fields" + (submitted && !concert.About ? ' is-invalid' : '')}
-                                // value={concert.About}
                                 placeholder="Short description of the concert..."
-                                // onChange={handleChange}
                                 ref={register}
                             />
                             {submitted && !concert.About &&
@@ -198,8 +193,6 @@ const ConcertForm = () => {
                                     type="text"
                                     name="Instrumentation"
                                     className={"form-control email text-fields"}
-                                    // value={concert.Instrumentation}
-                                    // onChange={handleChange}
                                     as="select"
                                     custom
                                     ref={register}
@@ -230,10 +223,7 @@ const ConcertForm = () => {
                                         <Form.Control
                                             type="date"
                                             className={"form-control email text-fields" + (submitted && !concert.Date ? ' is-invalid' : '')}
-                                            // value={concert.Date}
                                             placeholder="dd/mm/yyyy"
-                                            // onChange={handleChange}
-                                            // ref={register}
                                             value={value}
                                             onChange={onChange}
                                         />
