@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import './UserCard.scss';
 import { Link } from 'react-router-dom';
 const UserCardLogo = lazy(() => import('./UserCardLogo'));
+const UserCardImage = lazy(() => import('./UserCardImage'))
 const Loader = () => <p>Loading</p>
 
 // import UserCardLogo from './UserCardLogo';
@@ -11,12 +12,12 @@ const UserCard = ({ user }) => {
             <Suspense fallback={Loader}>
                 <UserCardLogo />
             </Suspense>
+
             <div className="navi">
-                <img
-                    src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                    alt="profile-img"
-                    className="profile-img-card photo"
-                />
+                <Suspense fallback={Loader}>
+                    <UserCardImage />
+                </Suspense>
+
                 <h6 className="user-h6">{user?.ArtistFirstName} {user?.ArtistLastName}</h6>
                 <ul>
                     <li className="active"><Link to="/"><i className="fa fa-columns" aria-hidden="true"></i>User DashBoard</Link></li>
